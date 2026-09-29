@@ -120,9 +120,9 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-lg overflow-hidden border border-slate-200 shadow-xl bg-slate-900">
                 <img
-                  src="/assets/services/field-testing/field-testing-1.png"
+                  src="/assets/services/field-testing/cone-penetration-probing.png"
                   alt="SIMCON Geotechnical Deep Foundation Field Testing & Drilling Operations"
-                  className="w-full h-[440px] sm:h-[500px] object-cover"
+                  className="w-full h-[440px] sm:h-[500px] object-cover object-center"
                 />
                 
                 {/* Real Technical Caption Overlay */}
@@ -184,7 +184,7 @@ export const Home: React.FC = () => {
       <section className="py-20 lg:py-28 bg-[#F7F8FA] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// VALUE PROPOSITION"
+            technicalLabel="VALUE PROPOSITION"
             title="Engineering Decisions Built on Evidence."
             description="At SIMCON Technology, we believe foundational decisions must be driven by verifiable technical facts and strict ethics — never by commercial pressure."
           />
@@ -269,7 +269,7 @@ export const Home: React.FC = () => {
       <section className="py-20 lg:py-28 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// METHODOLOGY //"
+            technicalLabel="METHODOLOGY"
             title="Investigate. Analyse. Design."
             description="Our recurring engineering framework unites subsurface investigation, scientific numerical interpretation, and actionable engineering recommendations."
           />
@@ -328,7 +328,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <SectionHeading
-              technicalLabel="// CORE DISCIPLINES //"
+              technicalLabel="CORE DISCIPLINES"
               title="Comprehensive Engineering Services."
               description="Explore our specialized testing, surveying, and diagnostic services tailored for heavy infrastructure."
               className="mb-0!"
@@ -401,7 +401,7 @@ export const Home: React.FC = () => {
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-2.5 py-1 bg-[#062B5C]/90 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider rounded">
-                      DISCIPLINE {featuredService.number} // {featuredService.category}
+                      DISCIPLINE {featuredService.number} · {featuredService.category}
                     </span>
                   </div>
                 </div>
@@ -464,7 +464,7 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-6 space-y-6">
               <div className="flex items-center gap-2">
                 <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-                  // FLAGSHIP CASE STUDY //
+                  FLAGSHIP CASE STUDY
                 </span>
                 <div className="h-[1px] w-8 bg-[#2B7EC8]/40" />
               </div>
@@ -534,7 +534,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <SectionHeading
-              technicalLabel="// QUALITY BENCHMARKS //"
+              technicalLabel="QUALITY BENCHMARKS"
               title="NABL Accredited Testing Facilities."
               description="Accredited under ISO/IEC 17025:2017 for 581 distinct parameters across physical, mechanical, and chemical testing."
               className="mb-0!"
@@ -610,7 +610,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <SectionHeading
-              technicalLabel="// PROJECT ARCHIVE //"
+              technicalLabel="PROJECT ARCHIVE"
               title="Proven Track Record in Complex Ground."
               description="A curated look into our recent national engineering testing and foundation investigation engagements."
               className="mb-0!"
@@ -677,7 +677,7 @@ export const Home: React.FC = () => {
       <section className="py-20 lg:py-28 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// OPERATING REACH //"
+            technicalLabel="OPERATING REACH"
             title="Strategic Regional Hubs. Pan-India Execution."
             description="With permanent testing laboratories and hubs in Gandhidham, Ahmedabad, Lucknow, and Indore, we mobilize specialized crews to any site nationwide."
           />
@@ -693,7 +693,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block mb-2">
-              // PARTNERSHIPS BUILT ON TRUST
+              PARTNERSHIPS BUILT ON TRUST
             </span>
             <h3 className="text-2xl font-bold font-display text-[#062B5C]">
               Trusted by Premier Infrastructure Organizations
@@ -743,7 +743,7 @@ export const Home: React.FC = () => {
             <div className="absolute inset-0 bg-tech-grid-dark opacity-20 pointer-events-none" />
             <div className="relative z-10 max-w-xl space-y-3">
               <span className="text-xs font-mono tracking-widest text-[#2B7EC8] uppercase font-bold">
-                BUILD WITH SIMCON // RECRUITMENT
+                BUILD WITH SIMCON · CAREERS
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold font-display leading-tight">
                 Build Your Engineering Career on Solid Ground.
@@ -771,7 +771,7 @@ export const Home: React.FC = () => {
       <section className="py-20 lg:py-28 bg-[#F7F8FA] text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
           <span className="technical-tag text-[#D71920] font-mono font-medium tracking-widest">
-            // PROJECT INQUIRY //
+            PROJECT INQUIRY
           </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-[#062B5C] leading-tight">

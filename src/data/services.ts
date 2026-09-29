@@ -33,7 +33,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription: "Subsurface exploration, rotary rock coring, and characterization for safe and economical infrastructure design.",
     fullDescription: "SIMCON Technology delivers comprehensive geotechnical subsurface investigations across all geological conditions. With a dedicated fleet of drilling rigs, rotary diamond coring units, and field instrumentation, we acquire high-integrity undisturbed and disturbed samples. Our testing protocols provide actionable data for shallow/deep foundations, bridge abutments, elevated corridors, industrial plants, and transit systems.",
     iconName: "Layers",
-    heroImage: "/assets/services/field-testing/field-testing-1.png",
+    heroImage: "/assets/projects/geotechnical-investigation-site-1.png",
     category: "Geotechnical & Subsurface",
     keyCapabilities: [
       "Deep rotary core drilling in hard rock, weathered formations, and soil",
@@ -115,7 +115,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription: "Non-invasive subsurface geophysical imaging for geological hazard detection and ground risk mitigation.",
     fullDescription: "SIMCON provides advanced non-destructive geophysical exploration methods to map subsurface stratigraphy, identify cavities, evaluate bedrock profiles, and measure dynamic soil properties. Geophysical surveys enable continuous profiling over kilometers of alignment without disturbing utilities or operations.",
     iconName: "Activity",
-    heroImage: "/assets/services/field-testing/field-testing-3.png",
+    heroImage: "/assets/services/geophysical/masw-seismic-imaging-2d.png",
     category: "Geophysics & Subsurface Imaging",
     keyCapabilities: [
       "Multichannel Analysis of Surface Waves (MASW) for shear wave velocity (Vs30) & seismic site classification",
@@ -149,7 +149,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription: "Investigating foundation distress, slope failures, and geotechnical collapses to identify root causes and remedial designs.",
     fullDescription: "When infrastructure systems encounter unexpected distress, excessive settlement, retaining wall tilting, or slope instability, SIMCON's senior geotechnical specialists conduct forensic investigations. By combining historical design verification, in-situ forensic testing, numerical back-analysis, and forensic laboratory testing, we establish root failure mechanisms and engineer sound remedial interventions.",
     iconName: "Search",
-    heroImage: "/assets/projects/project-metro-bullet-train-1.png",
+    heroImage: "/assets/projects/geotechnical-investigation-site-2.png",
     category: "Forensics & Diagnostics",
     keyCapabilities: [
       "Differential settlement and structural distortion root-cause diagnosis",
@@ -171,7 +171,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription: "NABL-accredited physical, mechanical, and chemical testing of concrete, aggregates, steel, bitumen, and soil in our central laboratories.",
     fullDescription: "SIMCON operates state-of-the-art NABL-accredited material testing laboratories equipped with calibrated computerized compression testing machines, servo-hydraulic UTMs, bitumen rheometers, and spectrophotometers. We test more than 580 parameters ensuring every batch of material meets regulatory codes and project specifications.",
     iconName: "FlaskConical",
-    heroImage: "/assets/services/field-testing/field-testing-4.png",
+    heroImage: "/assets/services/materials/universal-testing-machine-utm-steel.png",
     category: "Laboratory & Materials",
     keyCapabilities: [
       "Cementitious Materials: OPC, PPC, PSC, RHPC, Fly Ash, GGBS, Silica Fume (Compressive strength, setting time, fineness, soundness, autoclave)",
@@ -238,7 +238,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription: "High-precision topographic mapping, drone photogrammetry, and DGPS surveys for engineering alignments and infrastructure master plans.",
     fullDescription: "Accurate spatial coordinates form the baseline of every civil engineering endeavor. SIMCON utilizes dual-frequency RTK-DGPS receivers, robotic total stations, and UAV photogrammetry to provide millimeter-accurate digital terrain models (DTM), contour maps, right-of-way corridor surveys, and volume calculations.",
     iconName: "Compass",
-    heroImage: "/assets/projects/project-railway-aviation-1.png",
+    heroImage: "/assets/projects/geotechnical-drilling-rig-highway.png",
     category: "Surveying & Geomatics",
     keyCapabilities: [
       "Differential Global Positioning System (DGPS) ground control network establishment",
@@ -261,7 +261,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription: "In-situ deep foundation testing, static and dynamic pile load tests, plate load tests, pressuremeter, and cone penetration tests.",
     fullDescription: "Field testing validates theoretical geotechnical assumptions under actual site stresses. SIMCON maintains specialized loading frames, automatic hydraulic jacks, load cells, digital displacement transducers, and calibrated pile driving analyzers to execute high-capacity pile tests, plate load tests, and deep in-situ penetration assessments across India.",
     iconName: "Gauge",
-    heroImage: "/assets/services/field-testing/field-testing-5.png",
+    heroImage: "/assets/services/field-testing/scpt-rig-field-operation.png",
     category: "In-Situ Field Testing",
     keyCapabilities: [
       "Vertical Pile Load Test (Static & Cyclic) via Kentledge or Anchor Pile / Reaction Rock Anchor setups",
@@ -313,7 +313,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription: "Real-time geotechnical and structural health monitoring for tunnels, deep excavations, retaining walls, and embankments.",
     fullDescription: "Complex underground and transit construction demands continuous surveillance to verify ground movements remain within design tolerances. SIMCON provides automated and manual geotechnical instrumentation systems including vibrating wire piezometers, inclinometers, load cells, and ground settlement sensors for safety critical infrastructure.",
     iconName: "MonitorCheck",
-    heroImage: "/assets/projects/project-railway-aviation-6.png",
+    heroImage: "/assets/services/structural-health/structural-vibration-monitoring.png",
     category: "Monitoring & Safety",
     keyCapabilities: [
       "In-place and manual digital inclinometer systems for lateral ground movement tracking in diaphragm walls",
@@ -336,7 +336,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription: "Non-destructive testing, bridge proof load tests, seismic vulnerability reviews, and condition assessment of vital structures.",
     fullDescription: "Aging infrastructure and structures subjected to environmental exposure, thermal stresses, or retrofitting requirements necessitate rigorous non-destructive evaluation. SIMCON conducts structural health diagnostics on thermal power plants, major railway bridges, commercial terminals, and government premises.",
     iconName: "Building2",
-    heroImage: "/assets/projects/project-adani-thermal-1.png",
+    heroImage: "/assets/services/ndt/rebound-hammer-concrete-testing.jpeg",
     category: "Structural Integrity & Diagnostics",
     keyCapabilities: [
       "Low Strain Pile Integrity Testing (PIT) for pile length verification and continuity defects",

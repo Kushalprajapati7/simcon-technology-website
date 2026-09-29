@@ -26,7 +26,7 @@ export const Accreditations: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
             <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-              // ACCREDITATION & COMPLIANCE //
+              ACCREDITATION & COMPLIANCE
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display leading-[1.12]">
               NABL Accreditations & ISO/IEC 17025 Standards.
@@ -42,7 +42,7 @@ export const Accreditations: React.FC = () => {
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// VERIFIED CREDENTIALS"
+            technicalLabel="VERIFIED CREDENTIALS"
             title="Official Laboratory Accreditations"
             description="Inspect the authentic certificates issued to SIMCON testing facilities by NABL under the ISO/IEC 17025:2017 global benchmark."
           />
@@ -127,7 +127,7 @@ export const Accreditations: React.FC = () => {
       <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// TESTING DISCIPLINE QUANTIFICATION //"
+            technicalLabel="TESTING DISCIPLINE QUANTIFICATION"
             title="581 Distinct NABL Accredited Parameters"
             description="Our accredited testing scopes span all vital civil engineering disciplines to satisfy NHAI, RVNL, MES, and EPC tender mandates."
           />

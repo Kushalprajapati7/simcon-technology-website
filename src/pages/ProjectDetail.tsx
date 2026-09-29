@@ -50,7 +50,7 @@ export const ProjectDetail: React.FC = () => {
           <div className="max-w-4xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded text-[11px] font-mono text-[#2B7EC8] uppercase tracking-wider">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D71920]" />
-              CASE STUDY // {project.category}
+              CASE STUDY · {project.category}
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-[1.12]">
@@ -132,7 +132,7 @@ export const ProjectDetail: React.FC = () => {
               {project.scope && (
                 <div className="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 space-y-4">
                   <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block">
-                    // TECHNICAL DELIVERABLES
+                    TECHNICAL DELIVERABLES
                   </span>
                   <h2 className="text-xl font-bold font-display text-[#062B5C]">
                     SIMCON Engineering Scope

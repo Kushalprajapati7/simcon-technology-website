@@ -14,7 +14,7 @@ export const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
             <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-              // ABOUT SIMCON TECHNOLOGY //
+              ABOUT SIMCON TECHNOLOGY
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1]">
               A Legacy Built on Rigor, Ethics, and Precision.
@@ -32,7 +32,7 @@ export const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <SectionHeading
-                technicalLabel="// COMPANY HISTORY"
+                technicalLabel="COMPANY HISTORY"
                 title="18+ Years of Uncompromising Engineering Integrity."
                 className="mb-0!"
               />
@@ -58,7 +58,7 @@ export const About: React.FC = () => {
             <div className="lg:col-span-6">
               <div className="relative rounded-xl overflow-hidden border border-slate-200 shadow-lg">
                 <img
-                  src="/assets/services/field-testing/field-testing-6.png"
+                  src="/assets/projects/geotechnical-investigation-site-1.png"
                   alt="SIMCON Field Drilling and Investigation Operations"
                   className="w-full h-[400px] object-cover"
                 />
@@ -82,7 +82,7 @@ export const About: React.FC = () => {
                 <Target className="w-6 h-6 text-[#2B7EC8]" />
               </div>
               <span className="technical-tag text-[#D71920] font-mono tracking-widest block font-bold">
-                // OUR VISION
+                OUR VISION
               </span>
               <h2 className="text-2xl font-bold font-display text-[#062B5C]">
                 The Preferred Partner in Technical Safety
@@ -98,7 +98,7 @@ export const About: React.FC = () => {
                 <Compass className="w-6 h-6 text-[#2B7EC8]" />
               </div>
               <span className="technical-tag text-[#1268B3] font-mono tracking-widest block font-bold">
-                // OUR MISSION
+                OUR MISSION
               </span>
               <h2 className="text-2xl font-bold font-display text-[#062B5C]">
                 Empowering Clients to Build Durably
@@ -115,7 +115,7 @@ export const About: React.FC = () => {
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// PRINCIPLES //"
+            technicalLabel="PRINCIPLES"
             title="The Five Pillars of SIMCON."
             description="Our core values govern every laboratory test, borehole log, and engineering recommendation we issue."
           />

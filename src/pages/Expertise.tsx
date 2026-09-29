@@ -91,7 +91,7 @@ export const Expertise: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
             <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-              // COMPUTATIONAL & DESIGN RIGOR //
+              COMPUTATIONAL & DESIGN RIGOR
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display leading-[1.12]">
               Technical Expertise & Numerical Modeling.
@@ -107,7 +107,7 @@ export const Expertise: React.FC = () => {
       <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// ENGINEERING CAPABILITIES"
+            technicalLabel="ENGINEERING CAPABILITIES"
             title="Core Specialized Competencies"
             description="Our geotechnical consulting practice bridges investigative testing with practical structural and civil engineering execution."
           />
@@ -155,7 +155,7 @@ export const Expertise: React.FC = () => {
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// SOFTWARE TOOLS //"
+            technicalLabel="SOFTWARE TOOLS"
             title="Industry-Standard Computational Platforms"
             description="Our engineers utilize globally validated engineering software to simulate complex soil-structure behavior."
           />

@@ -39,7 +39,7 @@ export const IndiaMap: React.FC = () => {
 
           {/* Technical Map Label */}
           <div className="absolute top-3 left-3 text-[10px] font-mono tracking-widest text-[#062B5C]/60 uppercase">
-            // PAN-INDIA MOBILIZATION & REGIONAL HUBS
+            PAN-INDIA MOBILIZATION & REGIONAL HUBS
           </div>
 
           <svg
@@ -148,7 +148,7 @@ export const IndiaMap: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="technical-tag text-[#D71920] font-mono">
-                REGIONAL HUB // {selectedOffice.id.toUpperCase()}
+                REGIONAL HUB · {selectedOffice.id.toUpperCase()}
               </span>
               {selectedOffice.nablCode && (
                 <span className="px-2 py-0.5 text-[10px] font-mono font-semibold bg-[#062B5C] text-white rounded">

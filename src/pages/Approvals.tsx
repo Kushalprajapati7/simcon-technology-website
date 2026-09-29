@@ -13,7 +13,7 @@ export const Approvals: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
             <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-              // INSTITUTIONAL RECOGNITION //
+              INSTITUTIONAL RECOGNITION
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display leading-[1.12]">
               Government Approvals & Authority Empanelments.
@@ -29,7 +29,7 @@ export const Approvals: React.FC = () => {
       <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// VERIFIED EMPANELMENTS"
+            technicalLabel="VERIFIED EMPANELMENTS"
             title="Institutional Empanelments"
             description="Our laboratories and drilling units meet the stringent pre-qualification standards required for strategic national infrastructure."
           />

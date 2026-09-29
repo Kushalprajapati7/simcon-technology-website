@@ -18,7 +18,7 @@ export const Team: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
             <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-              // HUMAN CAPITAL //
+              HUMAN CAPITAL
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display leading-[1.12]">
               125+ Dedicated Engineering Professionals.
@@ -35,7 +35,7 @@ export const Team: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <span className="text-xs font-mono uppercase tracking-wider text-[#D71920] font-bold block mb-1">
-              // RIGOROUS TALENT BENCHMARK
+              RIGOROUS TALENT BENCHMARK
             </span>
             <h2 className="text-2xl font-bold font-display text-[#062B5C]">
               Technical Team Composition
@@ -71,7 +71,7 @@ export const Team: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block mb-1">
-                // ACTIVE PERSONNEL
+                ACTIVE PERSONNEL
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#062B5C]">
                 Specialists Across Sections & Specialities

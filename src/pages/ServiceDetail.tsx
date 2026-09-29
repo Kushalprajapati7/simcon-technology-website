@@ -48,7 +48,7 @@ export const ServiceDetail: React.FC = () => {
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-white/10 rounded text-[11px] font-mono text-[#2B7EC8] uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D71920]" />
-                DISCIPLINE {service.number} // {service.category}
+                DISCIPLINE {service.number} · {service.category}
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-[1.12]">
@@ -89,7 +89,7 @@ export const ServiceDetail: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl space-y-6">
             <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block">
-              // TECHNICAL OVERVIEW
+              TECHNICAL OVERVIEW
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#062B5C]">
               Methodology & Technical Approach
@@ -120,7 +120,7 @@ export const ServiceDetail: React.FC = () => {
         <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              technicalLabel="// TESTING PROTOCOLS //"
+              technicalLabel="TESTING PROTOCOLS"
               title="Detailed Parameter Breakdown"
               description="NABL-accredited laboratory procedures and analytical categories executed by SIMCON specialists."
             />
@@ -163,7 +163,7 @@ export const ServiceDetail: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-8">
               <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block mb-1">
-                // COMPUTATIONAL SUITE
+                COMPUTATIONAL SUITE
               </span>
               <h2 className="text-2xl font-bold font-display text-[#062B5C]">
                 Software Expertise & Numerical Tools
@@ -195,7 +195,7 @@ export const ServiceDetail: React.FC = () => {
             <div className="flex items-center justify-between mb-8">
               <div>
                 <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block mb-1">
-                  // CASE STUDIES
+                  CASE STUDIES
                 </span>
                 <h2 className="text-2xl font-bold font-display text-[#062B5C]">
                   Related Infrastructure Projects

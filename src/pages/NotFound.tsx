@@ -9,7 +9,7 @@ export const NotFound: React.FC = () => {
 
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded text-xs font-mono font-bold text-[#D71920] shadow-2xs">
-          <span>ERROR 404 // DISCONTINUITY DETECTED</span>
+          <span>ERROR 404 · PAGE NOT FOUND</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display text-[#062B5C] leading-tight">
@@ -45,7 +45,7 @@ export const NotFound: React.FC = () => {
         </div>
 
         <div className="pt-8 text-xs font-mono text-slate-400">
-          SIMCON TECHNOLOGY PVT. LTD. // ROUTE SYSTEM
+          SIMCON TECHNOLOGY PVT. LTD.
         </div>
       </div>
     </div>

@@ -48,12 +48,11 @@ export const PROJECTS: ProjectItem[] = [
       "Foundation Recommendations"
     ],
     description: "Geotechnical soil testing, foundation investigation, and dynamic pile testing for viaduct piers and the Sabarmati High Speed Rail Hub for India's pioneer Bullet Train corridor.",
-    featuredImage: "/assets/projects/project-metro-bullet-train-1.png",
+    featuredImage: "/assets/projects/project-sabarmati-bullet-train-hub.png",
     gallery: [
-      "/assets/projects/project-metro-bullet-train-1.png",
-      "/assets/projects/project-metro-bullet-train-2.png",
-      "/assets/projects/project-metro-bullet-train-5.png",
-      "/assets/projects/project-metro-bullet-train-10.png"
+      "/assets/projects/project-sabarmati-bullet-train-hub.png",
+      "/assets/projects/project-bullet-train-pier-testing.png",
+      "/assets/projects/project-metro-viaduct-corridor.png"
     ],
     scope: [
       "Deep rotary boreholes along viaduct alignments",
@@ -79,7 +78,7 @@ export const PROJECTS: ProjectItem[] = [
       "Foundation Bearing Capacity Reports"
     ],
     description: "Subcontractor for geotechnical investigation work for part design and construction of elevated viaducts and metro stations across Bhopal Metro network.",
-    featuredImage: "/assets/projects/project-metro-bullet-train-2.png",
+    featuredImage: "/assets/projects/project-metro-viaduct-corridor.png",
     scope: [
       "Continuous rock coring in basalt and sedimentary formations",
       "UCS and Brazilian tensile testing of rock cores",
@@ -102,7 +101,7 @@ export const PROJECTS: ProjectItem[] = [
       "Borehole Logging & Testing"
     ],
     description: "Specialized pressuremeter testing and geotechnical soil exploration across the 8.65 km project stretch for Indore Metro packages IN04 and IN05R.",
-    featuredImage: "/assets/projects/project-metro-bullet-train-5.png",
+    featuredImage: "/assets/projects/project-elevated-metro-station.png",
     scope: [
       "In-situ Menard Pressuremeter tests for deformation moduli and creep pressure",
       "Rotary drilling in difficult urban corridors",
@@ -126,10 +125,10 @@ export const PROJECTS: ProjectItem[] = [
       "Geophysical Investigation"
     ],
     description: "Geotechnical and geophysical investigation across complex Himalayan rock formations for deep rail tunnel portals, approach cuttings, and bridge abutments.",
-    featuredImage: "/assets/projects/project-railway-aviation-1.png",
+    featuredImage: "/assets/projects/project-secr-railway-tunnel-portal.png",
     gallery: [
-      "/assets/projects/project-railway-aviation-1.png",
-      "/assets/projects/project-railway-aviation-5.png"
+      "/assets/projects/project-secr-railway-tunnel-portal.png",
+      "/assets/projects/geotechnical-investigation-site-1.png"
     ],
     scope: [
       "Deep mountain geotechnical drilling and geological classification",
@@ -153,7 +152,7 @@ export const PROJECTS: ProjectItem[] = [
       "Cross-Hole Sonic Logging (CHSL)"
     ],
     description: "Non-destructive foundation integrity testing and high-strain dynamic load testing for deep foundation shafts on tunnels T14, T15, and T16 and adjacent major bridges.",
-    featuredImage: "/assets/projects/project-railway-aviation-5.png",
+    featuredImage: "/assets/projects/project-railway-bridge-pier-foundation.png",
     scope: [
       "Sonic wave velocity logging on deep drilled shafts",
       "Integrity profiling with PIT-W signal interpretation",
@@ -175,7 +174,7 @@ export const PROJECTS: ProjectItem[] = [
       "Structural Soundness Verification"
     ],
     description: "Specialized ultrasonic crosshole sonic logging for deep bridge pier foundation piles to verify concrete integrity and sound bonding in rock sockets.",
-    featuredImage: "/assets/projects/project-railway-aviation-6.png",
+    featuredImage: "/assets/projects/project-highway-bridge-load-test.png",
     scope: [
       "Multi-tube sonic logging across deep riverbed piers",
       "Real-time velocity profile tomographic visualization",
@@ -199,7 +198,7 @@ export const PROJECTS: ProjectItem[] = [
       "ATC & NTB Subsurface Exploration"
     ],
     description: "Pavement structural overlay evaluation, plate load tests, GPR underground mapping, and geotechnical investigation for the new Air Traffic Control (ATC) and New Terminal Building (NTB).",
-    featuredImage: "/assets/projects/project-railway-aviation-7.png",
+    featuredImage: "/assets/projects/project-airport-terminal-apron.png",
     scope: [
       "Non-destructive runway sub-base GPR scanning",
       "Plate load testing for subgrade k-value assessment",
@@ -222,7 +221,7 @@ export const PROJECTS: ProjectItem[] = [
       "NABL Laboratory Testing"
     ],
     description: "Comprehensive subsurface investigation and foundation capacity recommendations for landside inflight flight catering infrastructure at Lucknow Airport.",
-    featuredImage: "/assets/projects/project-railway-aviation-8.jpeg",
+    featuredImage: "/assets/projects/project-airport-terminal-apron.png",
     scope: [
       "Soil boring and standard penetration testing",
       "Chemical suitability testing of soil and groundwater",

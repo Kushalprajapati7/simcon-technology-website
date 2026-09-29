@@ -10,13 +10,12 @@ interface TeamCardProps {
 export const TeamCard: React.FC<TeamCardProps> = ({ member, featured = false }) => {
   return (
     <div
-      className={`bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-md hover:border-[#1268B3]/50 transition-all ${
-        featured ? 'ring-1 ring-[#062B5C]/10' : ''
-      }`}
+      className={`bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-md hover:border-[#1268B3]/50 transition-all ${featured ? 'ring-1 ring-[#062B5C]/10' : ''
+        }`}
     >
       <div>
         {/* Photo Container */}
-        <div className="relative h-64 sm:h-72 bg-slate-100 overflow-hidden">
+        <div className="relative h-72 bg-slate-100 overflow-hidden">
           {member.image ? (
             <img
               src={member.image}

@@ -14,7 +14,7 @@ export const Reach: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
             <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-              // NATIONAL PRESENCE & MOBILIZATION //
+              NATIONAL PRESENCE & MOBILIZATION
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display leading-[1.12]">
               National Reach. Four Strategic Hubs.
@@ -30,7 +30,7 @@ export const Reach: React.FC = () => {
       <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// PAN-INDIA EXPLORATION NETWORK"
+            technicalLabel="PAN-INDIA EXPLORATION NETWORK"
             title="Interactive Regional Network"
             description="Select any operating hub to view address details, contact channels, and specialized laboratory testing capabilities."
           />
@@ -43,7 +43,7 @@ export const Reach: React.FC = () => {
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// OPERATING BASES"
+            technicalLabel="OPERATING BASES"
             title="Headquarters & Regional Facilities"
             description="Complete contact information and facility accreditations for each permanent SIMCON location."
           />

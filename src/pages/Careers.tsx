@@ -53,7 +53,7 @@ export const Careers: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
             <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-              // CAREERS AT SIMCON //
+              CAREERS AT SIMCON
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display leading-[1.12]">
               Build Your Career with SIMCON Technology.
@@ -69,7 +69,7 @@ export const Careers: React.FC = () => {
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            technicalLabel="// WORK ENVIRONMENT"
+            technicalLabel="WORK ENVIRONMENT"
             title="Why Engineers Build Their Future Here"
             description="Our people-first philosophy pairs challenging technical assignments with long-term professional stability and academic mentoring."
           />
@@ -103,7 +103,7 @@ export const Careers: React.FC = () => {
             <div className="lg:col-span-6 space-y-6">
               <div>
                 <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block mb-1">
-                  // CURRENT VACANCIES
+                  CURRENT VACANCIES
                 </span>
                 <h2 className="text-2xl font-bold font-display text-[#062B5C]">
                   Active Technical Positions

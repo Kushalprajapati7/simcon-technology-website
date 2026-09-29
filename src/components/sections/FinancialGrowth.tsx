@@ -25,7 +25,7 @@ export const FinancialGrowth: React.FC = () => {
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-2">
               <span className="technical-tag text-[#D71920] font-mono font-medium tracking-widest">
-                // ENTERPRISE STRENGTH
+                ENTERPRISE STRENGTH
               </span>
               <div className="h-[1px] w-8 bg-[#062B5C]/20" />
             </div>

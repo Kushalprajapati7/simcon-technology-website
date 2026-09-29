@@ -175,7 +175,7 @@ export const Footer: React.FC = () => {
         {/* Office Hubs Grid */}
         <div className="py-10 border-b border-white/10">
           <div className="text-[11px] font-mono uppercase tracking-widest text-[#2B7EC8] font-semibold mb-6">
-            // REGIONAL OPERATING HUBS & TESTING LABORATORIES
+            REGIONAL OPERATING HUBS & TESTING LABORATORIES
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {OFFICES.map((office) => (
