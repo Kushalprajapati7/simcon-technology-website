@@ -13,10 +13,7 @@ export const About: React.FC = () => {
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-              ABOUT SIMCON TECHNOLOGY
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display text-white leading-[1.1]">
               A Legacy Built on Rigor, Ethics, and Precision.
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed pt-2">
@@ -81,11 +78,8 @@ export const About: React.FC = () => {
               <div className="w-12 h-12 rounded bg-[#062B5C] text-white flex items-center justify-center">
                 <Target className="w-6 h-6 text-[#2B7EC8]" />
               </div>
-              <span className="technical-tag text-[#D71920] font-mono tracking-widest block font-bold">
-                OUR VISION
-              </span>
               <h2 className="text-2xl font-bold font-display text-[#062B5C]">
-                The Preferred Partner in Technical Safety
+                Our Vision: The Preferred Partner in Technical Safety
               </h2>
               <blockquote className="text-base text-[#536271] leading-relaxed italic border-l-2 border-[#1268B3] pl-4">
                 "{COMPANY_INFO.vision}"
@@ -97,11 +91,8 @@ export const About: React.FC = () => {
               <div className="w-12 h-12 rounded bg-[#062B5C] text-white flex items-center justify-center">
                 <Compass className="w-6 h-6 text-[#2B7EC8]" />
               </div>
-              <span className="technical-tag text-[#1268B3] font-mono tracking-widest block font-bold">
-                OUR MISSION
-              </span>
               <h2 className="text-2xl font-bold font-display text-[#062B5C]">
-                Empowering Clients to Build Durably
+                Our Mission: Empowering Clients to Build Durably
               </h2>
               <blockquote className="text-base text-[#536271] leading-relaxed italic border-l-2 border-[#D71920] pl-4">
                 "{COMPANY_INFO.mission}"
@@ -149,39 +140,40 @@ export const About: React.FC = () => {
       </section>
 
       {/* Director's Message Full Text */}
-      <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-8 sm:p-12 rounded-xl border border-slate-200 shadow-sm space-y-6">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+      <section className="py-20 bg-[#062B5C] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-tech-grid-dark opacity-25 pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="bg-white/10 backdrop-blur-xs p-8 sm:p-12 rounded-xl border border-white/20 shadow-xl space-y-6">
+            <div className="flex items-center justify-between border-b border-white/15 pb-4">
               <div>
-                <span className="text-xs font-mono tracking-widest text-[#D71920] uppercase font-bold block">
+                <span className="text-xs font-mono tracking-widest text-[#4A8BE2] uppercase font-bold block">
                   LEADERSHIP COMMITMENT
                 </span>
-                <h2 className="text-2xl font-bold font-display text-[#062B5C]">
+                <h2 className="text-2xl sm:text-3xl font-bold font-display text-white">
                   Director's Message
                 </h2>
               </div>
-              <Shield className="w-8 h-8 text-[#062B5C]/20" />
+              <Shield className="w-8 h-8 text-[#4A8BE2]" />
             </div>
 
-            <div className="space-y-4 text-sm sm:text-base text-[#536271] leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-slate-200 leading-relaxed">
               {COMPANY_INFO.directorsMessage.content.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
 
-            <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
+            <div className="pt-6 border-t border-white/15 flex items-center justify-between">
               <div>
-                <span className="font-display font-bold text-base text-[#062B5C] block">
+                <span className="font-display font-bold text-base text-white block">
                   {COMPANY_INFO.directorsMessage.author}
                 </span>
-                <span className="text-xs font-mono text-slate-500 block">
+                <span className="text-xs font-mono text-slate-300 block">
                   {COMPANY_INFO.directorsMessage.title} ({COMPANY_INFO.directorsMessage.credentials})
                 </span>
               </div>
               <Link
                 to="/about/leadership"
-                className="text-xs font-mono font-bold text-[#1268B3] hover:text-[#062B5C] uppercase tracking-wider flex items-center gap-1"
+                className="text-xs font-mono font-bold text-[#4A8BE2] hover:text-white uppercase tracking-wider flex items-center gap-1 transition-colors"
               >
                 Meet All Directors <ArrowRight className="w-3.5 h-3.5" />
               </Link>

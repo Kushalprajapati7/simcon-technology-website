@@ -16,10 +16,7 @@ export const Legal: React.FC = () => {
       <section className="bg-[#062B5C] text-white py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-            CORPORATE GOVERNANCE
-          </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold font-display mt-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold font-display text-white">
             {title}
           </h1>
           <p className="text-xs font-mono text-slate-300 mt-2">

@@ -15,7 +15,7 @@ export const FinancialGrowth: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#F7F8FA] border-y border-slate-200/80 relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[#F1F3F7] border-y border-slate-200/80 relative overflow-hidden">
       {/* Background linework */}
       <div className="absolute inset-0 bg-tech-grid opacity-50 pointer-events-none" />
 
@@ -23,13 +23,6 @@ export const FinancialGrowth: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Narrative */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="flex items-center gap-2">
-              <span className="technical-tag text-[#D71920] font-mono font-medium tracking-widest">
-                ENTERPRISE STRENGTH
-              </span>
-              <div className="h-[1px] w-8 bg-[#062B5C]/20" />
-            </div>
-
             <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#062B5C] leading-tight">
               Financial Stability Built on Technical Trust.
             </h2>

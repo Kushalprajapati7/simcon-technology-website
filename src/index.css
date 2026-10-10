@@ -1,56 +1,147 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #062B5C;
-  --color-navy-dark: #041B3B;
-  --color-navy-light: #0A3D7E;
+  /* ==========================================
+     SIMCON Official Brand Design Tokens
+     Derived from the Official SIMCON Logo
+     ========================================== */
+
+  /* Primary Deep Engineering Navy */
+  --color-primary: #062B5C;
+  --color-primary-dark: #041B3B;
+  --color-primary-light: #0A3D7E;
+
+  /* Secondary SIMCON Accent Red */
+  --color-secondary: #D71920;
+  --color-secondary-dark: #B51319;
+  --color-secondary-light: #EA3E45;
+
+  /* Tech Blue Accents */
   --color-blue: #1268B3;
   --color-blue-light: #2B7EC8;
   --color-blue-subtle: #EBF4FC;
-  --color-red: #D71920;
-  --color-red-light: #EA3E45;
-  --color-offwhite: #F7F8FA;
-  --color-offwhite-alt: #EFF2F6;
-  --color-graphite: #17212B;
-  --color-graphite-muted: #536271;
-  --color-border-subtle: #E2E8F0;
+
+  /* Background & Surface Colors */
+  --color-background: #F7F8FA;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #EFF2F6;
+
+  /* Typography Colors */
+  --color-text: #17212B;
+  --color-text-muted: #536271;
+  --color-text-on-dark: #FFFFFF;
+
+  /* Border & Structure Colors */
+  --color-border: #E2E8F0;
   --color-border-dark: #1E334D;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+
+  /* State Colors */
+  --color-success: #059669;
+  --color-warning: #D97706;
+  --color-error: #D71920;
+
+  /* Typography System */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     font-family: var(--font-sans);
-    color: var(--color-graphite);
-    background-color: var(--color-offwhite);
+    color: var(--color-text);
+    background-color: var(--color-background);
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+    color: var(--color-primary);
+  }
+
+  .text-white h1,
+  .text-white h2,
+  .text-white h3,
+  .text-white h4,
+  .text-white h5,
+  .text-white h6,
+  [class*="text-white"] h1,
+  [class*="text-white"] h2,
+  [class*="text-white"] h3,
+  [class*="text-white"] h4,
+  [class*="bg-[#062B5C]"] h1,
+  [class*="bg-[#062B5C]"] h2,
+  [class*="bg-[#062B5C]"] h3,
+  [class*="bg-[#062B5C]"] h4,
+  [class*="bg-[#041B3B]"] h1,
+  [class*="bg-[#041B3B]"] h2,
+  [class*="bg-[#041B3B]"] h3,
+  [class*="bg-[#041B3B]"] h4 {
+    color: #ffffff;
   }
 }
 
-/* Technical Linework & Precision Grid Patterns */
-.bg-tech-grid {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(6, 43, 92, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(6, 43, 92, 0.05) 1px, transparent 1px);
+/* Reusable Component Utility Classes */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #062B5C;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.btn-primary:hover {
+  background-color: #1268B3;
 }
 
-.bg-tech-grid-dark {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #D71920;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.btn-secondary:hover {
+  background-color: #EA3E45;
 }
 
-.bg-contour-pattern {
-  background-image: radial-gradient(circle at 50% 50%, rgba(18, 104, 179, 0.06) 0%, transparent 60%);
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #062B5C;
+  background-color: transparent;
+  border: 1px solid #062B5C;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+.btn-outline:hover {
+  background-color: #062B5C;
+  color: #ffffff;
 }
 
 .technical-tag {
@@ -58,6 +149,17 @@
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  font-weight: 700;
+  color: #D71920;
+}
+
+.bg-tech-grid,
+.bg-tech-grid-dark {
+  background-image: none !important;
+}
+
+.bg-contour-pattern {
+  background-image: radial-gradient(circle at 50% 50%, rgba(18, 104, 179, 0.06) 0%, transparent 60%);
 }
 
 /* Accessibility & Reduced Motion */

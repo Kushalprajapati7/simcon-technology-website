@@ -17,10 +17,7 @@ export const Leadership: React.FC = () => {
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <span className="technical-tag text-[#2B7EC8] font-mono tracking-widest uppercase">
-              EXECUTIVE DIRECTORS & ADVISORS
-            </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold font-display leading-[1.12]">
+            <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-white leading-[1.12]">
               Guided by Integrity, Academic Rigor, and Technical Competence.
             </h1>
             <p className="text-base text-slate-300 leading-relaxed pt-2">
@@ -48,36 +45,35 @@ export const Leadership: React.FC = () => {
       </section>
 
       {/* Director's Message Callout */}
-      <section className="py-16 bg-[#F7F8FA] border-b border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-8 sm:p-10 rounded-xl border border-slate-200/90 shadow-sm space-y-4">
+      <section className="py-16 bg-[#062B5C] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-tech-grid-dark opacity-25 pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="bg-white/10 backdrop-blur-xs p-8 sm:p-10 rounded-xl border border-white/20 shadow-lg space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded bg-[#062B5C] text-white flex items-center justify-center">
-                <Shield className="w-5 h-5 text-[#2B7EC8]" />
+              <div className="w-10 h-10 rounded-full bg-[#1E60FF] text-white flex items-center justify-center shrink-0">
+                <Shield className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-base font-bold font-display text-[#062B5C]">
+                <h3 className="text-base font-bold font-display text-white">
                   Managing Director's Commitment
                 </h3>
-                <span className="text-xs font-mono text-slate-500">
+                <span className="text-xs font-mono text-slate-300">
                   {COMPANY_INFO.directorsMessage.author} ({COMPANY_INFO.directorsMessage.credentials})
                 </span>
               </div>
             </div>
-            <p className="text-sm text-[#536271] leading-relaxed italic border-l-2 border-[#1268B3] pl-4">
+            <p className="text-base text-white/95 leading-relaxed italic border-l-2 border-[#1E60FF] pl-4 font-display">
               "{COMPANY_INFO.directorsMessage.quote}"
             </p>
-            <p className="text-xs text-slate-600 leading-relaxed">
+            <p className="text-xs text-slate-300 leading-relaxed">
               "Our recommendations are based on genuine results from our own field investigations and laboratory testing, supported by qualified professionals, advanced resources and NABL-accredited facilities. We are committed to delivering technically sound, honest and reliable solutions within committed timelines."
             </p>
           </div>
         </div>
       </section>
 
-
-
       {/* Regional Branch Incharges */}
-      <section className="py-20 bg-[#F7F8FA]">
+      <section className="py-20 bg-[#F1F3F7] border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             technicalLabel="OPERATIONAL HUBS"

@@ -53,7 +53,7 @@ export const ProjectDetail: React.FC = () => {
               CASE STUDY · {project.category}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-[1.12]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white leading-[1.12]">
               {project.title}
             </h1>
 
@@ -131,9 +131,6 @@ export const ProjectDetail: React.FC = () => {
               {/* Technical Scope Breakdown */}
               {project.scope && (
                 <div className="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 space-y-4">
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block">
-                    TECHNICAL DELIVERABLES
-                  </span>
                   <h2 className="text-xl font-bold font-display text-[#062B5C]">
                     SIMCON Engineering Scope
                   </h2>
@@ -151,9 +148,6 @@ export const ProjectDetail: React.FC = () => {
               {/* Project Outcome */}
               {project.outcome && (
                 <div className="p-6 rounded-xl bg-blue-50 border border-[#1268B3]/20 space-y-2">
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#1268B3] font-bold block">
-                    ENGINEERING OUTCOME
-                  </span>
                   <p className="text-sm text-[#062B5C] font-medium leading-relaxed">
                     {project.outcome}
                   </p>
@@ -163,9 +157,6 @@ export const ProjectDetail: React.FC = () => {
               {/* Gallery if present */}
               {project.gallery && project.gallery.length > 1 && (
                 <div className="space-y-4">
-                  <span className="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold block">
-                    ADDITIONAL ON-SITE PHOTOGRAPHY
-                  </span>
                   <div className="grid grid-cols-2 gap-4">
                     {project.gallery.slice(1).map((img, i) => (
                       <div key={i} className="rounded-lg overflow-hidden border border-slate-200 h-48 bg-slate-100">
@@ -200,9 +191,6 @@ export const ProjectDetail: React.FC = () => {
 
               {/* Discussion Prompt Card */}
               <div className="bg-[#062B5C] text-white p-6 sm:p-8 rounded-xl space-y-4">
-                <span className="text-xs font-mono uppercase text-[#2B7EC8] tracking-widest font-bold block">
-                  COLLABORATE
-                </span>
                 <h3 className="text-xl font-bold font-display">
                   Planning a similar infrastructure development?
                 </h3>

@@ -51,7 +51,7 @@ export const ServiceDetail: React.FC = () => {
                 DISCIPLINE {service.number} · {service.category}
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-[1.12]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white leading-[1.12]">
                 {service.title}
               </h1>
 
@@ -88,9 +88,6 @@ export const ServiceDetail: React.FC = () => {
       <section className="py-16 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl space-y-6">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block">
-              TECHNICAL OVERVIEW
-            </span>
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#062B5C]">
               Methodology & Technical Approach
             </h2>
@@ -162,9 +159,6 @@ export const ServiceDetail: React.FC = () => {
         <section className="py-16 bg-white border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-8">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block mb-1">
-                COMPUTATIONAL SUITE
-              </span>
               <h2 className="text-2xl font-bold font-display text-[#062B5C]">
                 Software Expertise & Numerical Tools
               </h2>
@@ -194,9 +188,6 @@ export const ServiceDetail: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block mb-1">
-                  CASE STUDIES
-                </span>
                 <h2 className="text-2xl font-bold font-display text-[#062B5C]">
                   Related Infrastructure Projects
                 </h2>
@@ -248,9 +239,6 @@ export const ServiceDetail: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#062B5C] text-white p-8 sm:p-12 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-8">
             <div className="space-y-2 max-w-xl">
-              <span className="text-xs font-mono text-[#2B7EC8] uppercase font-bold tracking-wider">
-                TECHNICAL ENQUIRY
-              </span>
               <h3 className="text-2xl font-bold font-display">
                 Require {service.title} for your site?
               </h3>

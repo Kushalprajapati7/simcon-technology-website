@@ -147,7 +147,7 @@ export const IndiaMap: React.FC = () => {
         <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="technical-tag text-[#D71920] font-mono">
+              <span className="text-xs font-mono font-bold text-[#D71920]">
                 REGIONAL HUB · {selectedOffice.id.toUpperCase()}
               </span>
               {selectedOffice.nablCode && (
@@ -208,11 +208,10 @@ export const IndiaMap: React.FC = () => {
                 <button
                   key={off.id}
                   onClick={() => setSelectedOffice(off)}
-                  className={`px-3 py-2 text-xs font-semibold rounded text-center transition-all ${
-                    selectedOffice.id === off.id
+                  className={`px-3 py-2 text-xs font-semibold rounded text-center transition-all ${selectedOffice.id === off.id
                       ? 'bg-[#062B5C] text-white shadow-sm'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                  }`}
+                    }`}
                 >
                   {off.city}
                 </button>

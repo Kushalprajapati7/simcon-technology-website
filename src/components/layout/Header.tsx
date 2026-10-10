@@ -271,7 +271,7 @@ export const Header: React.FC = () => {
             </a>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold tracking-wide uppercase text-white bg-[#062B5C] hover:bg-[#1268B3] rounded transition-all shadow-sm group"
+              className="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-bold tracking-wide uppercase text-white bg-[#D71920] hover:bg-[#EA3E45] rounded-full transition-all shadow-md group shrink-0"
             >
               <span>Get Started</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />

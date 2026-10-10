@@ -47,7 +47,7 @@ export const InsightDetail: React.FC = () => {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-[1.12]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white leading-[1.12]">
               {article.title}
             </h1>
 
