@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Clock, GraduationCap } from 'lucide-react';
+import { User, GraduationCap } from 'lucide-react';
 import { TeamMember } from '@/data/team';
 
 interface TeamCardProps {
@@ -7,20 +7,24 @@ interface TeamCardProps {
   featured?: boolean;
 }
 
-export const TeamCard: React.FC<TeamCardProps> = ({ member, featured = false }) => {
+export const TeamCard: React.FC<TeamCardProps> = ({
+  member,
+  featured = false
+}) => {
   return (
     <div
-      className={`bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-md hover:border-[#1268B3]/50 transition-all ${featured ? 'ring-1 ring-[#062B5C]/10' : ''
-        }`}
+      className={`bg-white rounded-xl border border-slate-200/90 overflow-hidden flex flex-col justify-between transition-all duration-200 hover:shadow-md hover:border-[#1268B3]/40 ${
+        featured ? 'ring-1 ring-[#062B5C]/15 shadow-sm' : ''
+      }`}
     >
       <div>
         {/* Photo Container */}
-        <div className="relative h-72 bg-slate-100 overflow-hidden">
+        <div className="relative aspect-[4/4.5] bg-slate-100 overflow-hidden">
           {member.image ? (
             <img
               src={member.image}
               alt={`${member.name} - ${member.designation} at SIMCON`}
-              className="w-full h-full object-cover object-top hover:scale-102 transition-transform duration-300"
+              className="w-full h-full object-cover object-[center_top] transition-transform duration-300 hover:scale-102"
               loading="lazy"
             />
           ) : (
@@ -28,40 +32,33 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member, featured = false }) 
               <User className="w-16 h-16 opacity-40" />
             </div>
           )}
-
-          {member.yearsWithSimcon && (
-            <div className="absolute bottom-3 left-3 bg-[#062B5C]/90 backdrop-blur-xs text-white px-2.5 py-1 rounded text-[10px] font-mono flex items-center gap-1.5 shadow-sm">
-              <Clock className="w-3 h-3 text-[#2B7EC8]" />
-              <span>{member.yearsWithSimcon}</span>
-            </div>
-          )}
         </div>
 
         {/* Member Details */}
-        <div className="p-5 space-y-2">
-          <div className="flex items-center justify-between">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-[#D71920] font-bold">
-              {member.department}
-            </span>
-          </div>
-
-          <h3 className="font-display font-bold text-base text-[#062B5C] leading-snug">
+        <div className="p-3.5 sm:p-4 space-y-1">
+          <h3 className="font-display font-bold text-xs sm:text-sm text-[#062B5C] leading-snug line-clamp-1">
             {member.name}
           </h3>
 
-          <p className="text-xs font-medium text-[#1268B3]">
-            {member.designation}
+          <p className="text-[11px] sm:text-xs text-slate-600 font-medium line-clamp-1">
+            {member.designation || member.department}
           </p>
 
+          {member.yearsWithSimcon && (
+            <p className="text-[10px] font-mono font-bold text-slate-500 tracking-tight uppercase pt-0.5">
+              ({member.yearsWithSimcon})
+            </p>
+          )}
+
           {member.qualifications && (
-            <div className="flex items-center gap-1.5 text-xs text-slate-500 pt-1">
-              <GraduationCap className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-              <span className="font-mono text-[11px]">{member.qualifications}</span>
+            <div className="flex items-center gap-1 text-[11px] text-slate-500 pt-0.5">
+              <GraduationCap className="w-3 h-3 text-slate-400 shrink-0" />
+              <span className="font-mono">{member.qualifications}</span>
             </div>
           )}
 
           {member.bioSnippet && (
-            <p className="text-xs text-[#536271] pt-2 leading-relaxed border-t border-slate-100 mt-2">
+            <p className="text-[11px] text-[#536271] pt-2 mt-2 leading-relaxed border-t border-slate-100 line-clamp-2">
               {member.bioSnippet}
             </p>
           )}

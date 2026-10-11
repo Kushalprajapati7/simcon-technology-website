@@ -38,7 +38,7 @@ export const ProjectDetail: React.FC = () => {
       {/* Header & Breadcrumbs */}
       <section className="bg-[#062B5C] text-white py-14 lg:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
           <nav className="flex items-center gap-2 text-xs font-mono text-slate-300 mb-6" aria-label="Breadcrumb">
             <Link to="/" className="hover:text-white">Home</Link>
             <span>/</span>
@@ -66,7 +66,7 @@ export const ProjectDetail: React.FC = () => {
 
       {/* Project Metadata Ribbon */}
       <section className="bg-white border-b border-slate-200 py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-xs">
             {project.client && (
               <div className="space-y-1">
@@ -115,7 +115,7 @@ export const ProjectDetail: React.FC = () => {
 
       {/* Main Photographic Narrative & Scope */}
       <section className="py-16 bg-[#F7F8FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Narrative */}
             <div className="lg:col-span-7 space-y-8">
@@ -124,7 +124,7 @@ export const ProjectDetail: React.FC = () => {
                 <img
                   src={project.featuredImage}
                   alt={project.title}
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-auto aspect-[16/10] sm:aspect-[16/9] max-h-[520px] object-cover"
                 />
               </div>
 
@@ -225,19 +225,19 @@ export const ProjectDetail: React.FC = () => {
       {/* Related Projects Section */}
       {relatedProjects.length > 0 && (
         <section className="py-16 bg-white border-t border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <h3 className="text-lg font-bold font-display text-[#062B5C] mb-6">
               Other Infrastructure Case Studies
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {relatedProjects.map(rel => (
                 <Link
                   key={rel.id}
                   to={`/projects/${rel.slug}`}
                   className="bg-[#F7F8FA] rounded-lg border border-slate-200 overflow-hidden hover:border-[#062B5C] transition-colors p-4 block group"
                 >
-                  <div className="h-36 bg-slate-900 rounded overflow-hidden mb-3">
+                  <div className="aspect-[16/10] bg-slate-900 rounded overflow-hidden mb-3">
                     <img
                       src={rel.featuredImage}
                       alt={rel.title}

@@ -25,7 +25,7 @@ export const InsightDetail: React.FC = () => {
       {/* Header */}
       <section className="bg-[#062B5C] text-white py-16 lg:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
           <nav className="flex items-center gap-2 text-xs font-mono text-slate-300 mb-6">
             <Link to="/" className="hover:text-white">Home</Link>
             <span>/</span>

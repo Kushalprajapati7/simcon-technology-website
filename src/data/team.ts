@@ -6,9 +6,22 @@ export interface TeamMember {
   qualifications?: string;
   yearsWithSimcon?: string;
   image?: string;
-  section: "leadership" | "advisors" | "branch-leads" | "geotech" | "geophysical" | "material" | "field";
+  section: "leadership" | "advisors" | "branch-leads" | "geotech" | "geophysical" | "material" | "field" | "corporate";
   bioSnippet?: string;
 }
+
+export const CHAIRMAN_DETAILS = {
+  name: "Mr. Vinesh Maheshwari",
+  qualifications: "B.Tech., MBA",
+  designation: "Chairman & Managing Director",
+  image: "/assets/leadership/vinesh-maheshwari.jpeg",
+  quote: "Expertise Ethics Excellence for a Better Tomorrow",
+  messageParagraphs: [
+    "Over the past two decades, the consulting industry has become increasingly competitive, yet confidence in the quality and integrity of technical services has not grown at the same pace. At SIMCON Technology, we believe engineering decisions must be driven by facts, technical competence and ethics & not by commercial pressure.",
+    "Our recommendations are based on genuine results from our own field investigations and laboratory testing, supported by qualified professionals, advanced resources and NABL-accredited facilities. We are committed to delivering technically sound, honest and reliable solutions within committed timelines.",
+    "For us, credibility is earned through the accuracy of our work and the integrity with which we deliver it."
+  ]
+};
 
 export const ORG_STRUCTURE = {
   totalCount: "125+",
@@ -27,42 +40,42 @@ export const LEADERSHIP: TeamMember[] = [
   {
     id: "vinesh-maheshwari",
     name: "Mr. Vinesh Maheshwari",
-    designation: "Managing Director",
+    designation: "Chairman & Managing Director",
     department: "Executive Leadership",
     qualifications: "B.Tech., MBA",
     yearsWithSimcon: "18+ Years",
     image: "/assets/leadership/vinesh-maheshwari.jpeg",
     section: "leadership",
-    bioSnippet: "Founder and Managing Director steering SIMCON's growth from a boutique geotechnical firm into a national engineering testing enterprise."
+    bioSnippet: "Founder & Chairman steering SIMCON's growth from a boutique geotechnical firm into a national engineering testing enterprise."
   },
   {
     id: "kalpana-maheshwari",
     name: "Dr. Kalpana Maheshwari",
-    designation: "Director",
+    designation: "Managing Director",
     department: "Executive Leadership",
-    qualifications: "B.E., M.E., Ph.D.",
+    qualifications: "B.E., M.E., PhD",
     yearsWithSimcon: "18+ Years",
     image: "/assets/leadership/kalpana-maheshwari.jpeg",
     section: "leadership",
-    bioSnippet: "Director with deep academic and technical acumen in civil engineering, overseeing quality benchmarks and NABL compliance."
+    bioSnippet: "Managing Director with deep academic and technical acumen in civil engineering, overseeing quality benchmarks and NABL compliance."
   },
   {
     id: "kunal-shah",
     name: "Mr. Kunal Shah",
-    designation: "Branch Incharge - Ahmedabad",
+    designation: "Branch Incharge - Gandhidham",
     department: "Branch Operations",
     image: "/assets/leadership/kunal-shah.jpeg",
     section: "branch-leads",
-    bioSnippet: "Heads the Ahmedabad regional facility, managing transit infrastructure projects, high-speed rail, and urban development contracts."
+    bioSnippet: "Leads operations, central testing facility logistics, and port/marine geotechnical assignments at Gandhidham HQ."
   },
   {
     id: "bhavesh-dodiya",
     name: "Mr. Bhavesh Dodiya",
-    designation: "Branch Incharge - Gandhidham",
+    designation: "Branch Incharge - Ahmedabad",
     department: "Branch Operations",
     image: "/assets/leadership/bhavesh-dodiya.jpeg",
     section: "branch-leads",
-    bioSnippet: "Leads operations, central testing facility logistics, and port/marine geotechnical assignments at Gandhidham HQ."
+    bioSnippet: "Heads the Ahmedabad regional facility, managing transit infrastructure projects, high-speed rail, and urban development contracts."
   },
   {
     id: "shiv-mishra",
@@ -87,8 +100,9 @@ export const LEADERSHIP: TeamMember[] = [
     name: "Mrs. Komal Rajwani",
     designation: "Manager - Accounts & HR",
     department: "Corporate Management",
+    yearsWithSimcon: "9 Years with SIMCON",
     image: "/assets/leadership/komal-rajwani.jpeg",
-    section: "leadership",
+    section: "corporate",
     bioSnippet: "Oversees corporate governance, talent acquisition, human capital development, and financial administration across all branches."
   },
   {
@@ -124,10 +138,11 @@ export const LEADERSHIP: TeamMember[] = [
 ];
 
 export const SPECIALIST_TEAM: TeamMember[] = [
+  // Row 1
   {
     id: "shashank-singh",
     name: "Dr. Shashank Singh",
-    designation: "Geotechnical Numerical Modeler",
+    designation: "Geotech Section",
     department: "Geotech Section",
     yearsWithSimcon: "1 Year with SIMCON",
     image: "/assets/team/shashank-singh.jpeg",
@@ -136,7 +151,7 @@ export const SPECIALIST_TEAM: TeamMember[] = [
   {
     id: "deepa-jethva",
     name: "Mrs. Deepa Jethva",
-    designation: "Senior Geotechnical Specialist",
+    designation: "Geotech Section",
     department: "Geotech Section",
     yearsWithSimcon: "13 Years with SIMCON",
     image: "/assets/team/deepa-jethva.jpeg",
@@ -145,25 +160,45 @@ export const SPECIALIST_TEAM: TeamMember[] = [
   {
     id: "kanti-parmar",
     name: "Mr. Kanti Parmar",
-    designation: "Senior Materials Engineer",
+    designation: "Material Testing Section",
     department: "Material Testing Section",
     yearsWithSimcon: "11 Years with SIMCON",
     image: "/assets/team/kanti-parmar.jpeg",
     section: "material"
   },
   {
+    id: "komal-rajwani",
+    name: "Mrs. Komal Rajwani",
+    designation: "Manager - Accounts & HR",
+    department: "Corporate Management",
+    yearsWithSimcon: "9 Years with SIMCON",
+    image: "/assets/leadership/komal-rajwani.jpeg",
+    section: "corporate"
+  },
+  {
+    id: "hasmukh-jogani",
+    name: "Mr. Hasmukh Jogani",
+    designation: "Material Testing Section",
+    department: "Material Testing Section",
+    yearsWithSimcon: "9 Years with SIMCON",
+    image: "/assets/team/hasmukh-jogani.png",
+    section: "material"
+  },
+  {
     id: "amit-pratap-singh",
     name: "Mr. Amit Pratap Singh",
-    designation: "Field Testing Lead Engineer",
+    designation: "Field Testing Section",
     department: "Field Testing Section",
     yearsWithSimcon: "9 Years with SIMCON",
     image: "/assets/team/amit-pratap-singh.jpeg",
     section: "field"
   },
+
+  // Row 2
   {
     id: "akshay-maddhasiya",
     name: "Mr. Akshay Maddhasiya",
-    designation: "Materials Testing Specialist",
+    designation: "Material Testing Section",
     department: "Material Testing Section",
     yearsWithSimcon: "6 Years with SIMCON",
     image: "/assets/team/akshay-maddhasiya.jpeg",
@@ -172,7 +207,7 @@ export const SPECIALIST_TEAM: TeamMember[] = [
   {
     id: "manu-dangar",
     name: "Mr. Manu Dangar",
-    designation: "Geotechnical Engineer",
+    designation: "Geotech Section",
     department: "Geotech Section",
     yearsWithSimcon: "5 Years with SIMCON",
     image: "/assets/team/manu-dangar.jpeg",
@@ -181,7 +216,7 @@ export const SPECIALIST_TEAM: TeamMember[] = [
   {
     id: "arunesh-tiwari",
     name: "Mr. Arunesh Tiwari",
-    designation: "Senior Field Engineer",
+    designation: "Field Testing Section",
     department: "Field Testing Section",
     yearsWithSimcon: "4 Years with SIMCON",
     image: "/assets/team/arunesh-tiwari.jpeg",
@@ -190,7 +225,7 @@ export const SPECIALIST_TEAM: TeamMember[] = [
   {
     id: "utsav-patel",
     name: "Mr. Utsav Patel",
-    designation: "Geophysicist",
+    designation: "Geophysical Section",
     department: "Geophysical Section",
     yearsWithSimcon: "3 Years with SIMCON",
     image: "/assets/team/utsav-patel.jpeg",
@@ -199,7 +234,7 @@ export const SPECIALIST_TEAM: TeamMember[] = [
   {
     id: "vidhi-bhavsar",
     name: "Mrs. Vidhi Bhavsar",
-    designation: "Quality & Testing Chemist",
+    designation: "Material Testing Section",
     department: "Material Testing Section",
     yearsWithSimcon: "2 Years with SIMCON",
     image: "/assets/team/vidhi-bhavsar.jpeg",
@@ -208,26 +243,27 @@ export const SPECIALIST_TEAM: TeamMember[] = [
   {
     id: "ujjawal-prakash",
     name: "Dr. Ujjawal Prakash",
-    designation: "Geotechnical Research Engineer",
+    designation: "Geotech Section",
     department: "Geotech Section",
     yearsWithSimcon: "1 Year with SIMCON",
     image: "/assets/team/ujjawal-prakash.jpeg",
     section: "geotech"
   },
+
+  // Row 3
   {
     id: "mayank-gupta",
     name: "Mr. Mayank Gupta",
-    designation: "Senior Geologist",
+    designation: "Geotech Section",
     department: "Geotech Section",
     yearsWithSimcon: "5 Years with SIMCON",
     image: "/assets/team/mayank-gupta.jpeg",
     section: "geotech"
   },
-
   {
     id: "dinesh-prajapat-field",
     name: "Mr. Dinesh Prajapat",
-    designation: "Field In-situ Testing Specialist",
+    designation: "Field Testing Section",
     department: "Field Testing Section",
     yearsWithSimcon: "5 Years with SIMCON",
     image: "/assets/team/dinesh-prajapat-field.jpeg",
@@ -236,41 +272,37 @@ export const SPECIALIST_TEAM: TeamMember[] = [
   {
     id: "dinesh-prajapati-geo",
     name: "Mr. Dinesh Prajapati",
-    designation: "Geotechnical Engineer",
+    designation: "Geotech Section",
     department: "Geotech Section",
     yearsWithSimcon: "5 Years with SIMCON",
     image: "/assets/team/dinesh-prajapati-geo.jpeg",
     section: "geotech"
   },
-
   {
     id: "suryapratap-singh",
     name: "Mr. Suryapratap Singh Sisodiya",
-    designation: "Pile Testing Engineer",
+    designation: "Field Testing Section",
     department: "Field Testing Section",
     yearsWithSimcon: "4 Years with SIMCON",
     image: "/assets/team/suryapratap-singh.jpeg",
     section: "field"
   },
-
   {
     id: "sujeet-sharma",
     name: "Mr. Sujeet Sharma",
-    designation: "Chemist & Testing Specialist",
+    designation: "Material Testing Section",
     department: "Material Testing Section",
     yearsWithSimcon: "3 Years with SIMCON",
     image: "/assets/team/sujeet-sharma.jpeg",
     section: "material"
   },
-
   {
     id: "smeet-mehta",
     name: "Mr. Smeet Mehta",
-    designation: "Concrete & Material Technologist",
+    designation: "Material Testing Section",
     department: "Material Testing Section",
     yearsWithSimcon: "2 Years with SIMCON",
     image: "/assets/team/smeet-mehta.jpeg",
     section: "material"
-  },
-
+  }
 ];

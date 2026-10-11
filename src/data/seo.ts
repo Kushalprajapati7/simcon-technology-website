@@ -38,8 +38,8 @@ export const PAGE_SEO: Record<string, SeoMetadata> = {
     structuredDataType: "Organization"
   },
   "/about/team": {
-    title: "Our Engineering Team | SIMCON Technology",
-    description: "Meet our 125+ member team of doctorates, postgraduates, geologists, materials engineers, and NABL-certified field specialists.",
+    title: "Our Team & Executive Leadership | SIMCON Technology",
+    description: "Meet SIMCON's Chairman, Managing Director, branch leadership, technical advisors, and 125+ specialist engineering team across India.",
     canonical: `${BASE_URL}/about/team`,
     structuredDataType: "Organization"
   },

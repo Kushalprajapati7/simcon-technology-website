@@ -10,7 +10,7 @@ export const Approvals: React.FC = () => {
       {/* Hero */}
       <section className="bg-[#062B5C] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-white leading-[1.12]">
               Government Approvals & Authority Empanelments.
@@ -24,7 +24,7 @@ export const Approvals: React.FC = () => {
 
       {/* Empanelments List */}
       <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <SectionHeading
             technicalLabel="VERIFIED EMPANELMENTS"
             title="Institutional Empanelments"

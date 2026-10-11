@@ -1,144 +1,188 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, Phone, Mail, Award, CheckCircle2 } from 'lucide-react';
 import { OFFICES } from '@/data/offices';
 import { OfficeLocation } from '@/data/company';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+
+// Additional pan-India project deployment pins
+const PROJECT_PINS = [
+  { name: "MAHSR Bullet Train", lat: 23.0805, lng: 72.5850 },
+  { name: "Rishikesh Tunnel", lat: 30.0869, lng: 78.2676 },
+  { name: "Khavda Hybrid Park", lat: 23.8500, lng: 69.7500 },
+  { name: "Adani Korba Thermal", lat: 22.3595, lng: 82.7501 },
+  { name: "Hingoli Solar Park", lat: 19.7180, lng: 77.1472 },
+  { name: "Deendayal Port", lat: 23.0033, lng: 70.2167 },
+  { name: "Bhopal Metro", lat: 23.2599, lng: 77.4126 }
+];
 
 export const IndiaMap: React.FC = () => {
   const [selectedOffice, setSelectedOffice] = useState<OfficeLocation>(OFFICES[0]);
+  const mapRef = useRef<L.Map | null>(null);
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+  const officeMarkersRef = useRef<Record<string, L.Marker>>({});
 
-  // Scaled coordinates on a 600x700 viewport representing India
-  // Gandhidham: (150, 310)
-  // Ahmedabad: (185, 335)
-  // Lucknow: (340, 240)
-  // Indore: (240, 350)
-  const officeCoords: Record<string, { x: number; y: number }> = {
-    gandhidham: { x: 135, y: 315 },
-    ahmedabad: { x: 180, y: 340 },
-    lucknow: { x: 335, y: 245 },
-    indore: { x: 235, y: 360 }
+  useEffect(() => {
+    if (!mapContainerRef.current || mapRef.current) return;
+
+    // Initialize Leaflet Map centered over India
+    const map = L.map(mapContainerRef.current, {
+      center: [23.2, 77.5],
+      zoom: 5,
+      minZoom: 4,
+      maxZoom: 12,
+      scrollWheelZoom: false,
+      zoomControl: true,
+    });
+
+    // 100% Free OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+    }).addTo(map);
+
+    // Render Project Deployment Pins
+    PROJECT_PINS.forEach(pin => {
+      const pinIcon = L.divIcon({
+        className: 'custom-project-pin',
+        html: `
+          <div class="relative group cursor-pointer flex flex-col items-center">
+            <div class="w-6 h-6 rounded-full bg-[#062B5C] hover:bg-[#1268B3] flex items-center justify-center border-2 border-white shadow-md transition-all">
+              <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+            </div>
+            <div class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[5px] border-t-[#062B5C] group-hover:border-t-[#1268B3] -mt-0.5"></div>
+          </div>
+        `,
+        iconSize: [24, 30],
+        iconAnchor: [12, 30],
+        popupAnchor: [0, -28],
+      });
+
+      const popupContent = `
+        <div class="text-center px-2 py-1">
+          <div class="font-bold text-xs text-[#062B5C] font-display">${pin.name}</div>
+          <div class="text-[10px] text-slate-500 font-mono mt-0.5">Project Deployment Site</div>
+        </div>
+      `;
+
+      L.marker([pin.lat, pin.lng], { icon: pinIcon })
+        .bindPopup(popupContent, { closeButton: false, offset: [0, -4] })
+        .addTo(map);
+    });
+
+    mapRef.current = map;
+
+    return () => {
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+    };
+  }, []);
+
+  // Update office markers on map when selectedOffice changes
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    // Remove existing office markers
+    Object.values(officeMarkersRef.current).forEach(marker => marker.remove());
+    officeMarkersRef.current = {};
+
+    OFFICES.forEach(office => {
+      const isSelected = selectedOffice.id === office.id;
+
+      const teardropIcon = L.divIcon({
+        className: 'custom-teardrop-pin',
+        html: `
+          <div class="relative flex flex-col items-center cursor-pointer group">
+            <div class="w-8 h-8 rounded-full ${isSelected ? 'bg-[#D71920] scale-110 shadow-lg' : 'bg-[#D71920] opacity-90 hover:opacity-100 hover:scale-105'} flex items-center justify-center border-2 border-white shadow-md transition-all duration-300 relative z-10">
+              <div class="w-2.5 h-2.5 bg-white rounded-full"></div>
+            </div>
+            <div class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-[#D71920] -mt-1 drop-shadow-xs"></div>
+            ${isSelected ? '<div class="absolute top-0 w-8 h-8 rounded-full bg-[#D71920]/40 animate-ping pointer-events-none"></div>' : ''}
+          </div>
+        `,
+        iconSize: [32, 40],
+        iconAnchor: [16, 38],
+        popupAnchor: [0, -36],
+      });
+
+      const popupContent = `
+        <div class="text-center px-2 py-1">
+          <div class="font-extrabold text-sm text-[#062B5C] font-display leading-tight">${office.city}, ${office.state}</div>
+          <div class="text-xs font-semibold text-[#1268B3] mt-1">${office.role}</div>
+        </div>
+      `;
+
+      const marker = L.marker([office.coordinates.lat, office.coordinates.lng], { icon: teardropIcon })
+        .bindPopup(popupContent, {
+          closeButton: false,
+          autoClose: false,
+          closeOnClick: false,
+          offset: [0, -4]
+        })
+        .addTo(map)
+        .on('click', () => {
+          setSelectedOffice(office);
+        });
+
+      if (isSelected) {
+        marker.openPopup();
+      }
+
+      officeMarkersRef.current[office.id] = marker;
+    });
+  }, [selectedOffice]);
+
+  // Handle office switch click
+  const handleOfficeSelect = (office: OfficeLocation) => {
+    setSelectedOffice(office);
+    if (mapRef.current) {
+      mapRef.current.flyTo([office.coordinates.lat, office.coordinates.lng], 7, {
+        duration: 1.2,
+      });
+    }
   };
-
-  // Additional pan-India project deployment pins
-  const projectPins = [
-    { name: "MAHSR Bullet Train", x: 175, y: 320 },
-    { name: "Rishikesh Tunnel", x: 290, y: 165 },
-    { name: "Khavda Hybrid Park", x: 120, y: 295 },
-    { name: "Adani Korba Thermal", x: 365, y: 345 },
-    { name: "Hingoli Solar Park", x: 245, y: 415 },
-    { name: "Deendayal Port", x: 128, y: 310 },
-    { name: "Bhopal Metro", x: 260, y: 340 }
-  ];
 
   return (
     <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm p-6 lg:p-8">
+      {/* Scoped Leaflet Popup & Attribution Styling to match reference image */}
+      <style>{`
+        .simcon-leaflet-map .leaflet-control-attribution {
+          display: none !important;
+        }
+        .simcon-leaflet-map .leaflet-popup-content-wrapper {
+          background: #ffffff;
+          border-radius: 14px;
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+          padding: 10px 14px;
+          border: 1px solid #e2e8f0;
+        }
+        .simcon-leaflet-map .leaflet-popup-tip {
+          background: #ffffff;
+        }
+        .simcon-leaflet-map .leaflet-popup-content {
+          margin: 0;
+          line-height: 1.4;
+        }
+      `}</style>
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        {/* SVG Interactive Map View */}
-        <div className="lg:col-span-7 relative flex justify-center items-center bg-[#F7F8FA] rounded-lg p-4 border border-slate-100 overflow-hidden">
-          {/* Subtle Technical Grid Background */}
-          <div className="absolute inset-0 bg-tech-grid opacity-60" />
+        {/* Leaflet Interactive Map Only (No outer gray container or header/footer marks) */}
+        <div className="lg:col-span-7">
+          <div className="w-full h-[420px] sm:h-[480px] lg:h-[500px] rounded-xl overflow-hidden relative z-10 shadow-sm simcon-leaflet-map border border-slate-200">
+            <div ref={mapContainerRef} className="w-full h-full" />
 
-          {/* Technical Map Label */}
-          <div className="absolute top-3 left-3 text-[10px] font-mono tracking-widest text-[#062B5C]/60 uppercase">
-            PAN-INDIA MOBILIZATION & REGIONAL HUBS
-          </div>
-
-          <svg
-            viewBox="0 0 500 580"
-            className="w-full max-w-[440px] h-auto relative z-10 select-none"
-            aria-label="Interactive Map of India showing SIMCON locations and reach"
-          >
-            {/* Architectural Stylized India Boundary Silhouette */}
-            <path
-              d="M170,40 L210,30 L235,60 L280,75 L310,105 L290,140 L340,165 L370,185 L350,210 L410,225 L450,215 L470,240 L450,270 L395,280 L370,305 L370,350 L345,410 L310,470 L260,545 L245,550 L230,510 L200,450 L175,395 L165,360 L125,320 L100,300 L125,270 L155,270 L170,220 L160,180 L180,120 L160,80 Z"
-              fill="#E9EFF7"
-              stroke="#B3CDE6"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
-              className="transition-colors"
-            />
-
-            {/* Subtle Longitude & Latitude Lines */}
-            <line x1="60" y1="200" x2="440" y2="200" stroke="#062B5C" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.15" />
-            <line x1="60" y1="350" x2="440" y2="350" stroke="#062B5C" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.15" />
-            <line x1="250" y1="50" x2="250" y2="520" stroke="#062B5C" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.15" />
-
-            {/* Connection Network Lines connecting the 4 hubs */}
-            <line x1="135" y1="315" x2="180" y2="340" stroke="#1268B3" strokeWidth="1.5" strokeDasharray="4 2" opacity="0.6" />
-            <line x1="180" y1="340" x2="235" y2="360" stroke="#1268B3" strokeWidth="1.5" strokeDasharray="4 2" opacity="0.6" />
-            <line x1="235" y1="360" x2="335" y2="245" stroke="#1268B3" strokeWidth="1.5" strokeDasharray="4 2" opacity="0.6" />
-            <line x1="180" y1="340" x2="335" y2="245" stroke="#1268B3" strokeWidth="1" strokeDasharray="4 4" opacity="0.3" />
-
-            {/* Minor Pan-India Project Deployment Marks */}
-            {projectPins.map((pin, i) => (
-              <g key={i} className="opacity-60">
-                <circle cx={pin.x} cy={pin.y} r="2.5" fill="#536271" />
-                <circle cx={pin.x} cy={pin.y} r="4.5" fill="none" stroke="#536271" strokeWidth="0.5" opacity="0.4" />
-              </g>
-            ))}
-
-            {/* Active Hub Markers */}
-            {OFFICES.map((office) => {
-              const coords = officeCoords[office.id] || { x: 200, y: 300 };
-              const isSelected = selectedOffice.id === office.id;
-
-              return (
-                <g
-                  key={office.id}
-                  onClick={() => setSelectedOffice(office)}
-                  className="cursor-pointer group"
-                >
-                  {/* Outer pulse when selected */}
-                  {isSelected && (
-                    <circle
-                      cx={coords.x}
-                      cy={coords.y}
-                      r="16"
-                      fill="#D71920"
-                      opacity="0.2"
-                      className="animate-ping"
-                    />
-                  )}
-                  {/* Hub Halo */}
-                  <circle
-                    cx={coords.x}
-                    cy={coords.y}
-                    r={isSelected ? "9" : "6"}
-                    fill={isSelected ? "#D71920" : "#062B5C"}
-                    className="transition-all duration-200"
-                  />
-                  {/* Center Dot */}
-                  <circle
-                    cx={coords.x}
-                    cy={coords.y}
-                    r="3"
-                    fill="#FFFFFF"
-                  />
-                  {/* City Label */}
-                  <text
-                    x={coords.x + 12}
-                    y={coords.y + 4}
-                    fontSize="11"
-                    fontWeight={isSelected ? "700" : "600"}
-                    fill={isSelected ? "#D71920" : "#062B5C"}
-                    fontFamily="Inter, sans-serif"
-                    className="transition-colors pointer-events-none drop-shadow-sm"
-                  >
-                    {office.city}
-                  </text>
-                </g>
-              );
-            })}
-          </svg>
-
-          {/* Map Legend */}
-          <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm border border-slate-200 rounded px-3 py-2 text-[10px] text-slate-600 flex flex-col gap-1.5 shadow-sm">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#D71920]" />
-              <span className="font-medium text-[#062B5C]">Active Regional Hub</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#536271]" />
-              <span>Project Site Deployments</span>
+            {/* Map Legend Floating Overlay */}
+            <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm border border-slate-200 rounded px-3 py-2 text-[10px] text-slate-600 flex flex-col gap-1.5 shadow-md z-[1000] pointer-events-none">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#D71920]" />
+                <span className="font-bold text-[#062B5C]">Active Regional Hub</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#062B5C]" />
+                <span>Project Site Deployments</span>
+              </div>
             </div>
           </div>
         </div>
@@ -207,9 +251,9 @@ export const IndiaMap: React.FC = () => {
               {OFFICES.map((off) => (
                 <button
                   key={off.id}
-                  onClick={() => setSelectedOffice(off)}
-                  className={`px-3 py-2 text-xs font-semibold rounded text-center transition-all ${selectedOffice.id === off.id
-                      ? 'bg-[#062B5C] text-white shadow-sm'
+                  onClick={() => handleOfficeSelect(off)}
+                  className={`px-3 py-2 text-xs font-semibold rounded text-center transition-all cursor-pointer ${selectedOffice.id === off.id
+                      ? 'bg-[#062B5C] text-[#ffffff] shadow-sm'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                     }`}
                 >

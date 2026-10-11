@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
       {/* Subtle Technical Grid Lines */}
       <div className="absolute inset-0 bg-tech-grid-dark opacity-40 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
         {/* Top High-Trust Row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-14 border-b border-white/10">
           {/* Brand & Mission */}
@@ -88,25 +88,20 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Company */}
+            {/* About Us */}
             <div>
               <h4 className="text-xs font-mono uppercase tracking-wider text-slate-300 font-bold mb-4">
-                Company
+                About Us
               </h4>
               <ul className="space-y-2.5 text-xs text-slate-300">
                 <li>
                   <Link to="/about" className="hover:text-white transition-colors">
-                    About SIMCON
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about/leadership" className="hover:text-white transition-colors">
-                    Leadership & Advisors
+                    Brief (Overview & Values)
                   </Link>
                 </li>
                 <li>
                   <Link to="/about/team" className="hover:text-white transition-colors">
-                    125+ Team Directory
+                    Our Team
                   </Link>
                 </li>
                 <li>
@@ -116,7 +111,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/approvals" className="hover:text-white transition-colors">
-                    Approvals & Empanelments
+                    Approvals & Empanelment
                   </Link>
                 </li>
                 <li>

@@ -59,7 +59,7 @@ const STATS_DATA: StatItem[] = [
 
 export const HeroStats: React.FC = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto">
+    <div className="w-full max-w-[1920px] mx-auto">
       {/* High-Transparency Luminous Glassmorphic Container */}
       <div className="relative rounded-2xl bg-white/[0.05] hover:bg-white/[0.07] backdrop-blur-xl border border-white/[0.12] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2),0_8px_32px_rgba(0,0,0,0.25)] py-2.5 px-3.5 sm:py-3.5 sm:px-5 lg:py-4 lg:px-8 transition-all duration-300">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-0">

@@ -57,13 +57,12 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-3'
           : 'bg-white border-b border-slate-100 py-4'
-      }`}
+        }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
           <Link
@@ -80,35 +79,38 @@ export const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
-            {/* About Dropdown */}
+            {/* About Us Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown('about')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${
-                  location.pathname.startsWith('/about') ? 'text-[#062B5C] font-bold' : 'text-[#17212B] hover:text-[#1268B3]'
-                }`}
+                className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${['/about', '/accreditations', '/approvals'].some(p => location.pathname.startsWith(p)) ? 'text-[#062B5C] font-bold' : 'text-[#17212B] hover:text-[#1268B3]'
+                  }`}
                 aria-expanded={activeDropdown === 'about'}
               >
-                About
+                About Us
                 <ChevronDown className="w-3.5 h-3.5 opacity-60" />
               </button>
 
               {activeDropdown === 'about' && (
-                <div className="absolute top-full left-0 w-64 bg-white border border-slate-200/90 rounded-md shadow-xl py-2 mt-1 z-50">
+                <div className="absolute top-full left-0 w-72 bg-white border border-slate-200/90 rounded-md shadow-xl py-2 mt-1 z-50">
                   <Link to="/about" className="block px-4 py-2.5 text-xs hover:bg-[#F7F8FA] hover:text-[#1268B3] text-[#17212B]">
-                    <div className="font-semibold text-[#062B5C]">Company Overview</div>
-                    <div className="text-[11px] text-slate-500">History, vision, mission & values</div>
-                  </Link>
-                  <Link to="/about/leadership" className="block px-4 py-2.5 text-xs hover:bg-[#F7F8FA] hover:text-[#1268B3] text-[#17212B]">
-                    <div className="font-semibold text-[#062B5C]">Leadership & Advisors</div>
-                    <div className="text-[11px] text-slate-500">Managing Director & technical advisors</div>
+                    <div className="font-semibold text-[#062B5C]">Brief</div>
+                    <div className="text-[11px] text-slate-500">Why SIMCON, vision, mission, core values</div>
                   </Link>
                   <Link to="/about/team" className="block px-4 py-2.5 text-xs hover:bg-[#F7F8FA] hover:text-[#1268B3] text-[#17212B]">
                     <div className="font-semibold text-[#062B5C]">Our Team</div>
-                    <div className="text-[11px] text-slate-500">125+ engineers, geologists & specialists</div>
+                    <div className="text-[11px] text-slate-500">Leadership, core team & 125+ specialists</div>
+                  </Link>
+                  <Link to="/accreditations" className="block px-4 py-2.5 text-xs hover:bg-[#F7F8FA] hover:text-[#1268B3] text-[#17212B]">
+                    <div className="font-semibold text-[#062B5C]">NABL Accreditations</div>
+                    <div className="text-[11px] text-slate-500">ISO/IEC 17025 accredited laboratories</div>
+                  </Link>
+                  <Link to="/approvals" className="block px-4 py-2.5 text-xs hover:bg-[#F7F8FA] hover:text-[#1268B3] text-[#17212B]">
+                    <div className="font-semibold text-[#062B5C]">Approvals and Empanelment</div>
+                    <div className="text-[11px] text-slate-500">NHAI, RVNL, MES, CPWD & authorities</div>
                   </Link>
                 </div>
               )}
@@ -122,9 +124,8 @@ export const Header: React.FC = () => {
             >
               <Link
                 to="/services"
-                className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${
-                  location.pathname.startsWith('/services') ? 'text-[#062B5C] font-bold' : 'text-[#17212B] hover:text-[#1268B3]'
-                }`}
+                className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${location.pathname.startsWith('/services') ? 'text-[#062B5C] font-bold' : 'text-[#17212B] hover:text-[#1268B3]'
+                  }`}
                 aria-expanded={activeDropdown === 'services'}
               >
                 Services
@@ -182,9 +183,8 @@ export const Header: React.FC = () => {
             {/* Expertise */}
             <Link
               to="/expertise"
-              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${
-                location.pathname === '/expertise' ? 'text-[#062B5C] font-bold' : 'text-[#17212B] hover:text-[#1268B3]'
-              }`}
+              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${location.pathname === '/expertise' ? 'text-[#062B5C] font-bold' : 'text-[#17212B] hover:text-[#1268B3]'
+                }`}
             >
               Expertise
             </Link>
@@ -192,9 +192,8 @@ export const Header: React.FC = () => {
             {/* Projects */}
             <Link
               to="/projects"
-              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${
-                location.pathname.startsWith('/projects') ? 'text-[#062B5C] font-bold' : 'text-[#17212B] hover:text-[#1268B3]'
-              }`}
+              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${location.pathname.startsWith('/projects') ? 'text-[#062B5C] font-bold' : 'text-[#17212B] hover:text-[#1268B3]'
+                }`}
             >
               Projects
             </Link>
@@ -206,11 +205,10 @@ export const Header: React.FC = () => {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${
-                  ['/accreditations', '/approvals', '/clients', '/reach', '/careers', '/insights'].some(p => location.pathname.startsWith(p))
+                className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${['/clients', '/reach', '/careers', '/insights'].some(p => location.pathname.startsWith(p))
                     ? 'text-[#062B5C] font-bold'
                     : 'text-[#17212B] hover:text-[#1268B3]'
-                }`}
+                  }`}
                 aria-expanded={activeDropdown === 'company'}
               >
                 Company
@@ -219,16 +217,6 @@ export const Header: React.FC = () => {
 
               {activeDropdown === 'company' && (
                 <div className="absolute top-full left-0 w-64 bg-white border border-slate-200/90 rounded-md shadow-xl py-2 mt-1 z-50">
-                  <Link to="/accreditations" className="block px-4 py-2 text-xs hover:bg-[#F7F8FA] text-[#17212B]">
-                    <div className="font-semibold text-[#062B5C] flex items-center gap-1.5">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#1268B3]" /> NABL Accreditations
-                    </div>
-                    <div className="text-[11px] text-slate-500">ISO/IEC 17025 certificates</div>
-                  </Link>
-                  <Link to="/approvals" className="block px-4 py-2 text-xs hover:bg-[#F7F8FA] text-[#17212B]">
-                    <div className="font-semibold text-[#062B5C]">Approvals & Empanelments</div>
-                    <div className="text-[11px] text-slate-500">NHAI, RVNL, MES, AUDA</div>
-                  </Link>
                   <Link to="/clients" className="block px-4 py-2 text-xs hover:bg-[#F7F8FA] text-[#17212B]">
                     <div className="font-semibold text-[#062B5C]">Our Clients</div>
                     <div className="text-[11px] text-slate-500">Government & EPC partners</div>
@@ -252,9 +240,8 @@ export const Header: React.FC = () => {
             {/* Contact */}
             <Link
               to="/contact"
-              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${
-                location.pathname === '/contact' ? 'text-[#062B5C] font-bold' : 'text-[#17212B] hover:text-[#1268B3]'
-              }`}
+              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded transition-colors ${location.pathname === '/contact' ? 'text-[#062B5C] font-bold' : 'text-[#17212B] hover:text-[#1268B3]'
+                }`}
             >
               Contact
             </Link>
@@ -316,9 +303,8 @@ export const Header: React.FC = () => {
               <Link
                 to="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center justify-between px-3 py-2.5 rounded-md transition-colors ${
-                  location.pathname === '/' ? 'bg-slate-100 text-[#062B5C] font-bold' : 'text-[#17212B] hover:bg-slate-50'
-                }`}
+                className={`flex items-center justify-between px-3 py-2.5 rounded-md transition-colors ${location.pathname === '/' ? 'bg-slate-100 text-[#062B5C] font-bold' : 'text-[#17212B] hover:bg-slate-50'
+                  }`}
               >
                 <span>Home</span>
               </Link>
@@ -335,9 +321,8 @@ export const Header: React.FC = () => {
                     About Us
                   </span>
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
-                      mobileSubmenus.about ? 'rotate-180 text-[#1268B3]' : ''
-                    }`}
+                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${mobileSubmenus.about ? 'rotate-180 text-[#1268B3]' : ''
+                      }`}
                   />
                 </button>
                 {mobileSubmenus.about && (
@@ -347,24 +332,32 @@ export const Header: React.FC = () => {
                       onClick={() => setMobileMenuOpen(false)}
                       className="block px-3 py-2 text-xs text-[#062B5C] font-medium hover:bg-slate-50 rounded"
                     >
-                      <div className="font-semibold">Company Overview</div>
-                      <div className="text-[11px] text-slate-500">History, vision, mission & 18-yr heritage</div>
-                    </Link>
-                    <Link
-                      to="/about/leadership"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-xs text-[#062B5C] font-medium hover:bg-slate-50 rounded"
-                    >
-                      <div className="font-semibold">Leadership & Advisors</div>
-                      <div className="text-[11px] text-slate-500">Board of Directors & IIT/NIT Council</div>
+                      <div className="font-semibold">Brief</div>
+                      <div className="text-[11px] text-slate-500">Why SIMCON, vision, mission, core values</div>
                     </Link>
                     <Link
                       to="/about/team"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block px-3 py-2 text-xs text-[#062B5C] font-medium hover:bg-slate-50 rounded"
                     >
-                      <div className="font-semibold">Engineering Team</div>
-                      <div className="text-[11px] text-slate-500">125+ geotechnical specialists & lab leads</div>
+                      <div className="font-semibold">Our Team</div>
+                      <div className="text-[11px] text-slate-500">Leadership, core team & 125+ specialists</div>
+                    </Link>
+                    <Link
+                      to="/accreditations"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2 text-xs text-[#062B5C] font-medium hover:bg-slate-50 rounded"
+                    >
+                      <div className="font-semibold">NABL Accreditations</div>
+                      <div className="text-[11px] text-slate-500">ISO/IEC 17025 accredited laboratories</div>
+                    </Link>
+                    <Link
+                      to="/approvals"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2 text-xs text-[#062B5C] font-medium hover:bg-slate-50 rounded"
+                    >
+                      <div className="font-semibold">Approvals and Empanelment</div>
+                      <div className="text-[11px] text-slate-500">NHAI, RVNL, MES, CPWD & authorities</div>
                     </Link>
                   </div>
                 )}
@@ -382,9 +375,8 @@ export const Header: React.FC = () => {
                     Services & Disciplines
                   </span>
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
-                      mobileSubmenus.services ? 'rotate-180 text-[#1268B3]' : ''
-                    }`}
+                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${mobileSubmenus.services ? 'rotate-180 text-[#1268B3]' : ''
+                      }`}
                   />
                 </button>
                 {mobileSubmenus.services && (
@@ -475,9 +467,8 @@ export const Header: React.FC = () => {
                     Projects & Case Studies
                   </span>
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
-                      mobileSubmenus.projects ? 'rotate-180 text-[#1268B3]' : ''
-                    }`}
+                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${mobileSubmenus.projects ? 'rotate-180 text-[#1268B3]' : ''
+                      }`}
                   />
                 </button>
                 {mobileSubmenus.projects && (
@@ -543,35 +534,16 @@ export const Header: React.FC = () => {
                   className="w-full flex items-center justify-between px-3 py-2.5 text-left text-[#17212B] hover:bg-slate-100/80 transition-colors"
                   aria-expanded={mobileSubmenus.company}
                 >
-                  <span className={['/accreditations', '/approvals', '/clients', '/reach', '/careers', '/insights'].some(p => location.pathname.startsWith(p)) ? 'text-[#062B5C] font-bold' : ''}>
-                    Credentials & Company
+                  <span className={['/clients', '/reach', '/careers', '/insights'].some(p => location.pathname.startsWith(p)) ? 'text-[#062B5C] font-bold' : ''}>
+                    Company & Reach
                   </span>
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
-                      mobileSubmenus.company ? 'rotate-180 text-[#1268B3]' : ''
-                    }`}
+                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${mobileSubmenus.company ? 'rotate-180 text-[#1268B3]' : ''
+                      }`}
                   />
                 </button>
                 {mobileSubmenus.company && (
                   <div className="bg-white border-t border-slate-100 px-3 py-2 space-y-1">
-                    <Link
-                      to="/accreditations"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-xs text-[#062B5C] font-medium hover:bg-slate-50 rounded"
-                    >
-                      <div className="font-semibold flex items-center gap-1.5">
-                        <ShieldCheck className="w-3.5 h-3.5 text-[#1268B3]" /> NABL Accreditations
-                      </div>
-                      <div className="text-[11px] text-slate-500">ISO/IEC 17025 certificates & 581 params</div>
-                    </Link>
-                    <Link
-                      to="/approvals"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-xs text-[#062B5C] font-medium hover:bg-slate-50 rounded"
-                    >
-                      <div className="font-semibold">Approvals & Empanelments</div>
-                      <div className="text-[11px] text-slate-500">NHAI, RVNL, MES, AAI, AUDA</div>
-                    </Link>
                     <Link
                       to="/clients"
                       onClick={() => setMobileMenuOpen(false)}
@@ -612,9 +584,8 @@ export const Header: React.FC = () => {
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center justify-between px-3 py-2.5 rounded-md transition-colors ${
-                  location.pathname === '/contact' ? 'bg-[#062B5C] text-white font-bold' : 'text-[#062B5C] hover:bg-slate-50 font-bold'
-                }`}
+                className={`flex items-center justify-between px-3 py-2.5 rounded-md transition-colors ${location.pathname === '/contact' ? 'bg-[#062B5C] text-white font-bold' : 'text-[#062B5C] hover:bg-slate-50 font-bold'
+                  }`}
               >
                 <span>Contact Us & Regional Hubs</span>
                 <ArrowRight className="w-4 h-4" />

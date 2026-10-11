@@ -34,7 +34,7 @@ export const ServiceDetail: React.FC = () => {
       {/* Breadcrumbs & Hero Header */}
       <section className="bg-[#062B5C] text-white py-16 lg:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 text-xs font-mono text-slate-300 mb-6" aria-label="Breadcrumb">
             <Link to="/" className="hover:text-white">Home</Link>
@@ -76,7 +76,7 @@ export const ServiceDetail: React.FC = () => {
                 <img
                   src={service.heroImage}
                   alt={service.title}
-                  className="w-full h-64 sm:h-80 object-cover"
+                  className="w-full h-auto aspect-[16/10] sm:aspect-[4/3] object-cover"
                 />
               </div>
             </div>
@@ -86,7 +86,7 @@ export const ServiceDetail: React.FC = () => {
 
       {/* Comprehensive Description & Scope */}
       <section className="py-16 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="max-w-4xl space-y-6">
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#062B5C]">
               Methodology & Technical Approach
@@ -115,7 +115,7 @@ export const ServiceDetail: React.FC = () => {
       {/* Sub-Disciplines & Testing Breakdown (Soil Lab, Rock Lab, Foundation Modeling etc.) */}
       {service.subDisciplines && (
         <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <SectionHeading
               technicalLabel="TESTING PROTOCOLS"
               title="Detailed Parameter Breakdown"
@@ -157,7 +157,7 @@ export const ServiceDetail: React.FC = () => {
       {/* Software Tools Table */}
       {service.softwareTools && (
         <section className="py-16 bg-white border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-3xl mb-8">
               <h2 className="text-2xl font-bold font-display text-[#062B5C]">
                 Software Expertise & Numerical Tools
@@ -185,7 +185,7 @@ export const ServiceDetail: React.FC = () => {
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
         <section className="py-16 bg-[#F7F8FA] border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h2 className="text-2xl font-bold font-display text-[#062B5C]">
@@ -197,7 +197,7 @@ export const ServiceDetail: React.FC = () => {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {relatedProjects.map(proj => (
                 <Link
                   key={proj.id}
@@ -205,7 +205,7 @@ export const ServiceDetail: React.FC = () => {
                   className="bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition-shadow group flex flex-col justify-between"
                 >
                   <div>
-                    <div className="relative h-44 bg-slate-900 overflow-hidden">
+                    <div className="relative aspect-[16/10] bg-slate-900 overflow-hidden">
                       <img
                         src={proj.featuredImage}
                         alt={proj.title}

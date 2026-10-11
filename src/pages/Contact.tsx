@@ -3,14 +3,14 @@ import { COMPANY_INFO } from '@/data/company';
 import { OFFICES } from '@/data/offices';
 import { SERVICES } from '@/data/services';
 import { SectionHeading } from '@/components/common/SectionHeading';
-import { 
-  Phone, 
-  Mail, 
-  MessageCircle, 
-  Send, 
-  CheckCircle2, 
-  AlertCircle, 
-  ShieldCheck 
+import {
+  Phone,
+  Mail,
+  MessageCircle,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  ShieldCheck
 } from 'lucide-react';
 
 export const Contact: React.FC = () => {
@@ -62,7 +62,7 @@ export const Contact: React.FC = () => {
       {/* Hero */}
       <section className="bg-[#062B5C] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-white leading-[1.12]">
               Connect with Our Engineering Teams.
@@ -76,7 +76,7 @@ export const Contact: React.FC = () => {
 
       {/* Main Two-Column Contact Section */}
       <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Narrative & Direct Channels */}
             <div className="lg:col-span-5 space-y-8">
@@ -332,7 +332,7 @@ export const Contact: React.FC = () => {
 
       {/* Regional Office Locations Grid */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <SectionHeading
             technicalLabel="OPERATING BASES"
             title="Our Four Regional Laboratories & Hubs"

@@ -15,7 +15,7 @@ export const Legal: React.FC = () => {
     <div className="pt-[72px]">
       <section className="bg-[#062B5C] text-white py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
           <h1 className="text-3xl sm:text-4xl font-extrabold font-display text-white">
             {title}
           </h1>

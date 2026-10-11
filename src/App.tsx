@@ -50,30 +50,32 @@ export const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/about/leadership" element={<Leadership />} />
             <Route path="/about/team" element={<Team />} />
-            
+            <Route path="/about/accreditations" element={<Accreditations />} />
+            <Route path="/about/approvals" element={<Approvals />} />
+
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
-            
+
             <Route path="/expertise" element={<Expertise />} />
-            
+
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
-            
+
             <Route path="/accreditations" element={<Accreditations />} />
             <Route path="/approvals" element={<Approvals />} />
             <Route path="/clients" element={<Clients />} />
             <Route path="/reach" element={<Reach />} />
-            
+
             <Route path="/careers" element={<Careers />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/insights/:slug" element={<InsightDetail />} />
-            
+
             <Route path="/contact" element={<Contact />} />
-            
+
             <Route path="/privacy-policy" element={<Legal />} />
             <Route path="/terms" element={<Legal />} />
             <Route path="/cookie-policy" element={<Legal />} />
-            
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

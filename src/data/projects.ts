@@ -52,7 +52,7 @@ export const PROJECTS: ProjectItem[] = [
     gallery: [
       "/assets/projects/project-sabarmati-bullet-train-hub.png",
       "/assets/projects/project-bullet-train-pier-testing.png",
-      "/assets/projects/project-metro-viaduct-corridor.png"
+      "/assets/projects/project-metro-bullet-train-1.png"
     ],
     scope: [
       "Deep rotary boreholes along viaduct alignments",
@@ -78,7 +78,7 @@ export const PROJECTS: ProjectItem[] = [
       "Foundation Bearing Capacity Reports"
     ],
     description: "Subcontractor for geotechnical investigation work for part design and construction of elevated viaducts and metro stations across Bhopal Metro network.",
-    featuredImage: "/assets/projects/project-metro-viaduct-corridor.png",
+    featuredImage: "/assets/projects/project-bhopal-metro.jpg",
     scope: [
       "Continuous rock coring in basalt and sedimentary formations",
       "UCS and Brazilian tensile testing of rock cores",
@@ -101,7 +101,7 @@ export const PROJECTS: ProjectItem[] = [
       "Borehole Logging & Testing"
     ],
     description: "Specialized pressuremeter testing and geotechnical soil exploration across the 8.65 km project stretch for Indore Metro packages IN04 and IN05R.",
-    featuredImage: "/assets/projects/project-elevated-metro-station.png",
+    featuredImage: "/assets/projects/project-indore-metro.jpg",
     scope: [
       "In-situ Menard Pressuremeter tests for deformation moduli and creep pressure",
       "Rotary drilling in difficult urban corridors",
@@ -125,9 +125,9 @@ export const PROJECTS: ProjectItem[] = [
       "Geophysical Investigation"
     ],
     description: "Geotechnical and geophysical investigation across complex Himalayan rock formations for deep rail tunnel portals, approach cuttings, and bridge abutments.",
-    featuredImage: "/assets/projects/project-secr-railway-tunnel-portal.png",
+    featuredImage: "/assets/projects/project-rishikesh-tunnel.jpg",
     gallery: [
-      "/assets/projects/project-secr-railway-tunnel-portal.png",
+      "/assets/projects/project-rishikesh-tunnel.jpg",
       "/assets/projects/geotechnical-investigation-site-1.png"
     ],
     scope: [
@@ -221,7 +221,7 @@ export const PROJECTS: ProjectItem[] = [
       "NABL Laboratory Testing"
     ],
     description: "Comprehensive subsurface investigation and foundation capacity recommendations for landside inflight flight catering infrastructure at Lucknow Airport.",
-    featuredImage: "/assets/projects/project-airport-terminal-apron.png",
+    featuredImage: "/assets/projects/project-railway-aviation-8.jpeg",
     scope: [
       "Soil boring and standard penetration testing",
       "Chemical suitability testing of soil and groundwater",
@@ -244,7 +244,7 @@ export const PROJECTS: ProjectItem[] = [
       "Laboratory Mechanics of Marine Clays"
     ],
     description: "Geotechnical exploration at the backup area of Oil Jetty No. 07 and green hydrogen industrial land to support heavy liquid cargo storage tanks.",
-    featuredImage: "/assets/services/field-testing/field-testing-6.png",
+    featuredImage: "/assets/projects/geotechnical-investigation-site-1.png",
     scope: [
       "Coastal borehole drilling in intertidal marine sediments",
       "Piezometer installation and cyclic consolidation tests",
@@ -267,7 +267,7 @@ export const PROJECTS: ProjectItem[] = [
       "Plate Load Testing"
     ],
     description: "Geotechnical subsurface exploration and yard pavement bearing assessment for DP World's major container freight station and township development.",
-    featuredImage: "/assets/services/field-testing/field-testing-7.png",
+    featuredImage: "/assets/projects/geotechnical-investigation-site-2.png",
     scope: [
       "Extensive borehole grid for heavy container stacking yards",
       "Cyclic plate load tests to evaluate subgrade resilient modulus",
@@ -290,7 +290,7 @@ export const PROJECTS: ProjectItem[] = [
       "Field CBR Tests for Road Corridors"
     ],
     description: "Subsurface geotechnical investigation, hydrology drainage modeling, and in-situ field CBR testing for NTPC's 200MW wind-solar hybrid project in Khavda.",
-    featuredImage: "/assets/services/field-testing/field-testing-9.png",
+    featuredImage: "/assets/projects/project-khavda-hybrid-power.jpg",
     scope: [
       "Hydrological catchment analysis and flood level estimation",
       "Boreholes for solar array inverters and transmission lines",
@@ -314,11 +314,11 @@ export const PROJECTS: ProjectItem[] = [
       "Condition Assessment & Integrity Review"
     ],
     description: "Comprehensive non-destructive diagnostic evaluation and structural health assessment of operational power plant structures, boiler foundation rafts, and cooling systems.",
-    featuredImage: "/assets/projects/project-adani-thermal-1.png",
+    featuredImage: "/assets/projects/project-adani-thermal-21.png",
     gallery: [
-      "/assets/projects/project-adani-thermal-1.png",
-      "/assets/projects/project-adani-thermal-2.png",
-      "/assets/projects/project-adani-thermal-5.png"
+      "/assets/projects/project-adani-thermal-21.png",
+      "/assets/projects/project-adani-thermal-20.png",
+      "/assets/projects/project-adani-thermal-22.png"
     ],
     scope: [
       "UPV velocity mapping across heavy concrete pedestals",
@@ -343,7 +343,7 @@ export const PROJECTS: ProjectItem[] = [
       "Quality Assurance Surveillance"
     ],
     description: "Non-destructive low-strain integrity testing and high-strain dynamic load testing for elevated flyover pier foundations on the 4 km Iscon corridor.",
-    featuredImage: "/assets/projects/project-metro-bullet-train-10.png",
+    featuredImage: "/assets/projects/geotechnical-drilling-rig-highway.png",
     scope: [
       "100% PIT integrity testing on cast-in-situ foundation piles",
       "Dynamic capacity testing using calibrated drop weights",
@@ -389,7 +389,7 @@ export const PROJECTS: ProjectItem[] = [
       "CAPWAP Numerical Analysis"
     ],
     description: "High-strain dynamic pile testing on foundation piles supporting heavy chemical storage tanks and process equipment in coastal Kandla.",
-    featuredImage: "/assets/services/field-testing/field-testing-5.png",
+    featuredImage: "/assets/projects/project-iffco-pile-testing.jpg",
     scope: [
       "Dynamic monitoring of pile driving stresses",
       "CAPWAP signal matching to evaluate ultimate pile bearing capacity",

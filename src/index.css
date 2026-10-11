@@ -171,3 +171,61 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================
+   SIMCON Brand Custom Scrollbar System
+   ========================================== */
+
+/* Standard CSS (Firefox) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1268B3 #F1F5F9;
+}
+
+/* WebKit / Chromium (Chrome, Edge, Safari, Opera, Brave) */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-left: 1px solid #E2E8F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1268B3 0%, #062B5C 100%);
+  border-radius: 9999px;
+  border: 2px solid #F1F5F9;
+  transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #D71920 0%, #062B5C 100%);
+  border-color: #E2E8F0;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #D71920;
+}
+
+::-webkit-scrollbar-corner {
+  background: #F1F5F9;
+}
+
+/* Remove bulky retro Windows scrollbar arrow buttons */
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Utility to cleanly hide scrollbars for horizontal pill bars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

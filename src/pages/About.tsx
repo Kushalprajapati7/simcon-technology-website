@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Target, Compass, ArrowRight } from 'lucide-react';
+import { Shield, Target, Compass, ArrowRight, ShieldCheck, FileCheck, Users } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 import { SectionHeading } from '@/components/common/SectionHeading';
+import { WhySimcon } from '@/components/sections/WhySimcon';
 import { FinancialGrowth } from '@/components/sections/FinancialGrowth';
 
 export const About: React.FC = () => {
@@ -11,7 +12,7 @@ export const About: React.FC = () => {
       {/* Hero */}
       <section className="bg-[#062B5C] text-white py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display text-white leading-[1.1]">
               A Legacy Built on Rigor, Ethics, and Precision.
@@ -25,7 +26,7 @@ export const About: React.FC = () => {
 
       {/* Corporate Overview & Evolution */}
       <section className="py-20 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <SectionHeading
@@ -57,7 +58,7 @@ export const About: React.FC = () => {
                 <img
                   src="/assets/projects/geotechnical-investigation-site-1.png"
                   alt="SIMCON Field Drilling and Investigation Operations"
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-auto aspect-[16/10] sm:aspect-[4/3] max-h-[480px] object-cover"
                 />
                 <div className="p-4 bg-[#F7F8FA] border-t border-slate-200 text-xs font-mono text-slate-600 flex items-center justify-between">
                   <span>Subsurface Exploration Fleet</span>
@@ -69,9 +70,12 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Vision & Mission (Preserving Exact Source Content) */}
+      {/* Why SIMCON */}
+      <WhySimcon />
+
+      {/* Vision & Mission */}
       <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Vision */}
             <div className="bg-white p-8 lg:p-10 rounded-xl border border-slate-200 shadow-2xs space-y-4">
@@ -102,9 +106,9 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Core Values (Exact Source Content) */}
+      {/* Core Values */}
       <section className="py-20 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <SectionHeading
             technicalLabel="PRINCIPLES"
             title="The Five Pillars of SIMCON."
@@ -172,10 +176,10 @@ export const About: React.FC = () => {
                 </span>
               </div>
               <Link
-                to="/about/leadership"
+                to="/about/team#leadership"
                 className="text-xs font-mono font-bold text-[#4A8BE2] hover:text-white uppercase tracking-wider flex items-center gap-1 transition-colors"
               >
-                Meet All Directors <ArrowRight className="w-3.5 h-3.5" />
+                Meet Leadership & Directors <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
@@ -185,40 +189,66 @@ export const About: React.FC = () => {
       {/* Modular Financial Growth */}
       <FinancialGrowth />
 
-      {/* Navigation Quick Links to Leadership & Team */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Navigation Quick Links to other About Us Sections */}
+      <section className="py-16 bg-[#F8FAFC] border-t border-slate-200">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold font-display text-[#062B5C]">
+              Explore About Us
+            </h2>
+            <p className="text-xs text-slate-500 mt-1">
+              Discover our engineering professionals, NABL-accredited facilities, and approved authority empanelments.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link
-              to="/about/leadership"
-              className="p-8 rounded-xl bg-[#062B5C] text-white flex items-center justify-between group hover:bg-[#1268B3] transition-colors"
+              to="/about/team"
+              className="p-6 rounded-xl bg-white border border-slate-200 text-[#062B5C] flex flex-col justify-between group hover:border-[#1268B3] hover:shadow-md transition-all"
             >
-              <div>
-                <span className="text-xs font-mono text-[#2B7EC8] uppercase tracking-widest block font-bold mb-1">
-                  EXECUTIVE BOARD
-                </span>
-                <h3 className="text-2xl font-bold font-display">
-                  Leadership & Technical Advisors →
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-[#062B5C] text-white flex items-center justify-center">
+                  <Users className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold font-display">
+                  Our Team →
                 </h3>
-                <p className="text-xs text-slate-300 mt-2">
-                  Meet our Managing Director, academic doctorates, and branch in-charges.
+                <p className="text-xs text-[#536271] leading-relaxed">
+                  Executive leadership, branch directors, doctorate advisors, and 125+ engineering professionals.
                 </p>
               </div>
             </Link>
 
             <Link
-              to="/about/team"
-              className="p-8 rounded-xl bg-[#F7F8FA] border border-slate-200 text-[#062B5C] flex items-center justify-between group hover:border-[#062B5C] transition-colors"
+              to="/accreditations"
+              className="p-6 rounded-xl bg-white border border-slate-200 text-[#062B5C] flex flex-col justify-between group hover:border-[#1268B3] hover:shadow-md transition-all"
             >
-              <div>
-                <span className="text-xs font-mono text-[#D71920] uppercase tracking-widest block font-bold mb-1">
-                  125+ PROFESSIONALS
-                </span>
-                <h3 className="text-2xl font-bold font-display">
-                  Explore Full Team Directory →
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-[#062B5C] text-white flex items-center justify-center">
+                  <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                </div>
+                <h3 className="text-lg font-bold font-display">
+                  NABL Accreditations →
                 </h3>
-                <p className="text-xs text-[#536271] mt-2">
-                  Engineers, geologists, chemists, and testing technicians across all 4 hubs.
+                <p className="text-xs text-[#536271] leading-relaxed">
+                  ISO/IEC 17025 accredited testing laboratories across 581 parameters in Gandhidham, Ahmedabad, and Lucknow.
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              to="/approvals"
+              className="p-6 rounded-xl bg-white border border-slate-200 text-[#062B5C] flex flex-col justify-between group hover:border-[#1268B3] hover:shadow-md transition-all"
+            >
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-[#062B5C] text-white flex items-center justify-center">
+                  <FileCheck className="w-5 h-5 text-[#2B7EC8]" />
+                </div>
+                <h3 className="text-lg font-bold font-display">
+                  Approvals & Empanelment →
+                </h3>
+                <p className="text-xs text-[#536271] leading-relaxed">
+                  Approved testing consultant for NHAI, RVNL, MES, CPWD, AUDA, and key public sector undertakings.
                 </p>
               </div>
             </Link>

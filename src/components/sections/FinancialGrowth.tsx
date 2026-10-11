@@ -19,7 +19,7 @@ export const FinancialGrowth: React.FC = () => {
       {/* Background linework */}
       <div className="absolute inset-0 bg-tech-grid opacity-50 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Narrative */}
           <div className="lg:col-span-5 space-y-6">
@@ -100,11 +100,10 @@ export const FinancialGrowth: React.FC = () => {
                   {/* Bar */}
                   <div
                     style={{ height: `${item.heightPercent}%` }}
-                    className={`w-full max-w-[44px] rounded-t transition-all duration-500 ${
-                      idx === milestones.length - 1
+                    className={`w-full max-w-[44px] rounded-t transition-all duration-500 ${idx === milestones.length - 1
                         ? 'bg-[#062B5C] group-hover:bg-[#1268B3]'
                         : 'bg-[#1268B3]/80 group-hover:bg-[#062B5C]'
-                    }`}
+                      }`}
                   />
                   {/* Year */}
                   <span className="text-[9px] sm:text-xs font-mono text-slate-500 mt-2 sm:mt-3 whitespace-nowrap">

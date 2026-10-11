@@ -50,7 +50,7 @@ export const Careers: React.FC = () => {
       {/* Hero */}
       <section className="bg-[#062B5C] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-white leading-[1.12]">
               Build Your Career with SIMCON Technology.
@@ -64,7 +64,7 @@ export const Careers: React.FC = () => {
 
       {/* Culture Highlights */}
       <section className="py-20 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <SectionHeading
             technicalLabel="WORK ENVIRONMENT"
             title="Why Engineers Build Their Future Here"
@@ -94,7 +94,7 @@ export const Careers: React.FC = () => {
 
       {/* Current Openings & Static Application Form */}
       <section className="py-20 bg-[#F7F8FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Openings List */}
             <div className="lg:col-span-6 space-y-6">

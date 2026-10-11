@@ -39,7 +39,7 @@ export const Projects: React.FC = () => {
       {/* Hero */}
       <section className="bg-[#062B5C] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-white leading-[1.12]">
               6,480+ Projects Completed Across India.
@@ -53,7 +53,7 @@ export const Projects: React.FC = () => {
 
       {/* Explorer Controls: Categories & Search */}
       <section className="py-8 bg-white border-b border-slate-200 sticky top-[68px] z-30 shadow-2xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             {/* Category Scrollable Filter Pills */}
             <div className="flex items-center gap-1.5 overflow-x-auto pb-2 lg:pb-0 no-scrollbar">
@@ -92,7 +92,7 @@ export const Projects: React.FC = () => {
 
       {/* Projects Grid */}
       <section className="py-16 bg-[#F7F8FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="flex items-center justify-between mb-8">
             <span className="text-xs font-mono text-slate-500 uppercase">
               Showing {filteredProjects.length} of {PROJECTS.length} Featured Case Studies
@@ -118,7 +118,7 @@ export const Projects: React.FC = () => {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
               {filteredProjects.map((proj) => (
                 <div
                   key={proj.id}
@@ -126,7 +126,7 @@ export const Projects: React.FC = () => {
                 >
                   <div>
                     {/* Featured Image */}
-                    <div className="relative h-56 bg-slate-900 overflow-hidden">
+                    <div className="relative aspect-[16/10] bg-slate-900 overflow-hidden">
                       <img
                         src={proj.featuredImage}
                         alt={proj.title}
