@@ -9,7 +9,7 @@ export const HeroSection: React.FC = () => {
       {/* Right-Side Geotechnical Drilling Rig Infrastructure Photograph */}
       <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[62%] h-full z-0 overflow-hidden pointer-events-none">
         <img
-          src="/assets/hero/simcon_geotech_hero.jpg"
+          src="/assets/hero/simcon-geotechnical-drilling-rig-hero.jpg"
           alt="SIMCON Geotechnical Deep Foundation Drilling Operations"
           className="w-full h-full object-cover object-center lg:object-right"
         />

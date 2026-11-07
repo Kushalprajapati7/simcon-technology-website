@@ -59,7 +59,7 @@ export const FeaturedProject: React.FC = () => {
           <div className="reveal reveal-right lg:col-span-6 relative" style={{ '--delay': '0.15s' } as React.CSSProperties}>
             <div className="reveal-img-wrap rounded-xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900">
               <img
-                src="/assets/projects/project-metro-bullet-train-1.png"
+                src="/assets/projects/mumbai-ahmedabad-bullet-train-pier-testing.png"
                 alt="Mumbai-Ahmedabad High Speed Rail Bullet Train Project by SIMCON"
                 className="reveal-img w-full h-[400px] sm:h-[460px] object-cover"
               />

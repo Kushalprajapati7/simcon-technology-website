@@ -207,8 +207,7 @@ export const FivePillarsSection: React.FC<FivePillarsSectionProps> = ({
         {/* Section Header */}
         <div className="reveal reveal-up mb-12 sm:mb-16">
           <div className="flex items-center gap-2 mb-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#D71920] shrink-0" />
-            <span className="font-mono text-xs font-bold tracking-[0.16em] text-slate-500 uppercase">
+            <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#1268B3] uppercase block">
               PRINCIPLES
             </span>
           </div>

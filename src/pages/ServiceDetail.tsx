@@ -101,7 +101,7 @@ const TEST_METADATA: Record<string, TestMetadata> = {
     description: "Hoek cell high-confining pressure triaxial testing establishing Mohr-Coulomb and Hoek-Brown rock failure envelopes."
   },
   "Point Load Index Test": {
-    image: "/assets/services/rock-testing/point-load-testing-machine.png",
+    image: "/assets/services/rock-testing/point-load-test-apparatus.png",
     code: "IS 8764 / ASTM D5731",
     description: "Rapid diametral and axial index testing for core classification and empirical conversion to compressive strength."
   },
@@ -163,7 +163,7 @@ const TEST_METADATA: Record<string, TestMetadata> = {
     description: "Non-invasive acoustic refraction tomography determining bedrock depth, rippability, and strata velocity profiles."
   },
   "In-situ Shear & Lateral Load Test": {
-    image: "/assets/services/field-testing/pile-load-test-reaction-frame.png",
+    image: "/assets/services/field-testing/anchor-pile-load-test.png",
     code: "IS 2911 (Part 4) / ASTM D3966",
     description: "Deep foundation lateral, vertical compressive, and pull-out uplift testing with calibrated multi-dial displacement gauges."
   },
@@ -307,8 +307,8 @@ const TEST_METADATA: Record<string, TestMetadata> = {
 
 // Service-specific Hero Images (workspace assets)
 const SERVICE_HERO_IMAGES: Record<string, string> = {
-  "geotechnical-services": "/assets/hero/simcon_geotech_hero.jpg",
-  "geotechnical-investigation": "/assets/hero/simcon_geotech_hero.jpg",
+  "geotechnical-services": "/assets/hero/simcon-geotechnical-drilling-rig-hero.jpg",
+  "geotechnical-investigation": "/assets/hero/simcon-geotechnical-drilling-rig-hero.jpg",
   "material-testing-services": "/assets/services/materials/universal-testing-machine-utm-steel.png",
   "material-testing": "/assets/services/materials/universal-testing-machine-utm-steel.png",
   "ndt-structural-integrity": "/assets/services/ndt/rebound-hammer-concrete-testing.jpeg",
@@ -513,7 +513,7 @@ export const ServiceDetail: React.FC = () => {
     });
   };
 
-  const heroImage = SERVICE_HERO_IMAGES[service.slug] || service.heroImage || "/assets/hero/simcon_geotech_hero.jpg";
+  const heroImage = SERVICE_HERO_IMAGES[service.slug] || service.heroImage || "/assets/hero/simcon-geotechnical-drilling-rig-hero.jpg";
   const taglineWords = SERVICE_TAGLINES[service.slug] || ["ENGINEERING", "EXCELLENCE", "THROUGH", "INTEGRITY"];
   const trustBadges = SERVICE_BADGES[service.slug] || [
     { icon: Award, text: "NABL Accredited" },

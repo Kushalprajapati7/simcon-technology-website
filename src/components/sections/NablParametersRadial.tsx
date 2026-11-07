@@ -158,8 +158,7 @@ export const NablParametersRadial: React.FC = () => {
           <div className="lg:col-span-5 xl:col-span-5 space-y-6">
             <div>
               <div className="flex items-center gap-2 mb-2.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#D71920] shrink-0" />
-                <span className="font-mono text-xs font-bold tracking-[0.16em] text-slate-300 uppercase">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#1268B3] uppercase block">
                   TESTING DISCIPLINE QUANTIFICATION
                 </span>
               </div>

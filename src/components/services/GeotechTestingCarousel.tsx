@@ -65,7 +65,7 @@ export const GEOTECH_CAROUSEL_TESTS: GeotechTestSlide[] = [
     name: 'Point Load Strength Index (Is50)',
     category: 'Rock Mechanics',
     standard: 'IS 8764 / ASTM D5731',
-    image: '/assets/services/rock-testing/point-load-testing-machine.png',
+    image: '/assets/services/rock-testing/point-load-test-apparatus.png',
     description: 'Rapid diametral and axial rock core index strength for rock mass rating (RMR) and GSI.'
   },
   {
@@ -113,7 +113,7 @@ export const GEOTECH_CAROUSEL_TESTS: GeotechTestSlide[] = [
     name: 'High-Tonnage Static Pile Load Test (SPLT)',
     category: 'Field Testing',
     standard: 'IS 2911 (Part 4) / ASTM D1143',
-    image: '/assets/services/field-testing/pile-load-test-reaction-frame.png',
+    image: '/assets/services/field-testing/anchor-pile-load-test.png',
     description: 'Compressive, uplift pullout, and lateral thrust validation up to 2500+ tonnes with load frames.'
   },
   {

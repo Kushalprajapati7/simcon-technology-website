@@ -299,9 +299,9 @@ export const NdtServices: React.FC = () => {
       <section className="py-18 sm:py-24 lg:py-28 bg-white border-b border-slate-200">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 space-y-10 sm:space-y-14">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
-            <div className="space-y-2 max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight leading-tight">
-                Methodology &amp;<br className="hidden sm:inline" /> Structural Audit Workflow<span className="text-[#1268B3]">.</span>
+            <div className="space-y-2 max-w-4xl">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight leading-tight lg:whitespace-nowrap">
+                Methodology &amp; Structural Audit Workflow<span className="text-[#1268B3]">.</span>
               </h2>
               <p className="text-xs sm:text-sm text-[#536271] leading-relaxed pt-1">
                 From initial visual distress mapping and acoustic sensor zeroing to full-scale bridge proof loading and capacity re-rating, our diagnostic framework delivers definitive forensic data without compromising structural safety.
@@ -524,7 +524,7 @@ export const NdtServices: React.FC = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight">
                 Non-Destructive Testing (Concrete &amp; Masonry)
               </h2>
-              <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-3xl mt-2">
+              <p className="text-xs sm:text-sm lg:text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed lg:whitespace-nowrap font-normal mt-2">
                 NABL-accredited diagnostic testing evaluating in-situ compressive uniformity, rebar corrosion probability, cover thickness, and internal honeycombing without structural destruction.
               </p>
             </div>
@@ -560,7 +560,7 @@ export const NdtServices: React.FC = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight">
                 Deep Foundation &amp; Bridge Load Diagnostics
               </h2>
-              <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-3xl mt-2">
+              <p className="text-xs sm:text-sm lg:text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed lg:whitespace-nowrap font-normal mt-2">
                 Specialized proof load verification conforming to IRC:SP:51, ultrasonic deep shaft integrity, dynamic vibration response, and structural retrofitting advisories.
               </p>
             </div>
@@ -668,7 +668,7 @@ export const NdtServices: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight">
               Compliant Standards &amp; Test Codes
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-3xl mt-2">
+            <p className="text-xs sm:text-sm lg:text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed lg:whitespace-nowrap font-normal mt-2">
               Non-destructive testing, foundation pile integrity, and bridge load verifications executed in strict accordance with IS, ASTM, and IRC codes.
             </p>
           </div>

@@ -41,7 +41,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription: "NABL-accredited soil & rock laboratory testing, deep rotary core drilling, and advanced in-situ field testing across India.",
     fullDescription: "SIMCON Technology delivers comprehensive geotechnical engineering investigations across diverse geological strata. Equipped with a modernized fleet of hydraulic rotary diamond coring rigs, calibrated field penetration setups, and central NABL-accredited soil and rock mechanics laboratories, we provide verifiable foundation parameters for railways, metro viaducts, ports, and industrial structures.",
     iconName: "Layers",
-    heroImage: "/assets/projects/geotechnical-investigation-site-1.png",
+    heroImage: "/assets/projects/nhai-expressway-geotechnical-site-drilling.png",
     category: "Geotechnical Engineering",
     keyCapabilities: [
       "Deep rotary core drilling in hard rock, weathered formations, and cohesive soils",
@@ -447,7 +447,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription: "Subsurface exploration, rotary rock coring, and characterization (Part of Geotechnical Services).",
     fullDescription: "Please refer to Geotechnical Services for our comprehensive scope including soil, rock, and advanced field testing.",
     iconName: "Layers",
-    heroImage: "/assets/projects/geotechnical-investigation-site-1.png",
+    heroImage: "/assets/projects/nhai-expressway-geotechnical-site-drilling.png",
     category: "Geotechnical Engineering",
     keyCapabilities: ["Rotary Core Drilling", "SPT", "Undisturbed Sampling", "Permeability Testing"],
     relatedProjectSlugs: ["mahsr-bullet-train-sabarmati"],

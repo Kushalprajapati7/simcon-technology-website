@@ -65,7 +65,7 @@ export const GEOPHYSICAL_CAROUSEL_TESTS: GeophysicalTestSlide[] = [
     name: 'Seismic Impulsive Energy Wave Generation',
     category: 'Seismic Profiling',
     standard: 'Accelerated Weight Drop',
-    image: '/assets/services/geophysical/masw-seismic-1.png',
+    image: '/assets/services/geophysical/seismic-impulsive-energy-generation.png',
     description: 'Calibrated mechanical impact energy pulses penetrating dense overburden and rock strata.'
   },
   {
@@ -73,7 +73,7 @@ export const GEOPHYSICAL_CAROUSEL_TESTS: GeophysicalTestSlide[] = [
     name: '2D Subsurface Stratigraphic Section',
     category: 'Electrical & Radar',
     standard: 'Tomographic Inversion',
-    image: '/assets/services/geophysical/masw-seismic-2.png',
+    image: '/assets/services/geophysical/2d-subsurface-stratigraphic-tomogram.png',
     description: 'Color-coded inversion tomogram showing soil-rock interface, weathering layers, and moisture anomalies.'
   }
 ];
@@ -169,11 +169,10 @@ export const GeophysicalTestingCarousel: React.FC = () => {
               key={cat}
               type="button"
               onClick={() => setFilterCategory(cat)}
-              className={`px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                filterCategory === cat
+              className={`px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-mono font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${filterCategory === cat
                   ? 'bg-[#062B5C] text-white shadow-sm ring-2 ring-[#062B5C]/20'
                   : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-              }`}
+                }`}
             >
               {cat === 'All' ? `All Methods (${GEOPHYSICAL_CAROUSEL_TESTS.length})` : cat}
             </button>
@@ -289,11 +288,10 @@ export const GeophysicalTestingCarousel: React.FC = () => {
             key={idx}
             type="button"
             onClick={() => setCurrentIndex(idx)}
-            className={`transition-all duration-300 rounded-full cursor-pointer ${
-              currentIndex === idx
+            className={`transition-all duration-300 rounded-full cursor-pointer ${currentIndex === idx
                 ? 'w-7 h-2 bg-[#D71920]'
                 : 'w-2 h-2 bg-slate-300 hover:bg-slate-400'
-            }`}
+              }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}

@@ -12,10 +12,10 @@ export const WhatsAppButton: React.FC = () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with SIMCON on WhatsApp"
-      className="w-12 h-12 sm:w-13 sm:h-13 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_24px_rgba(37,211,102,0.6)] flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 group focus:outline-none focus:ring-4 focus:ring-[#25D366]/40 pointer-events-auto shrink-0"
+      className="w-9 h-9 sm:w-10 sm:h-10 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-[0_3px_12px_rgba(37,211,102,0.35)] hover:shadow-[0_4px_16px_rgba(37,211,102,0.5)] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 group focus:outline-none focus:ring-2 focus:ring-[#25D366]/40 pointer-events-auto shrink-0"
     >
       <svg
-        className="w-6 h-6 fill-current transition-transform group-hover:scale-105 shrink-0"
+        className="w-4.5 h-4.5 sm:w-5 sm:h-5 fill-current transition-transform group-hover:scale-105 shrink-0"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"

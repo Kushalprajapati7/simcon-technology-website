@@ -32,7 +32,7 @@ const CORE_SERVICES: CoreDiscipline[] = [
     subtitle: 'Soil, Rock & Foundation Exploration',
     slug: 'geotechnical-services',
     category: 'Geotechnical Engineering',
-    heroImage: '/assets/projects/geotechnical-investigation-site-1.png',
+    heroImage: '/assets/projects/nhai-expressway-geotechnical-site-drilling.png',
     description: 'NABL-accredited soil and rock laboratory mechanics, deep rotary diamond core drilling, and field penetration testing delivering verifiable ground parameters for heavy infrastructure.',
     keyChips: [
       'Soil Laboratory Testing (14 NABL Tests)',

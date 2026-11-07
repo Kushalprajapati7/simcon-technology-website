@@ -288,8 +288,8 @@ export const Header: React.FC = () => {
             aria-label="SIMCON Technology Home"
           >
             <img
-              src="/assets/logo/Simcon_logo.png"
-              alt="SIMCON Technology Pvt. Ltd."
+              src="/assets/logo/simcon-technology-logo.png"
+              alt="SIMCON Technology - Geotechnical & Material Testing Engineering"
               className="h-9 sm:h-10 lg:h-11 xl:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
             />
           </Link>
@@ -1369,50 +1369,142 @@ export const Header: React.FC = () => {
                 />
               </button>
               {mobileSubmenus.about && (
-                <div className="bg-white p-3 space-y-2 text-xs">
-                  <div className="font-bold text-[11px] font-mono uppercase text-[#1268B3] pt-1">Brief</div>
-                  <Link to="/about#our-story" onClick={() => handleNavClick('/about#our-story')} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • Who We Are & History
-                  </Link>
-                  <Link to="/about#why-simcon" onClick={() => handleNavClick('/about#why-simcon')} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • Why Simcon (Evidence-Based)
-                  </Link>
-                  <Link to="/about#vision-mission" onClick={() => handleNavClick('/about#vision-mission')} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • Vision & Mission
-                  </Link>
-                  <Link to="/about#core-values" onClick={() => handleNavClick('/about#core-values')} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • Core Values & Principles
-                  </Link>
-                  <Link to="/about#directors-message" onClick={() => handleNavClick('/about#directors-message')} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • Director's Commitment
+                <div className="bg-white p-3 space-y-3 text-xs">
+                  {/* Top Primary Overview Banner */}
+                  <Link
+                    to="/about"
+                    onClick={handleLinkClick}
+                    className="flex items-center justify-between py-2 px-3 rounded-lg bg-blue-50/80 hover:bg-blue-100/80 font-bold text-[#1268B3] transition-colors"
+                  >
+                    <span>Company Overview (18-Year Legacy)</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
 
-                  <div className="font-bold text-[11px] font-mono uppercase text-[#062B5C] pt-2 border-t border-slate-100">Our Team</div>
-                  <Link to="/about/team#chairman" onClick={() => handleNavClick('/about/team#chairman')} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • Chairman's Message
-                  </Link>
-                  <Link to="/about/team#leadership" onClick={() => handleNavClick('/about/team#leadership')} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • Executive Leadership & MD
-                  </Link>
-                  <Link to="/about/team#core-team" onClick={() => handleNavClick('/about/team#core-team')} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • Branch Incharges & Advisors
-                  </Link>
-                  <Link to="/about/team#specialists" onClick={() => handleNavClick('/about/team#specialists')} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • 18 Specialists Directory
-                  </Link>
+                  {/* 1. Company Profile & Legacy */}
+                  <div className="space-y-1">
+                    <div className="pt-1.5 font-bold text-[#062B5C] flex items-center justify-between">
+                      <Link
+                        to="/about"
+                        onClick={handleLinkClick}
+                        className="hover:text-[#1268B3] transition-colors flex items-center gap-1.5 font-bold text-xs"
+                      >
+                        <Building2 className="w-3.5 h-3.5 text-[#1268B3]" />
+                        <span>Company Profile</span>
+                      </Link>
+                      <Link
+                        to="/about"
+                        onClick={handleLinkClick}
+                        className="text-[#1268B3] text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 border border-blue-100 hover:bg-[#1268B3] hover:text-white transition-colors"
+                      >
+                        View Page →
+                      </Link>
+                    </div>
+                    <Link to="/about#our-story" onClick={() => handleNavClick('/about#our-story')} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • Who We Are &amp; 18-Year History
+                    </Link>
+                    <Link to="/about#why-simcon" onClick={() => handleNavClick('/about#why-simcon')} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • Why Simcon (Evidence-Based)
+                    </Link>
+                    <Link to="/about#vision-mission" onClick={() => handleNavClick('/about#vision-mission')} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • Vision, Mission &amp; Core Values
+                    </Link>
+                    <Link to="/about#directors-message" onClick={() => handleNavClick('/about#directors-message')} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • Director's Commitment
+                    </Link>
+                  </div>
 
-                  <div className="font-bold text-[11px] font-mono uppercase text-[#062B5C] pt-2 border-t border-slate-100">NABL Accreditations</div>
-                  <Link to="/accreditations" onClick={handleLinkClick} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • ISO/IEC 17025 Certificates
-                  </Link>
-                  <Link to="/accreditations#scope" onClick={() => handleNavClick('/accreditations#scope')} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • 581 Parameters Testing Scope
-                  </Link>
+                  {/* 2. Leadership & Technical Team */}
+                  <div className="space-y-1 pt-2 border-t border-slate-100">
+                    <div className="font-bold text-[#062B5C] flex items-center justify-between">
+                      <Link
+                        to="/about/team"
+                        onClick={handleLinkClick}
+                        className="hover:text-[#1268B3] transition-colors flex items-center gap-1.5 font-bold text-xs"
+                      >
+                        <Users className="w-3.5 h-3.5 text-[#1268B3]" />
+                        <span>Leadership &amp; Technical Council</span>
+                      </Link>
+                      <Link
+                        to="/about/team"
+                        onClick={handleLinkClick}
+                        className="text-[#1268B3] text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 border border-blue-100 hover:bg-[#1268B3] hover:text-white transition-colors"
+                      >
+                        View Page →
+                      </Link>
+                    </div>
+                    <Link to="/about/team#chairman" onClick={() => handleNavClick('/about/team#chairman')} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • Chairman's Message &amp; MD
+                    </Link>
+                    <Link to="/about/team#core-team" onClick={() => handleNavClick('/about/team#core-team')} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • Regional Branch Incharges
+                    </Link>
+                    <Link to="/about/team#advisors" onClick={() => handleNavClick('/about/team#advisors')} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • IIT/NIT Emeritus Advisory Council
+                    </Link>
+                    <Link to="/about/team#specialists" onClick={() => handleNavClick('/about/team#specialists')} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • 18 Specialists Directory
+                    </Link>
+                  </div>
 
-                  <div className="font-bold text-[11px] font-mono uppercase text-[#062B5C] pt-2 border-t border-slate-100">Approvals & Empanelment</div>
-                  <Link to="/approvals" onClick={handleLinkClick} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • NHAI, RVNL & MES Empanelment
-                  </Link>
+                  {/* 3. NABL Accreditations */}
+                  <div className="space-y-1 pt-2 border-t border-slate-100">
+                    <div className="font-bold text-[#062B5C] flex items-center justify-between">
+                      <Link
+                        to="/accreditations"
+                        onClick={handleLinkClick}
+                        className="hover:text-[#1268B3] transition-colors flex items-center gap-1.5 font-bold text-xs"
+                      >
+                        <Award className="w-3.5 h-3.5 text-[#1268B3]" />
+                        <span>NABL Accreditations (ISO/IEC 17025)</span>
+                      </Link>
+                      <Link
+                        to="/accreditations"
+                        onClick={handleLinkClick}
+                        className="text-[#1268B3] text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 border border-blue-100 hover:bg-[#1268B3] hover:text-white transition-colors"
+                      >
+                        View Page →
+                      </Link>
+                    </div>
+                    <Link to="/accreditations" onClick={handleLinkClick} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • ISO/IEC 17025:2017 Certificates
+                    </Link>
+                    <Link to="/accreditations#scope" onClick={() => handleNavClick('/accreditations#scope')} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • 581 Parameters Testing Scope
+                    </Link>
+                    <Link to="/reach" onClick={handleLinkClick} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • 3 Permanent Testing Laboratories
+                    </Link>
+                  </div>
+
+                  {/* 4. Approvals & Empanelment */}
+                  <div className="space-y-1 pt-2 border-t border-slate-100">
+                    <div className="font-bold text-[#062B5C] flex items-center justify-between">
+                      <Link
+                        to="/approvals"
+                        onClick={handleLinkClick}
+                        className="hover:text-[#1268B3] transition-colors flex items-center gap-1.5 font-bold text-xs"
+                      >
+                        <FileCheck className="w-3.5 h-3.5 text-[#1268B3]" />
+                        <span>Approvals &amp; Empanelment</span>
+                      </Link>
+                      <Link
+                        to="/approvals"
+                        onClick={handleLinkClick}
+                        className="text-[#1268B3] text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 border border-blue-100 hover:bg-[#1268B3] hover:text-white transition-colors"
+                      >
+                        View Page →
+                      </Link>
+                    </div>
+                    <Link to="/approvals" onClick={handleLinkClick} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • NHAI &amp; RVNL Empanelment
+                    </Link>
+                    <Link to="/approvals" onClick={handleLinkClick} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • MES &amp; CPWD Defense Approvals
+                    </Link>
+                    <Link to="/clients" onClick={handleLinkClick} className="block pl-5 py-0.5 text-slate-600 hover:text-[#1268B3]">
+                      • PSU &amp; Corporate Approvals
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
@@ -1551,13 +1643,54 @@ export const Header: React.FC = () => {
                 />
               </button>
               {mobileSubmenus.clients && (
-                <div className="bg-white p-3 space-y-2 text-xs">
-                  <Link to="/reach" onClick={handleLinkClick} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • Our Reach (Pan-India 4 Hubs)
+                <div className="bg-white p-3 space-y-3 text-xs">
+                  {/* Top Primary Overview Banner */}
+                  <Link
+                    to="/clients"
+                    onClick={handleLinkClick}
+                    className="flex items-center justify-between py-2 px-3 rounded-lg bg-blue-50/80 hover:bg-blue-100/80 font-bold text-[#1268B3] transition-colors"
+                  >
+                    <span>All Clients &amp; Partners Overview</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
-                  <Link to="/clients" onClick={handleLinkClick} className="block py-1 text-slate-700 hover:text-[#1268B3]">
-                    • Clients’ Logos & Empanelments
-                  </Link>
+
+                  {/* 1. Our Reach */}
+                  <div className="pt-1 font-bold text-[#062B5C] flex items-center justify-between">
+                    <Link
+                      to="/reach"
+                      onClick={handleLinkClick}
+                      className="hover:text-[#1268B3] transition-colors flex items-center gap-1.5 font-bold text-xs"
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-[#1268B3]" />
+                      <span>Our Reach (Pan-India 4 Hubs)</span>
+                    </Link>
+                    <Link
+                      to="/reach"
+                      onClick={handleLinkClick}
+                      className="text-[#1268B3] text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 border border-blue-100 hover:bg-[#1268B3] hover:text-white transition-colors"
+                    >
+                      View Page →
+                    </Link>
+                  </div>
+
+                  {/* 2. Clients' Logos & Empanelments */}
+                  <div className="pt-2 font-bold text-[#062B5C] flex items-center justify-between border-t border-slate-100">
+                    <Link
+                      to="/clients"
+                      onClick={handleLinkClick}
+                      className="hover:text-[#1268B3] transition-colors flex items-center gap-1.5 font-bold text-xs"
+                    >
+                      <Award className="w-3.5 h-3.5 text-[#1268B3]" />
+                      <span>79+ Corporate &amp; PSU Partners</span>
+                    </Link>
+                    <Link
+                      to="/clients"
+                      onClick={handleLinkClick}
+                      className="text-[#1268B3] text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 border border-blue-100 hover:bg-[#1268B3] hover:text-white transition-colors"
+                    >
+                      View Page →
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>

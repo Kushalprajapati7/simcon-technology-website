@@ -83,8 +83,8 @@ export const Footer: React.FC = () => {
               aria-label="SIMCON Technology Home"
             >
               <img
-                src="/assets/logo/Simcon_logo.png"
-                alt="SIMCON Technology Pvt. Ltd."
+                src="/assets/logo/simcon-technology-logo.png"
+                alt="SIMCON Technology - Geotechnical & Material Testing Engineering"
                 className="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]"
               />
             </Link>

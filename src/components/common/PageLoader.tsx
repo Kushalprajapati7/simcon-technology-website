@@ -46,8 +46,8 @@ export const PageLoader: React.FC = () => {
         {/* SIMCON Official Logo with Gentle Pulse */}
         <div className="p-3">
           <img
-            src="/assets/logo/Simcon_logo.png"
-            alt="SIMCON Technology Pvt. Ltd."
+            src="/assets/logo/simcon-technology-logo.png"
+            alt="SIMCON Technology - Geotechnical & Material Testing Engineering"
             className="h-11 sm:h-12 md:h-14 w-auto object-contain animate-simcon-pulse select-none drop-shadow-sm"
           />
         </div>

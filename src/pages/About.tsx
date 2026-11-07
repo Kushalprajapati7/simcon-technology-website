@@ -23,9 +23,8 @@ export const About: React.FC = () => {
             <div className="reveal reveal-left lg:col-span-6 space-y-6">
               
               {/* Technical Eyebrow */}
-              <div className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[#D71920]" />
-                <span className="text-xs font-mono font-bold tracking-widest text-slate-500 uppercase">
+              <div className="flex items-center">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#1268B3] uppercase block">
                   COMPANY HISTORY
                 </span>
               </div>
@@ -105,8 +104,8 @@ export const About: React.FC = () => {
               {/* Main Photo Wrapper */}
               <div className="relative z-10 rounded-2xl overflow-hidden border border-slate-200/90 shadow-2xl bg-slate-100">
                 <img
-                  src="/assets/projects/geotechnical-investigation-site-1.png"
-                  alt="SIMCON Field Drilling and Investigation Operations"
+                  src="/assets/projects/nhai-expressway-geotechnical-site-drilling.png"
+                  alt="SIMCON Geotechnical Investigation and Deep Drilling Rig Operations"
                   className="w-full h-auto aspect-[16/11] sm:aspect-[4/3] object-cover"
                 />
 

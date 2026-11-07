@@ -189,8 +189,8 @@ export const GeotechnicalServices: React.FC = () => {
         <div className="absolute inset-y-0 right-0 w-full lg:w-[58%] xl:w-[60%] h-full z-0 overflow-hidden pointer-events-none">
           <div className="w-full h-full relative [clip-path:none] lg:[clip-path:polygon(12%_0,100%_0,100%_100%,26%_100%)]">
             <img
-              src="/assets/hero/simcon_geotech_hero.jpg"
-              alt="SIMCON Geotechnical Investigation Drilling Rig"
+              src="/assets/hero/simcon-geotechnical-drilling-rig-hero.jpg"
+              alt="SIMCON Geotechnical Investigation Drilling Rig and Subsurface Exploration Operations"
               className="w-full h-full object-cover object-center opacity-30 lg:opacity-100 scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#062B5C] via-[#062B5C]/90 lg:via-[#062B5C]/20 to-[#062B5C]/60 lg:to-transparent pointer-events-none" />
@@ -271,9 +271,9 @@ export const GeotechnicalServices: React.FC = () => {
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 space-y-10 sm:space-y-14">
           {/* Header & Section Title */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
-            <div className="space-y-2 max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight leading-tight">
-                Methodology &amp;<br className="hidden sm:inline" /> Geotechnical Workflow<span className="text-[#1268B3]">.</span>
+            <div className="space-y-2 max-w-4xl">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight leading-tight lg:whitespace-nowrap">
+                Methodology &amp; Geotechnical Workflow<span className="text-[#1268B3]">.</span>
               </h2>
               <p className="text-xs sm:text-sm text-[#536271] leading-relaxed pt-1">
                 From initial geological mapping and deep hydraulic rock diamond coring to fully automated triaxial shear testing and finite element settlement modeling, our geotechnical approach eliminates subsurface uncertainty for complex infrastructure.
@@ -502,11 +502,11 @@ export const GeotechnicalServices: React.FC = () => {
 
           {/* A. DETAILED 3-PILLAR PARAMETER CHECKLIST */}
           <div className="space-y-8">
-            <div className="space-y-2 max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#062B5C] tracking-tight">
+            <div className="space-y-2 max-w-7xl">
+              <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#062B5C] tracking-tight lg:whitespace-nowrap">
                 Comprehensive Geotechnical Parameter Breakdown (40+ Tests)
               </h2>
-              <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+              <p className="text-xs sm:text-sm lg:text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed lg:whitespace-nowrap font-normal mt-2">
                 Physical, mechanical, consolidation, and foundation parameters executed in strict accordance with IS, ASTM, and BS standards across our NABL-accredited facilities.
               </p>
             </div>
@@ -528,7 +528,6 @@ export const GeotechnicalServices: React.FC = () => {
                           {cat.title}
                         </h3>
                       </div>
-                      <span className="w-2 h-2 rounded-full bg-[#D71920]" />
                     </div>
                     <p className="text-xs text-[#536271] leading-relaxed">
                       {cat.description}
@@ -568,7 +567,7 @@ export const GeotechnicalServices: React.FC = () => {
               <h3 className="text-xl sm:text-2xl font-bold font-display text-[#062B5C] tracking-tight">
                 NABL Testing Procedures & Apparatus Slideshow
               </h3>
-              <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+              <p className="text-xs sm:text-sm lg:text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed lg:whitespace-nowrap font-normal mt-2">
                 Continuous 4-up automatic slideshow of calibrated testing machines, intact rock specimens, and in-situ foundation penetration setups with testing labels and standard test codes.
               </p>
             </div>

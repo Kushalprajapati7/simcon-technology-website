@@ -17,8 +17,7 @@ export const Accreditations: React.FC = () => {
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
           <div className="max-w-3xl space-y-4 reveal reveal-left">
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D71920]" />
-              <span className="font-mono text-[11px] font-bold tracking-[0.15em] text-slate-300 uppercase">
+              <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#1268B3] uppercase block">
                 ISO/IEC 17025:2017 CERTIFICATION
               </span>
             </div>

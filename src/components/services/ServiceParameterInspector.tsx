@@ -141,7 +141,7 @@ export const TEST_METADATA_REGISTRY: Record<string, { image: string; code: strin
     description: "Non-destructive surface rebound hardness testing for intact rock cores and tunnel wall faces."
   },
   "Point Load Strength Index Test": {
-    image: "/assets/services/rock-testing/point-load-testing-machine.png",
+    image: "/assets/services/rock-testing/point-load-test-apparatus.png",
     code: "IS 8764 / ASTM D5731",
     description: "Rapid diametral and axial index testing for core classification and empirical conversion to compressive strength."
   },
@@ -193,7 +193,7 @@ export const TEST_METADATA_REGISTRY: Record<string, { image: string; code: strin
     description: "Piezocone dynamic penetration recording tip resistance (qc), sleeve friction (fs), and dynamic pore pressure (u2)."
   },
   "Field Permeability Test": {
-    image: "/assets/services/field-testing/field-testing-1.png",
+    image: "/assets/services/field-testing/borehole-permeability-packer-test.png",
     code: "IS 5529 (Parts 1 & 2)",
     description: "Borehole pumping-in / pumping-out and Packer water pressure tests in overburden and fractured bedrock."
   },
@@ -203,7 +203,7 @@ export const TEST_METADATA_REGISTRY: Record<string, { image: string; code: strin
     description: "Menard cylindrical expandable probe measurement of in-situ horizontal stress-strain modulus (E) and limit pressure (Pl)."
   },
   "Bi-Directional Load Test": {
-    image: "/assets/services/field-testing/pile-load-test-reaction-frame.png",
+    image: "/assets/services/field-testing/anchor-pile-load-test.png",
     code: "ASTM D8169",
     description: "Sacrificial embedded Osterberg-type hydraulic cell loading deep drilled pile shafts from within the rock socket."
   },
@@ -213,12 +213,12 @@ export const TEST_METADATA_REGISTRY: Record<string, { image: string; code: strin
     description: "Static and cyclic plate bearing test for allowable soil bearing capacity and subgrade reaction modulus (k-value)."
   },
   "Static/Cyclic Pile Load Test – Vertical, Pullout & Lateral (SPLT)": {
-    image: "/assets/services/field-testing/pile-load-test-reaction-frame.png",
+    image: "/assets/services/field-testing/anchor-pile-load-test.png",
     code: "IS 2911 (Part 4) / ASTM D1143 & D3966",
     description: "Deep foundation compressive, uplift pullout, and lateral thrust validation up to 2500+ tonnes with calibrated hydraulic rams."
   },
   "High Strain Pile Dynamic Test (DPLT)": {
-    image: "/assets/services/field-testing/field-testing-10.png",
+    image: "/assets/services/field-testing/high-strain-pile-dynamic-test-dplt.png",
     code: "ASTM D4945 / IS 14893",
     description: "Drop-weight impact monitoring with strain transducers and accelerometers processed using CAPWAP signal matching."
   },
@@ -270,7 +270,7 @@ export const TEST_METADATA_REGISTRY: Record<string, { image: string; code: strin
     description: "Transient needle probe method determining soil thermal conductivity and thermal runaway resistance for underground cables."
   },
   "Borehole Deviation Test": {
-    image: "/assets/services/field-testing/field-testing-9.png",
+    image: "/assets/services/field-testing/borehole-deviation-inclinometer-test.png",
     code: "IS 1892",
     description: "Gyroscopic / magnetic borehole inclinometer profiling vertical alignment, drift, and spatial trajectory of deep boreholes."
   },

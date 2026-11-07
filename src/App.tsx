@@ -122,7 +122,7 @@ export const App: React.FC = () => {
         </main>
         <Footer />
         {/* Floating Actions: Aligned in one horizontal line at bottom-right */}
-        <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2.5 sm:gap-3 pointer-events-none">
+        <div className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40 flex items-center gap-2 pointer-events-none">
           <ScrollToTopButton />
           <WhatsAppButton />
         </div>

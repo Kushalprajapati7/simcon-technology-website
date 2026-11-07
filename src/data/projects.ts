@@ -52,7 +52,7 @@ export const PROJECTS: ProjectItem[] = [
     gallery: [
       "/assets/projects/project-sabarmati-bullet-train-hub.png",
       "/assets/projects/project-bullet-train-pier-testing.png",
-      "/assets/projects/project-metro-bullet-train-1.png"
+      "/assets/projects/mumbai-ahmedabad-bullet-train-pier-testing.png"
     ],
     scope: [
       "Deep rotary boreholes along viaduct alignments",
@@ -128,7 +128,7 @@ export const PROJECTS: ProjectItem[] = [
     featuredImage: "/assets/projects/project-rishikesh-tunnel.jpg",
     gallery: [
       "/assets/projects/project-rishikesh-tunnel.jpg",
-      "/assets/projects/geotechnical-investigation-site-1.png"
+      "/assets/projects/nhai-expressway-geotechnical-site-drilling.png"
     ],
     scope: [
       "Deep mountain geotechnical drilling and geological classification",
@@ -221,7 +221,7 @@ export const PROJECTS: ProjectItem[] = [
       "NABL Laboratory Testing"
     ],
     description: "Comprehensive subsurface investigation and foundation capacity recommendations for landside inflight flight catering infrastructure at Lucknow Airport.",
-    featuredImage: "/assets/projects/project-railway-aviation-8.jpeg",
+    featuredImage: "/assets/projects/lucknow-airport-catering-foundation-investigation.jpeg",
     scope: [
       "Soil boring and standard penetration testing",
       "Chemical suitability testing of soil and groundwater",
@@ -244,7 +244,7 @@ export const PROJECTS: ProjectItem[] = [
       "Laboratory Mechanics of Marine Clays"
     ],
     description: "Geotechnical exploration at the backup area of Oil Jetty No. 07 and green hydrogen industrial land to support heavy liquid cargo storage tanks.",
-    featuredImage: "/assets/projects/geotechnical-investigation-site-1.png",
+    featuredImage: "/assets/projects/nhai-expressway-geotechnical-site-drilling.png",
     scope: [
       "Coastal borehole drilling in intertidal marine sediments",
       "Piezometer installation and cyclic consolidation tests",
@@ -267,7 +267,7 @@ export const PROJECTS: ProjectItem[] = [
       "Plate Load Testing"
     ],
     description: "Geotechnical subsurface exploration and yard pavement bearing assessment for DP World's major container freight station and township development.",
-    featuredImage: "/assets/projects/geotechnical-investigation-site-2.png",
+    featuredImage: "/assets/projects/dedicated-freight-corridor-geotechnical-site.png",
     scope: [
       "Extensive borehole grid for heavy container stacking yards",
       "Cyclic plate load tests to evaluate subgrade resilient modulus",
@@ -314,11 +314,11 @@ export const PROJECTS: ProjectItem[] = [
       "Condition Assessment & Integrity Review"
     ],
     description: "Comprehensive non-destructive diagnostic evaluation and structural health assessment of operational power plant structures, boiler foundation rafts, and cooling systems.",
-    featuredImage: "/assets/projects/project-adani-thermal-21.png",
+    featuredImage: "/assets/projects/adani-thermal-power-ultrasonic-pulse-velocity.png",
     gallery: [
-      "/assets/projects/project-adani-thermal-21.png",
-      "/assets/projects/project-adani-thermal-20.png",
-      "/assets/projects/project-adani-thermal-22.png"
+      "/assets/projects/adani-thermal-power-ultrasonic-pulse-velocity.png",
+      "/assets/projects/adani-thermal-power-rebound-hammer-test.png",
+      "/assets/projects/adani-thermal-power-concrete-core-extraction.png"
     ],
     scope: [
       "UPV velocity mapping across heavy concrete pedestals",
@@ -367,7 +367,7 @@ export const PROJECTS: ProjectItem[] = [
       "UPV & Crack Depth Measurement"
     ],
     description: "Subsurface geotechnical investigation, rotary core drilling, ground improvement quality surveillance, and non-destructive testing for mega petrochemical refinery works.",
-    featuredImage: "/assets/projects/project-metro-bullet-train-12.png",
+    featuredImage: "/assets/projects/petrochemical-refinery-rotary-core-drilling.png",
     scope: [
       "Extensive deep rotary boring and continuous rock recovery",
       "Ground improvement surveillance for stone column installations",

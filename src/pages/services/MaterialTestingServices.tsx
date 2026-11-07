@@ -330,9 +330,9 @@ export const MaterialTestingServices: React.FC = () => {
       <section className="py-18 sm:py-24 lg:py-28 bg-white border-b border-slate-200">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 space-y-10 sm:space-y-14">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
-            <div className="space-y-2 max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight leading-tight">
-                Methodology &amp;<br className="hidden sm:inline" /> Quality Assurance Workflow<span className="text-[#1268B3]">.</span>
+            <div className="space-y-2 max-w-4xl">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight leading-tight lg:whitespace-nowrap">
+                Methodology &amp; Quality Assurance Workflow<span className="text-[#1268B3]">.</span>
               </h2>
               <p className="text-xs sm:text-sm text-[#536271] leading-relaxed pt-1">
                 From standardized barcoded intake and controlled curing conditioning to automated closed-loop UTM testing and QR-coded certified reporting, SIMCON delivers bulletproof compliance for megaprojects.
@@ -599,7 +599,7 @@ export const MaterialTestingServices: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight">
               Analytical Chemical Assaying Across 6 Construction Matrices
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm lg:text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed lg:whitespace-nowrap font-normal mt-2">
               NABL-accredited analytical chemistry examining cementitious binders, aggregate alkali-silica reactivity, admixtures, groundwater aggressiveness, and steel rebar carbon composition.
             </p>
           </div>
@@ -686,7 +686,7 @@ export const MaterialTestingServices: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight">
               Compliant Standards &amp; Test Codes
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-3xl mt-2">
+            <p className="text-xs sm:text-sm lg:text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed lg:whitespace-nowrap font-normal mt-2">
               NABL laboratory testing and calibration procedures executed in strict accordance with applicable Indian (IS) and international (ASTM / BS) standards.
             </p>
           </div>
