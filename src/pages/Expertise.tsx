@@ -89,7 +89,7 @@ export const Expertise: React.FC = () => {
       <section className="bg-[#062B5C] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
-          <div className="max-w-3xl space-y-4">
+          <div className="max-w-3xl space-y-4 reveal reveal-left">
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-white leading-[1.12]">
               Technical Expertise & Numerical Modeling.
             </h1>
@@ -103,17 +103,20 @@ export const Expertise: React.FC = () => {
       {/* Six Technical Domains Grid */}
       <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <SectionHeading
-            technicalLabel="ENGINEERING CAPABILITIES"
-            title="Core Specialized Competencies"
-            description="Our geotechnical consulting practice bridges investigative testing with practical structural and civil engineering execution."
-          />
+          <div className="reveal reveal-up">
+            <SectionHeading
+              technicalLabel="ENGINEERING CAPABILITIES"
+              title="Core Specialized Competencies"
+              description="Our geotechnical consulting practice bridges investigative testing with practical structural and civil engineering execution."
+            />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {domains.map((dom, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-xl border border-slate-200 shadow-2xs flex flex-col justify-between hover:border-[#1268B3] transition-colors"
+                style={{ '--delay': `${0.08 * (idx + 1)}s` } as React.CSSProperties}
+                className="reveal reveal-up bg-white p-8 rounded-xl border border-slate-200 shadow-2xs flex flex-col justify-between hover:border-[#1268B3] transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -151,17 +154,20 @@ export const Expertise: React.FC = () => {
       {/* Software Arsenal */}
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <SectionHeading
-            technicalLabel="SOFTWARE TOOLS"
-            title="Industry-Standard Computational Platforms"
-            description="Our engineers utilize globally validated engineering software to simulate complex soil-structure behavior."
-          />
+          <div className="reveal reveal-up">
+            <SectionHeading
+              technicalLabel="SOFTWARE TOOLS"
+              title="Industry-Standard Computational Platforms"
+              description="Our engineers utilize globally validated engineering software to simulate complex soil-structure behavior."
+            />
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {softwareSuite.map((sw, idx) => (
               <div
                 key={idx}
-                className="bg-[#F7F8FA] p-6 rounded-lg border border-slate-200 hover:border-[#062B5C] transition-colors"
+                style={{ '--delay': `${0.05 * ((idx % 4) + 1)}s` } as React.CSSProperties}
+                className="reveal reveal-up bg-[#F7F8FA] p-6 rounded-lg border border-slate-200 hover:border-[#062B5C] transition-all"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Cpu className="w-4 h-4 text-[#1268B3]" />

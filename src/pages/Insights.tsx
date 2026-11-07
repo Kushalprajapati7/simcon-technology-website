@@ -10,7 +10,7 @@ export const Insights: React.FC = () => {
       <section className="bg-[#062B5C] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
-          <div className="max-w-3xl space-y-4">
+          <div className="max-w-3xl space-y-4 reveal reveal-left">
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-white leading-[1.12]">
               Engineering Insights & Methodologies.
             </h1>
@@ -25,10 +25,11 @@ export const Insights: React.FC = () => {
       <section className="py-20 bg-[#F7F8FA]">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {INSIGHTS.map((item) => (
+            {INSIGHTS.map((item, idx) => (
               <div
                 key={item.id}
-                className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md hover:border-[#1268B3]/50 transition-all flex flex-col justify-between"
+                style={{ '--delay': `${0.1 * (idx + 1)}s` } as React.CSSProperties}
+                className="reveal reveal-up bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md hover:border-[#1268B3]/50 transition-all flex flex-col justify-between"
               >
                 <div className="p-8 space-y-4">
                   <div className="flex items-center justify-between">

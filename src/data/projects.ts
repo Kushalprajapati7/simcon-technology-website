@@ -391,10 +391,14 @@ export const PROJECTS: ProjectItem[] = [
     description: "High-strain dynamic pile testing on foundation piles supporting heavy chemical storage tanks and process equipment in coastal Kandla.",
     featuredImage: "/assets/projects/project-iffco-pile-testing.jpg",
     scope: [
-      "Dynamic monitoring of pile driving stresses",
+      "Dynamic monitoring of pile driving stresses and energy transfer",
       "CAPWAP signal matching to evaluate ultimate pile bearing capacity",
+      "Skin friction and end-bearing resistance distribution analysis",
       "Settlement behavior evaluation under high operational loads"
     ],
+    challenge: "Heavy chemical bulk storage tanks and dynamic processing units required high-load pile foundations in coastal Kandla, where soft marine clays and high water tables presented settlement risks. Conventional static load tests would have caused multi-week scheduling delays and prohibitive reaction frame costs.",
+    solution: "SIMCON deployed High Strain Dynamic Pile Load Testing (PDA Method) conforming to ASTM D4945-17 and IS 2911 (Part 4) using calibrated strain transducers and accelerometers with CAPWAP numerical analysis to determine ultimate resistance within 48 hours.",
+    outcome: "Verified ultimate pile capacity exceeding design requirements with negligible permanent settlement under operational load, enabling immediate EPC foundation clearance and commissioning of storage facilities.",
     seoTitle: "IFFCO Kandla Pile Load Testing | SIMCON Technology",
     seoDescription: "PDA dynamic pile load testing and CAPWAP analysis for IFFCO industrial facilities."
   }

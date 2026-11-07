@@ -52,12 +52,14 @@
     font-family: var(--font-sans);
     color: var(--color-text);
     background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
-    color: var(--color-primary);
+    letter-spacing: -0.028em;
+    color: #062B5C;
   }
 
   .text-white h1,
@@ -65,19 +67,7 @@
   .text-white h3,
   .text-white h4,
   .text-white h5,
-  .text-white h6,
-  [class*="text-white"] h1,
-  [class*="text-white"] h2,
-  [class*="text-white"] h3,
-  [class*="text-white"] h4,
-  [class*="bg-[#062B5C]"] h1,
-  [class*="bg-[#062B5C]"] h2,
-  [class*="bg-[#062B5C]"] h3,
-  [class*="bg-[#062B5C]"] h4,
-  [class*="bg-[#041B3B]"] h1,
-  [class*="bg-[#041B3B]"] h2,
-  [class*="bg-[#041B3B]"] h3,
-  [class*="bg-[#041B3B]"] h4 {
+  .text-white h6 {
     color: #ffffff;
   }
 }
@@ -153,13 +143,77 @@
   color: #D71920;
 }
 
-.bg-tech-grid,
 .bg-tech-grid-dark {
-  background-image: none !important;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.bg-tech-grid,
+.bg-tech-grid-light {
+  background-image: 
+    linear-gradient(to right, rgba(6, 43, 92, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 43, 92, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Architectural Soft Shadows & Hairline Card Styling */
+.shadow-navy-card {
+  box-shadow: 0 1px 3px 0 rgba(6, 43, 92, 0.04), 0 8px 24px -4px rgba(6, 43, 92, 0.07);
+}
+.shadow-navy-card:hover {
+  box-shadow: 0 4px 12px 0 rgba(6, 43, 92, 0.06), 0 16px 36px -6px rgba(6, 43, 92, 0.12);
+}
+
+.glass-card-dark {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-dark:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(43, 126, 200, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 25px -5px rgba(18, 104, 179, 0.35);
 }
 
 .bg-contour-pattern {
   background-image: radial-gradient(circle at 50% 50%, rgba(18, 104, 179, 0.06) 0%, transparent 60%);
+}
+
+:root {
+  --header-height: 72px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 76px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 80px;
+  }
+}
+
+/* Responsive Hero Section:
+   - Mobile & Tablet: Natural cohesive height with balanced spacing (eliminates awkward empty voids)
+   - Desktop (lg: 1024px+): Full viewport height
+*/
+.hero-section {
+  min-height: auto;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    min-height: calc(100vh - var(--header-height, 80px));
+    min-height: calc(100dvh - var(--header-height, 80px));
+    min-height: calc(100svh - var(--header-height, 80px));
+  }
 }
 
 /* Accessibility & Reduced Motion */
@@ -170,6 +224,126 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .reveal,
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-fade,
+  .reveal-img {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================
+   Modern Scroll Reveal & Image Animation System
+   Inspired by contemporary engineering & architectural aesthetics
+   ========================================== */
+
+/* Base reveal item: subtle vertical rise + smooth fade */
+.reveal,
+.reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: opacity, transform;
+}
+
+/* Directional reveal: from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: opacity, transform;
+}
+
+/* Directional reveal: from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: opacity, transform;
+}
+
+/* Scale reveal: gentle scale-up from 0.95 */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: opacity, transform;
+}
+
+/* Pure fade reveal */
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: opacity;
+}
+
+/* Activated state when scrolled into view */
+.reveal.is-revealed,
+.reveal-up.is-revealed,
+.reveal-left.is-revealed,
+.reveal-right.is-revealed,
+.reveal-scale.is-revealed,
+.reveal-fade.is-revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Modern Image Reveal Container & Image Effect */
+.reveal-img-wrap {
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.reveal-img {
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+  will-change: opacity, transform;
+}
+
+.reveal-img.is-revealed,
+.is-revealed .reveal-img,
+.is-revealed > .reveal-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Silky smooth hover depth on images */
+.reveal-img-wrap:hover .reveal-img.is-revealed,
+.reveal-img-wrap:hover .reveal-img {
+  transform: scale(1.04);
+}
+
+/* Stagger presets for sequential card grids */
+.stagger-1 { --delay: 0.06s; }
+.stagger-2 { --delay: 0.12s; }
+.stagger-3 { --delay: 0.18s; }
+.stagger-4 { --delay: 0.24s; }
+.stagger-5 { --delay: 0.30s; }
+.stagger-6 { --delay: 0.36s; }
+.stagger-7 { --delay: 0.42s; }
+.stagger-8 { --delay: 0.48s; }
+
+/* Subtle floating keyframe for badges */
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-float-subtle {
+  animation: floatSubtle 4s ease-in-out infinite;
 }
 
 /* ==========================================
@@ -221,11 +395,57 @@
 }
 
 /* Utility to cleanly hide scrollbars for horizontal pill bars */
-.no-scrollbar::-webkit-scrollbar {
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
   display: none;
 }
-.no-scrollbar {
+.no-scrollbar,
+.scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ==========================================
+   SIMCON Brand Page Loader Animations
+   ========================================== */
+@keyframes simconPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+    filter: drop-shadow(0 10px 20px rgba(18, 104, 179, 0.16));
+  }
+}
+
+@keyframes simconProgress {
+  0% {
+    left: -40%;
+    width: 40%;
+  }
+  50% {
+    left: 25%;
+    width: 55%;
+  }
+  100% {
+    left: 100%;
+    width: 40%;
+  }
+}
+
+.animate-simcon-pulse {
+  animation: simconPulse 1.8s ease-in-out infinite;
+}
+
+.animate-simcon-progress {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  animation: simconProgress 1.35s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+
+
 

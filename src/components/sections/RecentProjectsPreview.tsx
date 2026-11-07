@@ -28,17 +28,18 @@ export const RecentProjectsPreview: React.FC = () => {
 
         {/* 4 Grid Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredProjects.map((proj) => (
+          {featuredProjects.map((proj, idx) => (
             <Link
               key={proj.id}
               to={`/projects/${proj.slug}`}
-              className="group relative h-[270px] sm:h-[285px] lg:h-[295px] xl:h-[320px] 2xl:h-[340px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col justify-end border border-slate-200/80 bg-slate-900"
+              style={{ '--delay': `${0.09 * (idx + 1)}s` } as React.CSSProperties}
+              className="reveal reveal-up reveal-img-wrap group relative h-[270px] sm:h-[285px] lg:h-[295px] xl:h-[320px] 2xl:h-[340px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-end border border-slate-200/80 bg-slate-900"
             >
               {/* Full Background Image */}
               <img
                 src={proj.featuredImage}
                 alt={proj.title}
-                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+                className="reveal-img absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                 loading="lazy"
               />
 
@@ -49,8 +50,8 @@ export const RecentProjectsPreview: React.FC = () => {
                 </span>
               </div>
 
-              {/* Bottom: Solid Theme Navy Strip (Visible ONLY in normal state, hides on hover) */}
-              <div className="relative z-10 bg-[#062B5C] px-3.5 py-3 text-white transition-opacity duration-300 group-hover:opacity-0 group-hover:pointer-events-none">
+              {/* Bottom: Solid Theme Navy Strip (Consistent Fixed Height for all cards) */}
+              <div className="relative z-10 bg-[#062B5C] px-3.5 sm:px-4 h-[68px] sm:h-[74px] text-white transition-opacity duration-300 group-hover:opacity-0 group-hover:pointer-events-none flex items-center">
                 <h3 className="font-display font-bold text-xs sm:text-sm text-white leading-snug line-clamp-2">
                   {proj.title}
                 </h3>

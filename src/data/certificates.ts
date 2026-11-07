@@ -5,6 +5,9 @@ export interface AccreditationCertificate {
   standard: string;
   body: string;
   imagePath: string;
+  qrCodePath: string;
+  validUntil: string;
+  scope: string;
   scopeDescription: string;
   featuredParameters: string[];
 }
@@ -17,6 +20,9 @@ export const ACCREDITATIONS: AccreditationCertificate[] = [
     standard: "ISO/IEC 17025:2017",
     body: "National Accreditation Board for Testing and Calibration Laboratories (NABL)",
     imagePath: "/assets/certificates/TC-5077-Gandhidham.jpg",
+    qrCodePath: "/assets/certificates/NABL-TC-5077.png",
+    validUntil: "20/11/2029",
+    scope: "Geotechnical, Soil, Rock & Construction Material Testing",
     scopeDescription: "Accredited for comprehensive geotechnical soil and rock testing, chemical analysis, physical mechanics, and civil engineering materials.",
     featuredParameters: [
       "Soil Laboratory Mechanics (Consolidation, Triaxial, UCS)",
@@ -32,6 +38,9 @@ export const ACCREDITATIONS: AccreditationCertificate[] = [
     standard: "ISO/IEC 17025:2017",
     body: "National Accreditation Board for Testing and Calibration Laboratories (NABL)",
     imagePath: "/assets/certificates/TC-9050-Ahmedabad.jpg",
+    qrCodePath: "/assets/certificates/NABL-TC-9050.png",
+    validUntil: "30/11/2028",
+    scope: "Geotechnical, Structural and Material Testing",
     scopeDescription: "Accredited testing facility catering to transit infrastructure, high-speed rail, metro corridors, and industrial structures.",
     featuredParameters: [
       "Construction Material Testing (Concrete, Cement, Aggregate)",
@@ -47,6 +56,9 @@ export const ACCREDITATIONS: AccreditationCertificate[] = [
     standard: "ISO/IEC 17025:2017",
     body: "National Accreditation Board for Testing and Calibration Laboratories (NABL)",
     imagePath: "/assets/certificates/TC-13273-Lucknow.jpg",
+    qrCodePath: "/assets/certificates/NABL-TC-13273.png",
+    validUntil: "08/11/2029",
+    scope: "Highways, Pavements & Geotechnical Material Testing",
     scopeDescription: "Accredited regional laboratory supporting major expressway, railway corridor, and infrastructure projects across Northern India.",
     featuredParameters: [
       "Aggregate & Bituminous Testing",

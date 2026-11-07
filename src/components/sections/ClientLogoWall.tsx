@@ -12,9 +12,14 @@ export const ClientLogoWall: React.FC = () => {
     <section className="py-20 lg:py-24 bg-[#F8FAFC] border-b border-slate-200/80 relative">
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <div className="reveal reveal-up text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#1268B3] uppercase block">
+              CLIENT TRUST &amp; REPUTATION
+            </span>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold font-display text-[#062B5C] tracking-tight leading-[1.15]">
-            Trusted by Premier <span className="text-[#1E60FF]">Infrastructure Organizations</span>
+            Trusted by Premier <span className="text-[#1268B3]">Infrastructure Organizations</span><span className="text-[#D71920]">.</span>
           </h2>
 
           <p className="mt-3.5 text-sm sm:text-base text-[#536271] max-w-2xl mx-auto leading-relaxed">
@@ -23,7 +28,7 @@ export const ClientLogoWall: React.FC = () => {
         </div>
 
         {/* 16 Logos Grid (2 rows of 8 logos matching the reference layout) */}
-        <div className="space-y-4 sm:space-y-6 w-full mx-auto">
+        <div className="reveal reveal-scale space-y-4 sm:space-y-6 w-full mx-auto" style={{ '--delay': '0.12s' } as React.CSSProperties}>
           {/* Row 1 (8 Logos) */}
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 items-center divide-y sm:divide-y-0 sm:divide-x divide-slate-200/80 py-2 sm:py-3">
             {row1Clients.map((client) => (

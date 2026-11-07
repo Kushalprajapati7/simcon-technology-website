@@ -10,8 +10,8 @@ export const FeaturedProject: React.FC = () => {
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Case Narrative */}
-          <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-[1.12]">
+          <div className="reveal reveal-left lg:col-span-6 space-y-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-[1.12] text-white">
               Mumbai–Ahmedabad High Speed Rail
             </h2>
 
@@ -56,12 +56,12 @@ export const FeaturedProject: React.FC = () => {
           </div>
 
           {/* Right Project Image */}
-          <div className="lg:col-span-6 relative">
-            <div className="rounded-xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900">
+          <div className="reveal reveal-right lg:col-span-6 relative" style={{ '--delay': '0.15s' } as React.CSSProperties}>
+            <div className="reveal-img-wrap rounded-xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900">
               <img
                 src="/assets/projects/project-metro-bullet-train-1.png"
                 alt="Mumbai-Ahmedabad High Speed Rail Bullet Train Project by SIMCON"
-                className="w-full h-[400px] sm:h-[460px] object-cover"
+                className="reveal-img w-full h-[400px] sm:h-[460px] object-cover"
               />
             </div>
           </div>

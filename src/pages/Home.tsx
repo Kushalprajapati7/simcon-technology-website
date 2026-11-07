@@ -18,7 +18,7 @@ export const Home: React.FC = () => {
   const [selectedCertificate, setSelectedCertificate] = useState<AccreditationCertificate | null>(null);
 
   return (
-    <div className="pt-[72px]">
+    <div className="pt-[var(--header-height,72px)]">
       <HeroSection />
       <WhySimcon />
       <EngineeringFramework />

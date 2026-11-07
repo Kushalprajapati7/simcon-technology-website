@@ -16,7 +16,7 @@ export const Clients: React.FC = () => {
       <section className="bg-[#062B5C] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
-          <div className="max-w-3xl space-y-4">
+          <div className="max-w-3xl space-y-4 reveal reveal-left">
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-white leading-[1.12]">
               Partnerships Built on Engineering Trust.
             </h1>
@@ -38,10 +38,10 @@ export const Clients: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-1.5 text-xs font-mono rounded whitespace-nowrap transition-colors ${
+                className={`px-3 py-1.5 text-xs font-mono rounded whitespace-nowrap transition-colors cursor-pointer ${
                   activeCategory === cat
-                    ? 'bg-[#062B5C] text-white font-bold'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    ? 'bg-[#1268B3] text-white font-bold shadow-2xs'
+                    : 'bg-slate-100 text-slate-700 hover:bg-blue-50 hover:text-[#1268B3]'
                 }`}
               >
                 {cat}
@@ -61,10 +61,11 @@ export const Clients: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {filteredClients.map((client) => (
+            {filteredClients.map((client, idx) => (
               <div
                 key={client.id}
-                className="bg-white p-5 rounded-xl border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-[#1268B3]/50 transition-all flex flex-col justify-between h-44 group"
+                style={{ '--delay': `${0.04 * ((idx % 5) + 1)}s` } as React.CSSProperties}
+                className="reveal reveal-up bg-white p-5 rounded-xl border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-[#1268B3]/50 transition-all flex flex-col justify-between h-44 group"
               >
                 <div className="flex-1 flex items-center justify-center p-2">
                   {client.logoPath ? (

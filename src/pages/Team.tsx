@@ -55,7 +55,7 @@ export const Team: React.FC = () => {
       <section id="leadership" className="py-16 sm:py-20 bg-white border-b border-slate-200">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           {/* Section Header */}
-          <div className="mb-10 sm:mb-12">
+          <div className="reveal reveal-up mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-[#062B5C] tracking-tight uppercase">
               LEADERSHIP & COMMITMENT
             </h2>
@@ -67,7 +67,7 @@ export const Team: React.FC = () => {
           {/* Slide 1 Grid Layout: Left Column (Chairman's Message) & Right Column (MD + Core Team) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             {/* LEFT COLUMN: CHAIRMAN'S MESSAGE */}
-            <div className="lg:col-span-5 flex">
+            <div className="reveal reveal-left lg:col-span-5 flex">
               <div className="w-full bg-[#062B5C] text-white rounded-2xl p-6 sm:p-8 lg:p-9 shadow-xl border border-[#1268B3]/30 flex flex-col justify-between relative overflow-hidden">
                 <div className="absolute inset-0 bg-tech-grid-dark opacity-20 pointer-events-none" />
 
@@ -138,17 +138,17 @@ export const Team: React.FC = () => {
             </div>
 
             {/* RIGHT COLUMN: MANAGING DIRECTOR + OUR CORE TEAM */}
-            <div className="lg:col-span-7 flex flex-col justify-between space-y-8">
+            <div className="reveal reveal-right lg:col-span-7 flex flex-col justify-between space-y-8" style={{ '--delay': '0.15s' } as React.CSSProperties}>
               {/* TOP: Dr. Kalpana Maheshwari (Managing Director) */}
               {managingDirector && (
                 <div className="bg-[#F8FAFC] rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm relative overflow-hidden">
                   <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
                     <div className="sm:col-span-4">
-                      <div className="aspect-[4/4.5] rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
+                      <div className="reveal-img-wrap aspect-[4/4.5] rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
                         <img
                           src={managingDirector.image}
                           alt={`${managingDirector.name} - ${managingDirector.designation}`}
-                          className="w-full h-full object-cover object-top hover:scale-102 transition-transform duration-300"
+                          className="reveal-img w-full h-full object-cover object-top hover:scale-102 transition-transform duration-300"
                         />
                       </div>
                     </div>
@@ -329,9 +329,9 @@ export const Team: React.FC = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveDepartment(tab.id as any)}
-                  className={`px-3 py-1.5 text-xs font-mono rounded-md transition-colors ${activeDepartment === tab.id
-                      ? 'bg-[#062B5C] text-white font-bold shadow-xs'
-                      : 'bg-[#F1F3F7] text-slate-700 hover:bg-slate-200 border border-slate-200'
+                  className={`px-3 py-1.5 text-xs font-mono rounded-md transition-colors cursor-pointer ${activeDepartment === tab.id
+                      ? 'bg-[#1268B3] text-white font-bold shadow-xs'
+                      : 'bg-[#F1F3F7] text-slate-700 hover:bg-blue-50 hover:text-[#1268B3] hover:border-[#1268B3]/40 border border-slate-200'
                     }`}
                 >
                   {tab.label}

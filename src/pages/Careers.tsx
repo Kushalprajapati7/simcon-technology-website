@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CAREER_OPENINGS, WORK_CULTURE_HIGHLIGHTS } from '@/data/careers';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { Send, CheckCircle2, AlertCircle, Clock, MapPin } from 'lucide-react';
@@ -48,44 +49,63 @@ export const Careers: React.FC = () => {
   return (
     <div className="pt-[72px]">
       {/* Hero */}
-      <section className="bg-[#062B5C] text-white py-20 relative overflow-hidden">
+      <section className="bg-[#062B5C] text-white py-12 sm:py-16 lg:py-20 relative overflow-hidden border-b border-[#0A3D78]">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-white leading-[1.12]">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10 w-full">
+          <div className="max-w-4xl space-y-3.5 sm:space-y-4 reveal reveal-left">
+            {/* Breadcrumb Navigation */}
+            <nav className="flex items-center gap-1.5 sm:gap-2 text-xs font-mono text-slate-300 flex-wrap" aria-label="Breadcrumb">
+              <Link to="/" className="hover:text-white transition-colors">Home</Link>
+              <span className="text-slate-400">&gt;</span>
+              <span className="text-slate-200">Careers</span>
+            </nav>
+
+            {/* Technical Eyebrow (Services Page Sky-Blue Format) */}
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.18em] sm:tracking-[0.2em] text-sky-300 uppercase">
+                CAREERS &amp; TALENT
+              </span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white leading-[1.12]">
               Build Your Career with SIMCON Technology.
             </h1>
-            <p className="text-base text-slate-300 leading-relaxed pt-2">
-              Join an engineering enterprise guided by IIT & NIT doctorates, operating modern digitalized testing laboratories and executing strategic infrastructure projects across India.
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl font-normal">
+              Join an engineering enterprise guided by IIT &amp; NIT doctorates, operating modern digitalized testing laboratories and executing strategic infrastructure projects across India.
             </p>
           </div>
         </div>
       </section>
 
       {/* Culture Highlights */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-20 bg-gradient-to-b from-[#F8FAFC] via-[#F1F6FC] to-[#EDF3FA] border-b border-slate-200">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <SectionHeading
-            technicalLabel="WORK ENVIRONMENT"
-            title="Why Engineers Build Their Future Here"
-            description="Our people-first philosophy pairs challenging technical assignments with long-term professional stability and academic mentoring."
-          />
+          <div className="reveal reveal-up">
+            <SectionHeading
+              technicalLabel="WORK ENVIRONMENT"
+              title="Why Engineers Build Their Future Here"
+              description="Our people-first philosophy pairs challenging technical assignments with long-term professional stability and academic mentoring."
+            />
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {WORK_CULTURE_HIGHLIGHTS.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-[#F7F8FA] p-6 rounded-xl border border-slate-200 hover:border-[#1268B3] transition-colors"
+                style={{ '--delay': `${0.08 * (idx + 1)}s` } as React.CSSProperties}
+                className="reveal reveal-up bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/90 shadow-navy-card hover:border-[#1268B3]/60 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
               >
-                <span className="font-mono text-xs font-bold text-[#D71920] block mb-2">
-                  0{idx + 1}
-                </span>
-                <h3 className="font-display font-bold text-base text-[#062B5C] mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-[#536271] leading-relaxed">
-                  {item.description}
-                </p>
+                <div>
+                  <span className="font-mono text-xs font-bold text-[#D71920] block mb-2">
+                    0{idx + 1}
+                  </span>
+                  <h3 className="font-display font-bold text-base text-[#062B5C] mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-[13px] text-[#536271] leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -97,9 +117,9 @@ export const Careers: React.FC = () => {
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Openings List */}
-            <div className="lg:col-span-6 space-y-6">
+            <div className="reveal reveal-left lg:col-span-6 space-y-6">
               <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block mb-1">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#1268B3] uppercase block mb-1">
                   CURRENT VACANCIES
                 </span>
                 <h2 className="text-2xl font-bold font-display text-[#062B5C]">
@@ -154,9 +174,9 @@ export const Careers: React.FC = () => {
             </div>
 
             {/* Right Static Application Form */}
-            <div className="lg:col-span-6 bg-white p-8 sm:p-10 rounded-xl border border-slate-200 shadow-sm lg:sticky lg:top-24">
+            <div className="reveal reveal-right lg:col-span-6 bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-navy-card lg:sticky lg:top-24">
               <div className="mb-6 border-b border-slate-100 pb-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block mb-1">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#1268B3] uppercase block mb-1">
                   ONLINE APPLICATION
                 </span>
                 <h3 className="text-xl font-bold font-display text-[#062B5C]">
@@ -249,10 +269,10 @@ export const Careers: React.FC = () => {
                         onChange={(e) => setFormState({ ...formState, position: e.target.value })}
                         className="w-full px-3.5 py-2 text-xs rounded border border-slate-200 focus:outline-none focus:border-[#062B5C] bg-[#F7F8FA]"
                       >
-                        {CAREER_OPENINGS.map(job => (
+                        {CAREER_OPENINGS.map((job) => (
                           <option key={job.id} value={job.title}>{job.title}</option>
                         ))}
-                        <option value="General Engineering Application">General Engineering Application</option>
+                        <option value="General Engineering Candidacy">General Engineering Candidacy</option>
                       </select>
                     </div>
 
@@ -266,7 +286,7 @@ export const Careers: React.FC = () => {
                         required
                         value={formState.experience}
                         onChange={(e) => setFormState({ ...formState, experience: e.target.value })}
-                        placeholder="e.g. 5 Years in Geotech"
+                        placeholder="e.g. 4 Years"
                         className="w-full px-3.5 py-2 text-xs rounded border border-slate-200 focus:outline-none focus:border-[#062B5C] bg-[#F7F8FA]"
                       />
                     </div>
@@ -274,14 +294,14 @@ export const Careers: React.FC = () => {
 
                   <div>
                     <label htmlFor="message" className="block text-xs font-mono uppercase tracking-wider text-[#062B5C] font-semibold mb-1">
-                      Brief Profile / Cover Message
+                      Professional Background / Note
                     </label>
                     <textarea
                       id="message"
-                      rows={4}
+                      rows={3}
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      placeholder="Outline your testing expertise, university background, or project experience..."
+                      placeholder="Brief summary of degrees, past projects, key software/lab competencies..."
                       className="w-full px-3.5 py-2 text-xs rounded border border-slate-200 focus:outline-none focus:border-[#062B5C] bg-[#F7F8FA]"
                     />
                   </div>
@@ -302,7 +322,7 @@ export const Careers: React.FC = () => {
                   </button>
 
                   <p className="text-[10px] text-slate-400 text-center font-mono">
-                    Protected by Formspree API integration • Private & Confidential
+                    Protected by Formspree API integration • Private &amp; Confidential
                   </p>
                 </form>
               )}

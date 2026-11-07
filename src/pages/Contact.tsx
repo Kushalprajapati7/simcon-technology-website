@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { COMPANY_INFO } from '@/data/company';
 import { OFFICES } from '@/data/offices';
 import { SERVICES } from '@/data/services';
@@ -58,16 +59,30 @@ export const Contact: React.FC = () => {
   const whatsappPhone = COMPANY_INFO.whatsappNumber.replace(/[^0-9]/g, '');
 
   return (
-    <div className="pt-[72px]">
+    <div className="pt-[72px] bg-white min-h-screen">
       {/* Hero */}
-      <section className="bg-[#062B5C] text-white py-20 relative overflow-hidden">
+      <section className="bg-[#062B5C] text-white py-12 sm:py-16 lg:py-20 relative overflow-hidden border-b border-[#0A3D78]">
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-white leading-[1.12]">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10 w-full">
+          <div className="max-w-4xl space-y-3.5 sm:space-y-4 reveal reveal-left">
+            {/* Breadcrumb Navigation */}
+            <nav className="flex items-center gap-1.5 sm:gap-2 text-xs font-mono text-slate-300 flex-wrap" aria-label="Breadcrumb">
+              <Link to="/" className="hover:text-white transition-colors">Home</Link>
+              <span className="text-slate-400">&gt;</span>
+              <span className="text-slate-200">Contact Us</span>
+            </nav>
+
+            {/* Technical Eyebrow (Services Page Sky-Blue Format) */}
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.18em] sm:tracking-[0.2em] text-sky-300 uppercase">
+                DIRECT CONSULTATION &amp; SCOPING
+              </span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white leading-[1.12]">
               Connect with Our Engineering Teams.
             </h1>
-            <p className="text-base text-slate-300 leading-relaxed pt-2">
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl font-normal">
               Reach our geotechnical specialists and NABL-accredited laboratory directors in Gandhidham, Ahmedabad, Lucknow, and Indore to initiate project discussions or request formal testing quotations.
             </p>
           </div>
@@ -75,25 +90,25 @@ export const Contact: React.FC = () => {
       </section>
 
       {/* Main Two-Column Contact Section */}
-      <section className="py-20 bg-[#F7F8FA] border-b border-slate-200">
+      <section className="py-16 sm:py-20 bg-[#F7F8FA] border-b border-slate-200">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             {/* Left Narrative & Direct Channels */}
-            <div className="lg:col-span-5 space-y-8">
-              <div className="space-y-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block">
+            <div className="reveal reveal-left lg:col-span-5 space-y-8">
+              <div className="space-y-3">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#1268B3] uppercase block mb-1">
                   TECHNICAL CONSULTATION
                 </span>
-                <h2 className="text-3xl font-extrabold font-display text-[#062B5C] leading-tight">
+                <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-[#062B5C] leading-tight">
                   Let's Talk About Your Project.
                 </h2>
-                <p className="text-sm text-[#536271] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#536271] leading-relaxed">
                   Every infrastructure project begins with an accurate understanding of subsurface ground behavior. Our senior advisors provide immediate technical guidance for your borehole plans, pile testing programs, and laboratory scopes.
                 </p>
               </div>
 
               {/* Direct Communication Channels */}
-              <div className="bg-white p-6 rounded-xl border border-slate-200 space-y-4">
+              <div className="bg-white p-6 rounded-xl border border-slate-200 space-y-4 shadow-2xs">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded bg-[#062B5C] text-white flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-[#2B7EC8]" />
@@ -102,7 +117,7 @@ export const Contact: React.FC = () => {
                     <span className="text-[10px] font-mono uppercase text-slate-400 block font-semibold">
                       CENTRAL TELEPHONE ENQUIRY
                     </span>
-                    <a href={`tel:${COMPANY_INFO.officialPhone}`} className="text-base font-bold font-mono text-[#062B5C] hover:text-[#1268B3]">
+                    <a href={`tel:${COMPANY_INFO.officialPhone}`} className="text-base font-bold font-mono text-[#062B5C] hover:text-[#1268B3] transition-colors">
                       {COMPANY_INFO.officialPhone}
                     </a>
                   </div>
@@ -116,7 +131,7 @@ export const Contact: React.FC = () => {
                     <span className="text-[10px] font-mono uppercase text-slate-400 block font-semibold">
                       OFFICIAL COMMUNICATIONS
                     </span>
-                    <a href={`mailto:${COMPANY_INFO.officialEmail}`} className="text-sm font-mono font-medium text-[#062B5C] hover:text-[#1268B3]">
+                    <a href={`mailto:${COMPANY_INFO.officialEmail}`} className="text-sm font-mono font-medium text-[#062B5C] hover:text-[#1268B3] transition-colors">
                       {COMPANY_INFO.officialEmail}
                     </a>
                   </div>
@@ -134,7 +149,7 @@ export const Contact: React.FC = () => {
                       href={`https://wa.me/${whatsappPhone}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-mono font-medium text-emerald-800 hover:text-emerald-950 flex items-center gap-1"
+                      className="text-sm font-mono font-medium text-emerald-800 hover:text-emerald-950 flex items-center gap-1 transition-colors"
                     >
                       {COMPANY_INFO.whatsappNumber} →
                     </a>
@@ -155,9 +170,9 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Right Project Enquiry Form */}
-            <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-xl border border-slate-200 shadow-sm">
+            <div className="reveal reveal-right lg:col-span-7 bg-white p-8 sm:p-10 rounded-xl border border-slate-200 shadow-sm" style={{ '--delay': '0.15s' } as React.CSSProperties}>
               <div className="mb-6 border-b border-slate-100 pb-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#D71920] font-bold block mb-1">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#1268B3] uppercase block mb-1">
                   PROJECT ENQUIRY
                 </span>
                 <h3 className="text-2xl font-bold font-display text-[#062B5C]">
@@ -174,14 +189,14 @@ export const Contact: React.FC = () => {
                   <h4 className="font-display font-bold text-lg text-emerald-900">
                     Thank You. Your Enquiry Has Been Received.
                   </h4>
-                  <p className="text-xs text-emerald-700 max-w-md mx-auto leading-relaxed">
-                    A technical lead from the appropriate regional hub will review your project parameters and respond with testing specifications or quotation within committed timelines.
+                  <p className="text-xs text-emerald-700 leading-relaxed max-w-md mx-auto">
+                    A technical director will review your project parameters and respond within one business day.
                   </p>
                   <button
                     onClick={() => setStatus('idle')}
-                    className="text-xs font-mono font-bold text-emerald-800 underline mt-2"
+                    className="text-xs font-mono font-bold text-[#062B5C] underline hover:text-[#1268B3] mt-2 block mx-auto"
                   >
-                    Submit Another Enquiry
+                    Submit Another Inquiry
                   </button>
                 </div>
               ) : (
@@ -189,14 +204,14 @@ export const Contact: React.FC = () => {
                   {status === 'error' && (
                     <div className="p-3 bg-red-50 border border-red-200 rounded text-xs text-red-700 flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 shrink-0" />
-                      <span>Something went wrong. Please try again or contact us directly by phone or email.</span>
+                      <span>Something went wrong. Please try again or reach our team directly at info@simcon.co.in</span>
                     </div>
                   )}
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="contact-name" className="block text-xs font-mono uppercase tracking-wider text-[#062B5C] font-semibold mb-1">
-                        Your Full Name *
+                        Contact Person *
                       </label>
                       <input
                         id="contact-name"
@@ -204,13 +219,13 @@ export const Contact: React.FC = () => {
                         required
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                        placeholder="e.g. Anand Patel"
+                        placeholder="e.g. D. K. Sharma"
                         className="w-full px-3.5 py-2.5 text-xs rounded border border-slate-200 focus:outline-none focus:border-[#062B5C] bg-[#F7F8FA]"
                       />
                     </div>
                     <div>
                       <label htmlFor="contact-company" className="block text-xs font-mono uppercase tracking-wider text-[#062B5C] font-semibold mb-1">
-                        Company / EPC Organization *
+                        Organization / Client Name *
                       </label>
                       <input
                         id="contact-company"
@@ -218,7 +233,7 @@ export const Contact: React.FC = () => {
                         required
                         value={formState.company}
                         onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                        placeholder="e.g. Larsen & Toubro"
+                        placeholder="e.g. NHAI / L&T / Adani Ports"
                         className="w-full px-3.5 py-2.5 text-xs rounded border border-slate-200 focus:outline-none focus:border-[#062B5C] bg-[#F7F8FA]"
                       />
                     </div>
@@ -269,7 +284,7 @@ export const Contact: React.FC = () => {
                         {SERVICES.map(srv => (
                           <option key={srv.id} value={srv.title}>{srv.title}</option>
                         ))}
-                        <option value="Numerical Modeling & PLAXIS">Numerical Modeling & PLAXIS</option>
+                        <option value="Numerical Modeling & PLAXIS">Numerical Modeling &amp; PLAXIS</option>
                         <option value="Comprehensive Tender Testing Package">Comprehensive Tender Testing Package</option>
                       </select>
                     </div>
@@ -340,10 +355,11 @@ export const Contact: React.FC = () => {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {OFFICES.map((off) => (
+            {OFFICES.map((off, idx) => (
               <div
                 key={off.id}
-                className="bg-[#F7F8FA] p-6 rounded-xl border border-slate-200 flex flex-col justify-between space-y-4"
+                style={{ '--delay': `${0.08 * (idx + 1)}s` } as React.CSSProperties}
+                className="reveal reveal-up bg-[#F7F8FA] p-6 rounded-xl border border-slate-200 flex flex-col justify-between space-y-4"
               >
                 <div>
                   <div className="flex items-center justify-between mb-1">
@@ -365,10 +381,10 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="pt-3 border-t border-slate-200/80 space-y-1.5 text-xs font-mono text-[#536271]">
-                  <a href={`tel:${off.phone}`} className="hover:text-[#062B5C] flex items-center gap-2">
+                  <a href={`tel:${off.phone}`} className="hover:text-[#062B5C] flex items-center gap-2 transition-colors">
                     <Phone className="w-3.5 h-3.5 text-[#1268B3]" /> {off.phone}
                   </a>
-                  <a href={`mailto:${off.email}`} className="hover:text-[#062B5C] flex items-center gap-2">
+                  <a href={`mailto:${off.email}`} className="hover:text-[#062B5C] flex items-center gap-2 transition-colors">
                     <Mail className="w-3.5 h-3.5 text-[#1268B3]" /> {off.email}
                   </a>
                 </div>

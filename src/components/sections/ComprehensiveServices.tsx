@@ -2,275 +2,415 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
-  Layers,
-  CheckCircle2,
-  Activity,
-  Search,
-  FlaskConical,
-  Compass,
-  Gauge,
-  Building2,
-  MonitorCheck,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  ShieldCheck,
+  CheckCircle2
 } from 'lucide-react';
-import { SERVICES } from '@/data/services';
 
-const SERVICE_TAB_LABELS: Record<string, string> = {
-  "geotechnical-investigation": "Geotechnical Investigation",
-  "geophysical-investigation": "Geophysical Survey",
-  "forensic-geotechnical": "Forensic Investigation",
-  "construction-material-testing": "Material Testing",
-  "topographical-survey": "Surveying & Mapping",
-  "field-insitu-testing": "Field Testing",
-  "geotechnical-instrumentation": "Monitoring & Safety",
-  "ndt-structural-health": "Structural Assessment",
-};
+interface CoreDiscipline {
+  id: string;
+  number: string;
+  title: string;
+  shortTitle: string;
+  subtitle: string;
+  slug: string;
+  category: string;
+  heroImage: string;
+  description: string;
+  keyChips: string[];
+  standards: string[];
+  equipmentSpec: string;
+}
+
+const CORE_SERVICES: CoreDiscipline[] = [
+  {
+    id: 'geotechnical-services',
+    number: '01',
+    title: 'Geotechnical Services',
+    shortTitle: 'Geotechnical Services',
+    subtitle: 'Soil, Rock & Foundation Exploration',
+    slug: 'geotechnical-services',
+    category: 'Geotechnical Engineering',
+    heroImage: '/assets/projects/geotechnical-investigation-site-1.png',
+    description: 'NABL-accredited soil and rock laboratory mechanics, deep rotary diamond core drilling, and field penetration testing delivering verifiable ground parameters for heavy infrastructure.',
+    keyChips: [
+      'Soil Laboratory Testing (14 NABL Tests)',
+      'Rock Core Geomechanics (13 NABL Tests)',
+      'Advanced In-Situ Testing (SPT, SPLT & DPLT)',
+      'Deep Rotary Diamond Core Drilling'
+    ],
+    standards: ['IS 1892', 'IS 2131', 'IS 2720', 'IS 13030', 'ASTM D422'],
+    equipmentSpec: 'Hydraulic Rotary Diamond Core Rigs · Digital Triaxial Console'
+  },
+  {
+    id: 'geophysical-survey',
+    number: '02',
+    title: 'Geophysical Survey',
+    shortTitle: 'Geophysical Survey',
+    subtitle: 'Non-Invasive Subsurface Exploration',
+    slug: 'geophysical-survey',
+    category: 'Subsurface Geophysics',
+    heroImage: '/assets/services/geophysical/masw-seismic-imaging-2d.png',
+    description: 'High-resolution non-invasive seismic imaging, electrical resistivity tomography, and radar exploration providing continuous subsurface cross-sections without site disruption or excavation.',
+    keyChips: [
+      'MASW (Vs30) & Seismic Refraction (SRT)',
+      'Electrical Resistivity (2D/3D ERT Tomography)',
+      'Ground Penetrating Radar (GPR Utility Mapping)',
+      'Downhole & Crosshole Seismics (CHST/DHT)'
+    ],
+    standards: ['ASTM D5777', 'ASTM D4428', 'ASTM D6432', 'IS 15681', 'IS 1893'],
+    equipmentSpec: '24-Channel Digital Seismograph · 2D/3D Multi-Electrode ERT · GPR Cart'
+  },
+  {
+    id: 'ndt-structural-integrity',
+    number: '03',
+    title: 'NDT & Structural Integrity Assessment',
+    shortTitle: 'NDT & Structural Integrity',
+    subtitle: 'Deep Foundation & Diagnostics',
+    slug: 'ndt-structural-integrity',
+    category: 'Structural Diagnostics & NDT',
+    heroImage: '/assets/services/ndt/rebound-hammer-concrete-testing.jpeg',
+    description: 'Rigorous non-destructive testing, acoustic pile integrity evaluation, bridge proof load deflection verification, and comprehensive structural condition audits using calibrated digital instrumentation.',
+    keyChips: [
+      'Low Strain Pile Integrity Testing (PIT)',
+      'Cross-Hole Sonic Logging (CHSL / CHUM)',
+      'Rebound Hammer & Ultrasonic UPV Scanning',
+      'Bridge & Span Proof Load Deflection Tests'
+    ],
+    standards: ['IS 13311', 'IS 14893', 'ASTM D5882', 'ASTM C876', 'IRC:SP:51'],
+    equipmentSpec: 'Acoustic PIT Sensors · UPV Transducers · Proceq Covermeter'
+  },
+  {
+    id: 'material-testing-services',
+    number: '04',
+    title: 'Material Testing Services',
+    shortTitle: 'Material Testing Services',
+    subtitle: 'Civil & Chemical Laboratories',
+    slug: 'material-testing-services',
+    category: 'Construction Material Testing',
+    heroImage: '/assets/services/materials/universal-testing-machine-utm-steel.png',
+    description: 'Central NABL ISO/IEC 17025 accredited laboratories validating 581+ parameters across cement, aggregates, bitumen, fresh/hardened concrete, steel rebars, and analytical wet chemistry.',
+    keyChips: [
+      'Cementitious & Aggregates Testing (25 Tests)',
+      'Reinforcing Steel Rebars & Welds (14 Tests)',
+      'Bituminous Binder & Asphalt Mix (19 Tests)',
+      'Chemical Testing (Across 6 Matrices)'
+    ],
+    standards: ['IS 269', 'IS 383', 'IS 516', 'IS 1786', 'IS 456', 'ASTM C39'],
+    equipmentSpec: '2000 kN Servo UTM · Auto Compressive Console · Spectrophotometer'
+  }
+];
+
+const EXTENDED_SLIDES = [
+  { ...CORE_SERVICES[3], originalIndex: 3, keyId: 'clone-prefix-04' },
+  { ...CORE_SERVICES[0], originalIndex: 0, keyId: 'real-slide-01' },
+  { ...CORE_SERVICES[1], originalIndex: 1, keyId: 'real-slide-02' },
+  { ...CORE_SERVICES[2], originalIndex: 2, keyId: 'real-slide-03' },
+  { ...CORE_SERVICES[3], originalIndex: 3, keyId: 'real-slide-04' },
+  { ...CORE_SERVICES[0], originalIndex: 0, keyId: 'clone-suffix-01' },
+];
 
 export const ComprehensiveServices: React.FC = () => {
-  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
+  // Start at index 1 (the first real slide: Discipline 01)
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const [isServicesPaused, setIsServicesPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
-  // Automatic slideshow for Comprehensive Engineering Services (cycles every 4.5s, pauses on hover)
+  // Active dot indicator (0 to 3) mapped from current index (with clone wraps)
+  const activeDotIndex =
+    currentIndex === 0
+      ? 3
+      : currentIndex === 5
+      ? 0
+      : currentIndex - 1;
+
+  const handlePrev = () => {
+    if (!isTransitionEnabled) return;
+    setCurrentIndex((prev) => prev - 1);
+  };
+
+  const handleNext = () => {
+    if (!isTransitionEnabled) return;
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  const handleDotClick = (dotIdx: number) => {
+    if (!isTransitionEnabled) return;
+    setCurrentIndex(dotIdx + 1);
+  };
+
+  // Auto-advance slider every 5.5 seconds, pauses on hover
   useEffect(() => {
     if (isServicesPaused) return;
     const interval = setInterval(() => {
-      setActiveServiceIndex((prev) => (prev + 1) % SERVICES.length);
-    }, 4500);
+      handleNext();
+    }, 5500);
     return () => clearInterval(interval);
-  }, [isServicesPaused]);
+  }, [isServicesPaused, isTransitionEnabled]);
 
-  const featuredService = SERVICES[activeServiceIndex];
+  // Handle seamless snap after sliding to clone slides
+  const handleTransitionEnd = (e: React.TransitionEvent<HTMLDivElement>) => {
+    if (e.target !== e.currentTarget || e.propertyName !== 'transform') return;
 
-  const getServiceIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Layers': return <Layers className="w-5 h-5" />;
-      case 'Activity': return <Activity className="w-5 h-5" />;
-      case 'Search': return <Search className="w-5 h-5" />;
-      case 'FlaskConical': return <FlaskConical className="w-5 h-5" />;
-      case 'Compass': return <Compass className="w-5 h-5" />;
-      case 'Gauge': return <Gauge className="w-5 h-5" />;
-      case 'MonitorCheck': return <MonitorCheck className="w-5 h-5" />;
-      case 'Building2': return <Building2 className="w-5 h-5" />;
-      default: return <Layers className="w-5 h-5" />;
+    if (currentIndex === 5) {
+      // Slid forward into Clone 01 -> snap instantly to Real 01
+      setIsTransitionEnabled(false);
+      setCurrentIndex(1);
+    } else if (currentIndex === 0) {
+      // Slid backward into Clone 04 -> snap instantly to Real 04
+      setIsTransitionEnabled(false);
+      setCurrentIndex(4);
     }
   };
 
+  // Re-enable CSS transition after the instant snap has rendered
+  useEffect(() => {
+    if (!isTransitionEnabled) {
+      const raf = requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTransitionEnabled(true);
+        });
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [isTransitionEnabled]);
+
+  // Safety fallback if onTransitionEnd is deferred by inactive browser tab
+  useEffect(() => {
+    if (currentIndex === 0 || currentIndex === 5) {
+      const timer = setTimeout(() => {
+        setIsTransitionEnabled(false);
+        setCurrentIndex(currentIndex === 0 ? 4 : 1);
+      }, 750);
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+    setTouchStartX(null);
+  };
+
   return (
-    <section className="py-20 lg:py-28 bg-white relative">
+    <section className="py-8 sm:py-12 bg-white relative">
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
+        
+        {/* Compact Section Header with Slider Navigation Controls */}
+        <div className="reveal reveal-up flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-6 gap-4">
           <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold font-display text-[#062B5C] tracking-tight leading-[1.12]">
-              End-to-End Engineering Solutions<span className="text-[#1E60FF]">.</span>
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.2em] text-[#1268B3] uppercase block">
+                INTEGRATED SOLUTIONS
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-extrabold font-display text-[#062B5C] tracking-tight leading-tight">
+              Four Core Engineering Disciplines<span className="text-[#D71920]">.</span>
             </h2>
-            <p className="mt-3 text-base text-[#536271] leading-relaxed max-w-2xl">
-              Explore our specialized testing, surveying, and diagnostic services tailored for heavy infrastructure.
-            </p>
           </div>
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#1E60FF] hover:text-[#062B5C] uppercase tracking-wider shrink-0 transition-colors"
-          >
-            <span>Explore All Services</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+
+          {/* Right Controls: Arrow Navigation + All Services Link */}
+          <div className="flex items-center gap-3 shrink-0">
+            <Link
+              to="/services"
+              className="hidden md:inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#1268B3] hover:text-[#062B5C] uppercase tracking-wider mr-2 transition-colors"
+            >
+              <span>All 581 Parameters</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+
+            <button
+              type="button"
+              onClick={handlePrev}
+              className="w-9 h-9 rounded-full border border-slate-200 bg-white hover:bg-[#1268B3] hover:text-white hover:border-[#1268B3] text-slate-700 transition-colors flex items-center justify-center shadow-2xs cursor-pointer"
+              aria-label="Previous service"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={handleNext}
+              className="w-9 h-9 rounded-full border border-slate-200 bg-white hover:bg-[#1268B3] hover:text-white hover:border-[#1268B3] text-slate-700 transition-colors flex items-center justify-center shadow-2xs cursor-pointer"
+              aria-label="Next service"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Discipline Controller (Zero Horizontal Scroll for small devices) */}
+        {/* Compact Heroic Slider Card: Continuous Sliding Carousel with Pre-mounted Images */}
         <div
-          className="sm:hidden mb-3 space-y-2"
+          className="reveal reveal-scale bg-white rounded-3xl border border-slate-200/90 shadow-md overflow-hidden relative"
+          style={{ '--delay': '0.12s' } as React.CSSProperties}
           onMouseEnter={() => setIsServicesPaused(true)}
           onMouseLeave={() => setIsServicesPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
-          {/* Active Discipline Card with Previous/Next Controls */}
-          <div className="bg-[#F8FAFC] p-2.5 rounded-xl border border-slate-200/90 shadow-xs flex items-center justify-between gap-2.5">
-            <button
-              type="button"
-              onClick={() => setActiveServiceIndex((prev) => (prev - 1 + SERVICES.length) % SERVICES.length)}
-              className="w-9 h-9 rounded-lg bg-white hover:bg-[#1E60FF] hover:text-white text-slate-700 border border-slate-200/70 flex items-center justify-center transition-colors shrink-0 cursor-pointer active:scale-95"
-              aria-label="Previous discipline"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            <div className="flex items-center gap-2 min-w-0 flex-1 justify-center">
-              <span className="p-1.5 rounded-lg bg-blue-50 text-[#1E60FF] shrink-0">
-                {getServiceIcon(featuredService.iconName)}
-              </span>
-              <div className="min-w-0 text-left">
-                <span className="text-[10px] font-mono font-bold text-[#1E60FF] block leading-none mb-0.5">
-                  DISCIPLINE {featuredService.number} / 08
-                </span>
-                <span className="text-xs font-bold text-[#062B5C] truncate block leading-tight">
-                  {SERVICE_TAB_LABELS[featuredService.id] || featuredService.title}
-                </span>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setActiveServiceIndex((prev) => (prev + 1) % SERVICES.length)}
-              className="w-9 h-9 rounded-lg bg-white hover:bg-[#1E60FF] hover:text-white text-slate-700 border border-slate-200/70 flex items-center justify-center transition-colors shrink-0 cursor-pointer active:scale-95"
-              aria-label="Next discipline"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* 8 Quick-Tap Number Indicator Pills */}
-          <div className="grid grid-cols-8 gap-1.5">
-            {SERVICES.map((srv, idx) => {
-              const isActive = activeServiceIndex === idx;
+          {/* Continuous Sliding Track with seamless infinite wrap */}
+          <div
+            onTransitionEnd={handleTransitionEnd}
+            className={`flex w-full will-change-transform ${
+              isTransitionEnabled
+                ? 'transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]'
+                : 'transition-none'
+            }`}
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {EXTENDED_SLIDES.map((srv) => {
+              const isSlideReversed = srv.originalIndex % 2 === 1;
               return (
-                <button
-                  key={srv.id}
-                  type="button"
-                  onClick={() => setActiveServiceIndex(idx)}
-                  className={`py-1.5 text-center text-xs font-mono font-bold rounded-lg transition-all cursor-pointer ${isActive
-                      ? 'bg-[#1E60FF] text-white shadow-xs font-black scale-102'
-                      : 'bg-[#F8FAFC] text-slate-600 border border-slate-200/80 hover:bg-slate-100'
-                    }`}
-                  aria-label={`Select discipline ${srv.number}`}
-                >
-                  {srv.number}
-                </button>
+                <div key={srv.keyId} className="w-full shrink-0 flex-none">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch min-h-[440px] h-full">
+
+                    {/* Image Column: 7 cols on lg (order-1 on 1st & 3rd, order-2 on 2nd & 4th) */}
+                    <div
+                      className={`lg:col-span-7 relative min-h-[300px] sm:min-h-[380px] lg:min-h-full bg-slate-900 overflow-hidden group ${
+                        isSlideReversed ? 'lg:order-2' : 'lg:order-1'
+                      }`}
+                    >
+                      <img
+                        src={srv.heroImage}
+                        alt={srv.title}
+                        loading="eager"
+                        decoding="async"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
+                      />
+
+                      {/* Top Discipline Tag Badge */}
+                      <div className="absolute top-4 left-4 z-10 bg-[#062B5C]/90 backdrop-blur-xs text-white px-3 py-1.5 rounded-lg text-[11px] font-mono font-bold shadow-md flex items-center gap-2">
+                        <span className="text-[#1268B3]">DISCIPLINE {srv.number}</span>
+                        <span className="text-white/40">·</span>
+                        <span className="text-slate-200 uppercase tracking-wider text-[10px]">
+                          {srv.category}
+                        </span>
+                      </div>
+
+                      {/* Top Right Accreditation Pill */}
+                      <div className="absolute top-4 right-4 z-10 hidden sm:flex items-center gap-1.5 bg-white/90 backdrop-blur-xs text-[#062B5C] px-3 py-1 rounded-full text-[10px] font-mono font-bold shadow-xs">
+                        <ShieldCheck className="w-3.5 h-3.5 text-[#1268B3]" />
+                        <span>NABL ISO/IEC 17025</span>
+                      </div>
+
+                      {/* Bottom Technical Setup Overlay Bar */}
+                      <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#062B5C]/95 via-[#062B5C]/80 to-transparent p-4 sm:p-5 text-white">
+                        <span className="text-[10px] font-mono uppercase text-blue-300 font-bold block mb-1">
+                          PRIMARY TESTING RIGS &amp; SETUP
+                        </span>
+                        <p className="text-xs font-mono text-slate-200 leading-snug">
+                          {srv.equipmentSpec}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Content Column: 5 cols on lg (order-2 on 1st & 3rd, order-1 on 2nd & 4th) */}
+                    <div
+                      className={`lg:col-span-5 p-5 sm:p-6 lg:p-7 flex flex-col justify-between bg-white ${
+                        isSlideReversed ? 'lg:order-1' : 'lg:order-2'
+                      }`}
+                    >
+                      <div>
+                        {/* Discipline Header */}
+                        <span className="text-xs font-mono font-bold text-[#1268B3] uppercase tracking-wider">
+                          DISCIPLINE 0{srv.originalIndex + 1} OF 04
+                        </span>
+                        <h3 className="text-xl sm:text-2xl font-extrabold font-display text-[#062B5C] tracking-tight leading-snug mt-1">
+                          {srv.title}
+                        </h3>
+                        <p className="text-xs font-mono font-semibold text-slate-400 mt-0.5">
+                          {srv.subtitle}
+                        </p>
+                        <p className="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed">
+                          {srv.description}
+                        </p>
+
+                        {/* Compact Capability Chips (4 Bullet Points) */}
+                        <div className="mt-3.5 pt-3 border-t border-slate-100 space-y-1.5">
+                          {srv.keyChips.map((chip, i) => (
+                            <div key={i} className="flex items-center gap-2 text-xs font-medium text-[#062B5C]">
+                              <CheckCircle2 className="w-4 h-4 text-[#1268B3] shrink-0" />
+                              <span className="truncate">{chip}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Applicable Codes Strip */}
+                        <div className="mt-3 pt-2.5 border-t border-slate-100 flex flex-wrap items-center gap-1.5 text-[10px] font-mono text-slate-500">
+                          <span className="font-bold text-[#062B5C]">STANDARDS:</span>
+                          {srv.standards.map((std, i) => (
+                            <span
+                              key={i}
+                              className="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded font-bold border border-slate-200/60"
+                            >
+                              {std}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="pt-4 mt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                        <Link
+                          to={`/services/${srv.slug}`}
+                          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#1268B3] hover:bg-[#062B5C] text-white text-xs font-bold rounded-xl shadow-xs hover:shadow-md transition-all duration-200"
+                        >
+                          <span>Explore {srv.shortTitle} Scope</span>
+                          <ChevronRight className="w-4 h-4" />
+                        </Link>
+
+                        <Link
+                          to="/contact#enquiry"
+                          className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold text-[#062B5C] hover:text-[#1268B3] transition-colors"
+                        >
+                          <span>Request Quotation</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
               );
             })}
           </div>
         </div>
 
-        {/* Tablet & Desktop Tabs Grid */}
-        <div
-          className="hidden sm:grid sm:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-2.5 pb-2"
-          onMouseEnter={() => setIsServicesPaused(true)}
-          onMouseLeave={() => setIsServicesPaused(false)}
-        >
-          {SERVICES.map((srv, idx) => {
-            const isActive = activeServiceIndex === idx;
-            const tabLabel = SERVICE_TAB_LABELS[srv.id] || srv.title;
-
+        {/* Bottom Slider Pagination Dots (`....`) */}
+        <div className="flex items-center justify-center gap-2.5 mt-6">
+          {CORE_SERVICES.map((srv, idx) => {
+            const isActive = activeDotIndex === idx;
             return (
               <button
                 key={srv.id}
                 type="button"
-                onClick={() => setActiveServiceIndex(idx)}
-                className={`flex flex-col items-center justify-between text-center p-3 sm:p-3.5 rounded-xl transition-all duration-300 relative group cursor-pointer ${isActive
-                    ? 'bg-white shadow-md border border-slate-200 ring-1 ring-[#1E60FF]/20'
-                    : 'bg-[#F8FAFC] hover:bg-slate-100 border border-slate-200/70 hover:border-slate-300'
-                  }`}
-              >
-                {/* Top: Service Number in Blue when active */}
-                <span
-                  className={`font-mono text-xs font-bold transition-colors ${isActive ? 'text-[#1E60FF]' : 'text-slate-400 group-hover:text-slate-600'
-                    }`}
-                >
-                  {srv.number}
-                </span>
-
-                {/* Middle: Discipline Icon in Blue when active */}
-                <div
-                  className={`my-2 transition-transform duration-300 ${isActive
-                      ? 'text-[#1E60FF] scale-110'
-                      : 'text-slate-400 group-hover:text-slate-600 group-hover:scale-105'
-                    }`}
-                >
-                  {getServiceIcon(srv.iconName)}
-                </div>
-
-                {/* Bottom: Tab Title */}
-                <span
-                  className={`text-[11px] sm:text-xs font-semibold leading-tight line-clamp-2 transition-colors ${isActive
-                      ? 'text-[#062B5C] font-bold'
-                      : 'text-slate-600 group-hover:text-[#062B5C]'
-                    }`}
-                >
-                  {tabLabel}
-                </span>
-
-                {/* Active Indicator Bar in Blue */}
-                {isActive && (
-                  <span className="absolute bottom-0 left-3 right-3 h-1 bg-[#1E60FF] rounded-full" />
-                )}
-              </button>
+                onClick={() => handleDotClick(idx)}
+                className={`transition-all duration-300 rounded-full cursor-pointer ${
+                  isActive
+                    ? 'w-8 h-2.5 bg-[#1268B3]'
+                    : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-400'
+                }`}
+                aria-label={`Go to ${srv.title} slide`}
+                title={`${srv.number}. ${srv.title}`}
+              />
             );
           })}
         </div>
 
-        {/* Main Service Feature Card */}
-        <div
-          className="mt-4 sm:mt-5 bg-white rounded-2xl p-4 sm:p-5 lg:p-6 border border-slate-200/90 shadow-[0_10px_35px_rgba(6,43,92,0.06)] transition-all duration-300"
-          onMouseEnter={() => setIsServicesPaused(true)}
-          onMouseLeave={() => setIsServicesPaused(false)}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-
-            {/* Left Side: Featured Image with Discipline Badge */}
-            <div className="lg:col-span-6">
-              <div className="relative h-56 sm:h-64 lg:h-[340px] xl:h-[380px] 2xl:h-[420px] w-full rounded-xl overflow-hidden shadow-sm bg-slate-900 group">
-                <img
-                  key={featuredService.id}
-                  src={featuredService.heroImage}
-                  alt={featuredService.title}
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                />
-
-                {/* Discipline Overlay Badge */}
-                <div className="absolute top-3.5 left-3.5 z-10 bg-[#062B5C]/90 backdrop-blur-xs text-white px-3 py-1 rounded-md text-[11px] font-mono font-bold shadow-md flex items-center gap-1.5">
-                  <span className="text-[#1E60FF]">DISCIPLINE {featuredService.number}</span>
-                  <span className="text-white/40">·</span>
-                  <span className="text-slate-200 uppercase tracking-wider text-[10px]">
-                    {featuredService.category}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side: Service Details & Blue Action Button */}
-            <div className="lg:col-span-6 flex flex-col justify-center space-y-4">
-              <div>
-                <h3 className="text-xl sm:text-2xl lg:text-[28px] font-extrabold font-display text-[#062B5C] leading-snug">
-                  {featuredService.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#536271] mt-2 leading-relaxed">
-                  {featuredService.shortDescription}
-                </p>
-              </div>
-
-              {/* Key Capabilities Bullet Points */}
-              <div className="space-y-2 pt-0.5">
-                <ul className="space-y-2">
-                  {featuredService.keyCapabilities.slice(0, 4).map((cap, i) => (
-                    <li key={i} className="text-xs sm:text-[13px] font-medium text-[#17212B] flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#1E60FF] shrink-0 mt-0.5" />
-                      <span className="leading-snug">{cap}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Action Buttons: Blue Primary Button */}
-              <div className="pt-1.5 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-                <Link
-                  to={`/services/${featuredService.slug}`}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-[#1E60FF] hover:bg-[#1268B3] text-white text-xs sm:text-sm font-bold rounded-xl shadow-sm hover:shadow-md transition-all duration-200 text-center"
-                >
-                  <span>Explore Service</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-
-                <Link
-                  to="/contact"
-                  className="text-xs font-mono font-semibold text-[#536271] hover:text-[#062B5C] transition-colors text-center sm:text-left py-1 sm:py-0"
-                >
-                  Request Quotation →
-                </Link>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </div>
     </section>
   );

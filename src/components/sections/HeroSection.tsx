@@ -5,7 +5,7 @@ import { HeroStats } from '@/components/sections/HeroStats';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-[calc(100dvh-72px)] lg:h-[calc(100vh-72px)] w-full flex flex-col justify-between bg-[#062B5C] text-white overflow-hidden">
+    <section className="hero-section relative w-full flex flex-col justify-between bg-[#062B5C] text-white overflow-hidden">
       {/* Right-Side Geotechnical Drilling Rig Infrastructure Photograph */}
       <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[62%] h-full z-0 overflow-hidden pointer-events-none">
         <img
@@ -34,12 +34,12 @@ export const HeroSection: React.FC = () => {
       </svg>
 
       {/* Hero Body Content */}
-      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-3 sm:pt-4 lg:pt-5 pb-2 relative z-10 my-auto">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-5 sm:pt-7 lg:pt-8 pb-2 sm:pb-3 lg:pb-6 relative z-10 lg:flex-1 flex flex-col lg:justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column Content */}
           <div className="lg:col-span-8">
             {/* Strong Editorial Headline */}
-            <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-display text-white tracking-tight leading-[1.06] sm:leading-[1.04] max-w-3xl uppercase">
+            <h1 className="reveal reveal-up text-[30px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-display text-white tracking-tight leading-[1.06] sm:leading-[1.04] max-w-3xl uppercase">
               ENGINEERING<br />
               THE GROUND<br />
               BENEATH<br />
@@ -47,12 +47,12 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Supporting Text */}
-            <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base lg:text-lg text-slate-200 leading-relaxed max-w-2xl font-normal">
+            <p className="reveal reveal-up mt-2.5 sm:mt-4 text-xs sm:text-sm md:text-base lg:text-lg text-slate-200 leading-relaxed max-w-2xl font-normal" style={{ '--delay': '0.1s' } as React.CSSProperties}>
               Geotechnical investigation, testing and engineering services for complex infrastructure. Backed by NABL-accredited central testing laboratories, IIT & NIT advisory rigor, and over 18 years of national project execution.
             </p>
 
             {/* Action Button */}
-            <div className="mt-2.5 sm:mt-3">
+            <div className="reveal reveal-up mt-3.5 sm:mt-4" style={{ '--delay': '0.2s' } as React.CSSProperties}>
               <Link
                 to="/services"
                 className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 text-xs font-bold tracking-wider uppercase text-white bg-transparent hover:bg-white/10 border border-white/40 hover:border-white rounded-full transition-all duration-200 group"
@@ -66,7 +66,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Glassmorphic Statistics Bar */}
-      <div className="w-full relative z-10 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pb-3 sm:pb-3.5 lg:pb-4">
+      <div className="reveal reveal-up w-full relative z-10 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 mt-5 sm:mt-6 lg:mt-auto pb-5 sm:pb-6 lg:pb-4 shrink-0" style={{ '--delay': '0.28s' } as React.CSSProperties}>
         <HeroStats />
       </div>
     </section>

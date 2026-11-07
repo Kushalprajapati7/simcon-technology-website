@@ -13,18 +13,18 @@ export const TeamCard: React.FC<TeamCardProps> = ({
 }) => {
   return (
     <div
-      className={`bg-white rounded-xl border border-slate-200/90 overflow-hidden flex flex-col justify-between transition-all duration-200 hover:shadow-md hover:border-[#1268B3]/40 ${
+      className={`reveal reveal-up bg-white rounded-xl border border-slate-200/90 overflow-hidden flex flex-col justify-between transition-all duration-200 hover:shadow-md hover:border-[#1268B3]/40 ${
         featured ? 'ring-1 ring-[#062B5C]/15 shadow-sm' : ''
       }`}
     >
       <div>
         {/* Photo Container */}
-        <div className="relative aspect-[4/4.5] bg-slate-100 overflow-hidden">
+        <div className="reveal-img-wrap relative aspect-[4/4.5] bg-slate-100 overflow-hidden">
           {member.image ? (
             <img
               src={member.image}
               alt={`${member.name} - ${member.designation} at SIMCON`}
-              className="w-full h-full object-cover object-[center_top] transition-transform duration-300 hover:scale-102"
+              className="reveal-img w-full h-full object-cover object-[center_top] transition-transform duration-300 hover:scale-102"
               loading="lazy"
             />
           ) : (
