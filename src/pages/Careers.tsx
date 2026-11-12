@@ -2,47 +2,44 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CAREER_OPENINGS, WORK_CULTURE_HIGHLIGHTS } from '@/data/careers';
 import { SectionHeading } from '@/components/common/SectionHeading';
+import { submitToGoogleScript } from '@/utils/formSubmission';
 import { Send, CheckCircle2, AlertCircle, Clock, MapPin } from 'lucide-react';
 
+const INITIAL_CAREERS_FORM = {
+  name: '',
+  email: '',
+  phone: '',
+  position: CAREER_OPENINGS[0]?.title || 'Senior Geotechnical Engineer',
+  department: CAREER_OPENINGS[0]?.department || 'Geotech Section',
+  experience: '',
+  message: '',
+  botField: ''
+};
+
 export const Careers: React.FC = () => {
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    position: 'Senior Geotechnical Engineer',
-    department: 'Geotech Section',
-    experience: '',
-    message: ''
-  });
+  const [formState, setFormState] = useState(INITIAL_CAREERS_FORM);
 
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (status === 'submitting') return;
+
     setStatus('submitting');
+    setErrorMessage(null);
 
-    const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
-
-    if (formEndpoint) {
-      try {
-        const response = await fetch(formEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(formState)
-        });
-        if (response.ok) {
-          setStatus('success');
-        } else {
-          setStatus('error');
-        }
-      } catch (err) {
+    try {
+      const result = await submitToGoogleScript('career', formState);
+      if (result.ok) {
+        setStatus('success');
+        setFormState(INITIAL_CAREERS_FORM);
+      } else {
+        setErrorMessage(result.timedOut && result.error ? result.error : null);
         setStatus('error');
       }
-    } else {
-      // Simulate static form receipt in development
-      setTimeout(() => {
-        setStatus('success');
-      }, 800);
+    } catch {
+      setStatus('error');
     }
   };
 
@@ -205,10 +202,24 @@ export const Careers: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Hidden honeypot field to filter out automated spam bots */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={formState.botField}
+                    onChange={(e) => setFormState({ ...formState, botField: e.target.value })}
+                    className="hidden"
+                  />
+
                   {status === 'error' && (
                     <div className="p-3 bg-red-50 border border-red-200 rounded text-xs text-red-700 flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 shrink-0" />
-                      <span>Something went wrong. Please try again or email hr@simcon.co.in directly.</span>
+                      <span>
+                        {errorMessage || 'Something went wrong. Please try again or email hr@simcon.co.in directly.'}
+                      </span>
                     </div>
                   )}
 
@@ -266,7 +277,15 @@ export const Careers: React.FC = () => {
                       <select
                         id="position"
                         value={formState.position}
-                        onChange={(e) => setFormState({ ...formState, position: e.target.value })}
+                        onChange={(e) => {
+                          const selectedTitle = e.target.value;
+                          const matchedOpening = CAREER_OPENINGS.find((job) => job.title === selectedTitle);
+                          setFormState({
+                            ...formState,
+                            position: selectedTitle,
+                            department: matchedOpening?.department || 'General Engineering'
+                          });
+                        }}
                         className="w-full px-3.5 py-2 text-xs rounded border border-slate-200 focus:outline-none focus:border-[#062B5C] bg-[#F7F8FA]"
                       >
                         {CAREER_OPENINGS.map((job) => (
@@ -322,7 +341,7 @@ export const Careers: React.FC = () => {
                   </button>
 
                   <p className="text-[10px] text-slate-400 text-center font-mono">
-                    Protected by Formspree API integration • Private &amp; Confidential
+                    Direct encrypted submission • Private &amp; Confidential
                   </p>
                 </form>
               )}

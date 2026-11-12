@@ -4,6 +4,7 @@ import { COMPANY_INFO } from '@/data/company';
 import { OFFICES } from '@/data/offices';
 import { SERVICES } from '@/data/services';
 import { SectionHeading } from '@/components/common/SectionHeading';
+import { submitToGoogleScript } from '@/utils/formSubmission';
 import {
   Phone,
   Mail,
@@ -14,45 +15,41 @@ import {
   ShieldCheck
 } from 'lucide-react';
 
+const INITIAL_CONTACT_FORM = {
+  name: '',
+  company: '',
+  email: '',
+  phone: '',
+  serviceRequired: 'Geotechnical Investigation',
+  projectLocation: '',
+  message: '',
+  botField: ''
+};
+
 export const Contact: React.FC = () => {
-  const [formState, setFormState] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    serviceRequired: 'Geotechnical Investigation',
-    projectLocation: '',
-    message: ''
-  });
+  const [formState, setFormState] = useState(INITIAL_CONTACT_FORM);
 
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (status === 'submitting') return;
+
     setStatus('submitting');
+    setErrorMessage(null);
 
-    const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
-
-    if (formEndpoint) {
-      try {
-        const response = await fetch(formEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(formState)
-        });
-        if (response.ok) {
-          setStatus('success');
-        } else {
-          setStatus('error');
-        }
-      } catch (err) {
+    try {
+      const result = await submitToGoogleScript('contact', formState);
+      if (result.ok) {
+        setStatus('success');
+        setFormState(INITIAL_CONTACT_FORM);
+      } else {
+        setErrorMessage(result.timedOut && result.error ? result.error : null);
         setStatus('error');
       }
-    } else {
-      // Simulate static form receipt in development
-      setTimeout(() => {
-        setStatus('success');
-      }, 700);
+    } catch {
+      setStatus('error');
     }
   };
 
@@ -201,10 +198,24 @@ export const Contact: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Hidden honeypot field to filter out automated spam bots */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={formState.botField}
+                    onChange={(e) => setFormState({ ...formState, botField: e.target.value })}
+                    className="hidden"
+                  />
+
                   {status === 'error' && (
                     <div className="p-3 bg-red-50 border border-red-200 rounded text-xs text-red-700 flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 shrink-0" />
-                      <span>Something went wrong. Please try again or reach our team directly at info@simcon.co.in</span>
+                      <span>
+                        {errorMessage || 'Something went wrong. Please try again or reach our team directly at info@simcon.co.in'}
+                      </span>
                     </div>
                   )}
 
